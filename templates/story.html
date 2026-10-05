@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% block title %}Data Story — Analysing Mental Health in Student Ecosystem{% endblock %}
+
+{% block content %}
+<div class="viz-container">
+  <div class="viz-header">
+    <div>
+      <h2 class="viz-title">Tableau Data Story: The Student Well-being Journey</h2>
+      <p style="color: var(--text-muted); font-size: 0.9rem;">A guided 5-scene narrative connecting data diagnostics to actionable institutional policy</p>
+    </div>
+    <div class="viz-controls">
+      <a href="{{ tableau_public_url }}" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="font-size: 0.85rem; padding: 0.5rem 1rem;">
+        Open in Tableau Public ↗
+      </a>
+    </div>
+  </div>
+
+  <!-- Tableau Story Embed -->
+  <div class="tableauPlaceholder" id="viz1710000000001" style="position: relative; width: 100%; min-height: 800px;">
+    <noscript>
+      <a href="{{ tableau_public_url }}">
+        <img alt="Student Mental Health Data Story" src="https://public.tableau.com/static/images/St/StudentMentalHealthAnalytics/Story/1_rss.png" style="border: none" />
+      </a>
+    </noscript>
+    <object class="tableauViz" style="display:none;">
+      <param name="host_url" value="https%3A%2F%2Fpublic.tableau.com%2F" />
+      <param name="embed_code_version" value="3" />
+      <param name="site_root" value="" />
+      <param name="name" value="{{ tableau_story_path }}" />
+      <param name="tabs" value="yes" />
+      <param name="toolbar" value="yes" />
+      <param name="animate_transition" value="yes" />
+      <param name="display_static_image" value="yes" />
+      <param name="display_spinner" value="yes" />
+      <param name="display_overlay" value="yes" />
+      <param name="display_count" value="yes" />
+      <param name="language" value="en-US" />
+    </object>
+  </div>
+</div>
+
+<div class="card">
+  <h3>5-Scene Analytical Narrative Architecture</h3>
+  <ol style="padding-left: 1.5rem; line-height: 1.8; color: var(--text-main);">
+    <li><strong>Scene 1 — Cohort Baseline:</strong> Establishes the overall demographic makeup and initial benchmark prevalence of mental health indicators across the student population.</li>
+    <li><strong>Scene 2 — The Academic Pressure Paradigm:</strong> Demonstrates that high CGPA performance does not insulate students from severe anxiety or depressive symptoms.</li>
+    <li><strong>Scene 3 — Lifestyle Stress Vectors:</strong> Evaluates study workload intensity, sleep disturbances, and acute panic attack occurrences.</li>
+    <li><strong>Scene 4 — Vulnerability Mapping:</strong> Isolates the 27.7% High-Risk cohort and contrasts symptom burden against the alarming 78.6% treatment deficit.</li>
+    <li><strong>Scene 5 — Strategic Roadmap:</strong> Prescribes concrete institutional solutions: proactive mental wellness screenings, de-stigmatized peer support, and academic calendar pacing.</li>
+  </ol>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script type="text/javascript" src="https://public.tableau.com/javascripts/api/viz_v1.js"></script>
+{% endblock %}

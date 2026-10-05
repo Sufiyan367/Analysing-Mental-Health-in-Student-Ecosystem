@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% block title %}Executive Overview — Analysing Mental Health in Student Ecosystem{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero">
+  <h1>Analysing Mental Health in Student Ecosystem</h1>
+  <p>A multidimensional visual analytics platform evaluating the psychological well-being, academic pressures, and treatment dynamics across university student cohorts.</p>
+  <div class="hero-actions">
+    <a href="{{ url_for('dashboard') }}" class="btn btn-primary">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+      Explore Dashboards
+    </a>
+    <a href="{{ url_for('story') }}" class="btn btn-outline">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+      View 5-Scene Story
+    </a>
+  </div>
+</section>
+
+<!-- KPI Cards -->
+<section>
+  <h2 class="section-title">Cohort Core Diagnostics</h2>
+  <div class="kpi-grid">
+    <div class="kpi-card">
+      <div class="kpi-title">Surveyed Cohort</div>
+      <div class="kpi-value">{{ total_students }}</div>
+      <div class="kpi-subtitle">De-identified undergraduate students</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-title">Depression Prevalence</div>
+      <div class="kpi-value" style="color: var(--danger);">{{ depression_rate }}%</div>
+      <div class="kpi-subtitle"><span class="badge badge-danger">High Severity</span> 35 of 101 students affected</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-title">Anxiety Prevalence</div>
+      <div class="kpi-value" style="color: var(--warning);">{{ anxiety_rate }}%</div>
+      <div class="kpi-subtitle"><span class="badge badge-warning">Moderate</span> 34 of 101 students affected</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-title">Treatment Seeking Rate</div>
+      <div class="kpi-value" style="color: var(--primary);">{{ treatment_rate }}%</div>
+      <div class="kpi-subtitle"><span class="badge badge-info">Critical Gap</span> Only 6 students receiving care</div>
+    </div>
+  </div>
+</section>
+
+<!-- Strategic Insights Summary -->
+<section class="card">
+  <h3>Key Analytical Findings</h3>
+  <ul style="padding-left: 1.5rem; line-height: 1.8; color: var(--text-main);">
+    <li><strong>The Institutional Care Gap:</strong> While 27.7% of surveyed students fall into the <em>High Risk</em> tier (co-occurring depression and anxiety/panic attacks), <strong>78.6%</strong> of these high-risk students have never sought specialist treatment.</li>
+    <li><strong>Academic Vulnerability Peaks:</strong> Students in their foundational and penultimate transition years (Year 1 and Year 3) display heightened susceptibility to acute panic events and depressive symptoms.</li>
+    <li><strong>Academic Performance Disconnect:</strong> High-performing students (CGPA 3.50 – 4.00) experience comparable mental distress rates to students with lower CGPA brackets, indicating stress is systemic rather than purely grade-deficit driven.</li>
+    <li><strong>Disciplinary Clustering:</strong> STEM disciplines (Engineering and Computer Science) exhibit dense clusters of unaddressed anxiety and stress.</li>
+  </ul>
+</section>
+{% endblock %}

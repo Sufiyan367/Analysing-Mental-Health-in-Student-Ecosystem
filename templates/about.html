@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %}Methodology & Architecture — Analysing Mental Health in Student Ecosystem{% endblock %}
+
+{% block content %}
+<section class="card">
+  <h2>Project Methodology & Technical Architecture</h2>
+  <p style="color: var(--text-muted); margin-bottom: 1.5rem;">Comprehensive overview of data processing, analytical modeling, and system integration.</p>
+
+  <h3 style="color: var(--primary);">1. Data Ingestion & Hygiene</h3>
+  <p>The analysis is constructed from 101 authentic student survey responses. The raw data underwent systematic preprocessing in Python, including imputation of missing demographic metrics using median values, standardizing mixed-casing entries, and parsing academic performance bands into quantitative indicators.</p>
+
+  <h3 style="color: var(--primary); margin-top: 1.5rem;">2. Analytical Metrics & Calculated Fields</h3>
+  <ul style="padding-left: 1.5rem; line-height: 1.8;">
+    <li><strong>Composite Risk Category:</strong> Multi-condition logic evaluating whether students exhibit single or co-occurring symptoms of depression, anxiety, and panic attacks.</li>
+    <li><strong>Treatment Deficit Index:</strong> Quantifies students facing multi-symptom distress who have not engaged with medical or campus psychological counseling services.</li>
+    <li><strong>Faculty Stratification:</strong> Course majors mapped into 6 macro-faculties (Engineering, IT/CS, Law, Business, Humanities, and Health Sciences) for macro-level comparison.</li>
+  </ul>
+
+  <h3 style="color: var(--primary); margin-top: 1.5rem;">3. Web Delivery & Embedding Pipeline</h3>
+  <p>Visualizations published on Tableau Public are integrated into this responsive Flask application via the Tableau JavaScript API. Dynamic script sizing guarantees optimal readability across desktop, tablet, and mobile devices.</p>
+
+  <div style="margin-top: 2rem; padding: 1.5rem; background: var(--primary-light); border-radius: 0.5rem; border: 1px solid #bfdbfe;">
+    <h4 style="color: var(--primary-dark); margin-bottom: 0.5rem;">SkillWallet / SmartBridge Alignment</h4>
+    <p style="font-size: 0.95rem; color: #1e3a8a;">This project satisfies all milestones across all 8 project epics, completing the Data Analytics with Tableau Virtual Internship Program requirements.</p>
+  </div>
+</section>
+{% endblock %}

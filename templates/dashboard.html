@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+{% block title %}Interactive Dashboards — Analysing Mental Health in Student Ecosystem{% endblock %}
+
+{% block content %}
+<div class="viz-container">
+  <div class="viz-header">
+    <div>
+      <h2 class="viz-title">Student Ecosystem Analytical Dashboards</h2>
+      <p style="color: var(--text-muted); font-size: 0.9rem;">Interactive multi-worksheet views with synchronized demographic & risk filtering</p>
+    </div>
+    <div class="viz-controls">
+      <a href="{{ tableau_public_url }}" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="font-size: 0.85rem; padding: 0.5rem 1rem;">
+        Open in Tableau Public ↗
+      </a>
+    </div>
+  </div>
+
+  <!-- Tableau Embed Container -->
+  <div class="tableauPlaceholder" id="viz1710000000000" style="position: relative; width: 100%; min-height: 800px;">
+    <noscript>
+      <a href="{{ tableau_public_url }}">
+        <img alt="Student Mental Health Dashboard" src="https://public.tableau.com/static/images/St/StudentMentalHealthAnalytics/Dashboard1/1_rss.png" style="border: none" />
+      </a>
+    </noscript>
+    <object class="tableauViz" style="display:none;">
+      <param name="host_url" value="https%3A%2F%2Fpublic.tableau.com%2F" />
+      <param name="embed_code_version" value="3" />
+      <param name="site_root" value="" />
+      <param name="name" value="{{ tableau_dashboard_path }}" />
+      <param name="tabs" value="yes" />
+      <param name="toolbar" value="yes" />
+      <param name="animate_transition" value="yes" />
+      <param name="display_static_image" value="yes" />
+      <param name="display_spinner" value="yes" />
+      <param name="display_overlay" value="yes" />
+      <param name="display_count" value="yes" />
+      <param name="language" value="en-US" />
+    </object>
+  </div>
+</div>
+
+<div class="card">
+  <h3>Dashboard User Guide & Analytical Controls</h3>
+  <p style="color: var(--text-muted); margin-bottom: 1rem;">Utilize the interactive controls above to explore cross-demographic insights:</p>
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
+    <div style="padding: 1rem; background: var(--background); border-radius: 0.5rem;">
+      <h4 style="color: var(--primary); margin-bottom: 0.5rem;">Dashboard 1: Demographics</h4>
+      <p style="font-size: 0.9rem; color: var(--text-main);">Filter by <strong>Gender</strong> and <strong>Course Discipline</strong> to evaluate how student enrollment and study tiers relate to baseline mental well-being.</p>
+    </div>
+    <div style="padding: 1rem; background: var(--background); border-radius: 0.5rem;">
+      <h4 style="color: var(--danger); margin-bottom: 0.5rem;">Dashboard 2: Risk Assessment</h4>
+      <p style="font-size: 0.9rem; color: var(--text-main);">Examine <strong>High-Risk Student Clusters</strong> and click any condition bar to cross-filter across study years and discover treatment seeking disparities.</p>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script type="text/javascript" src="https://public.tableau.com/javascripts/api/viz_v1.js"></script>
+{% endblock %}
