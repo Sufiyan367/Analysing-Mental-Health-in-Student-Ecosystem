@@ -42,9 +42,9 @@ The preprocessing pipeline transforms raw student survey responses into a struct
 * **Condition Count:** Aggregated metric:
   $$\text{Condition\_Count} = \text{Depression\_Binary} + \text{Anxiety\_Binary} + \text{Panic\_Binary} \quad (\text{Range: } 0 - 3)$$
 * **Risk Categorization:**
-  - `High Risk`: 2 or 3 co-occurring conditions ($27.7\%$ of student body).
-  - `Moderate Risk`: 1 condition ($20.8\%$).
-  - `Low Risk`: 0 conditions ($51.5\%$).
+  - `High Risk`: 2 or 3 co-occurring conditions (28 students, $27.7\%$).
+  - `Moderate Risk`: 1 condition (36 students, $35.6\%$).
+  - `Low Risk`: 0 conditions (37 students, $36.6\%$).
 * **Treatment Gap Diagnosis:**
   - Identified students in `High Risk` who have `Sought_Treatment = No`.
   - Found that **22 out of 28 High-Risk students ($78.6\%$)** have never accessed professional mental health services, representing a critical institutional care gap.
