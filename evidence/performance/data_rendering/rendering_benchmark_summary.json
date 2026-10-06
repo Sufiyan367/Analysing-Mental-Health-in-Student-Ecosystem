@@ -1,0 +1,69 @@
+{
+  "dataset_metadata": {
+    "file_path": "data\\cleaned\\mental_health_student_ecosystem_cleaned.csv",
+    "file_size_bytes": 20318,
+    "file_size_kb": 19.84,
+    "total_rows": 200,
+    "total_columns": 18,
+    "numerical_columns_count": 8,
+    "numerical_columns": [
+      "Age",
+      "Anxiety Score",
+      "Depression Score",
+      "Daily Screen Time (hrs)",
+      "Social Interaction Score",
+      "Intervention Duration (weeks)",
+      "Progress Score",
+      "Work-Life Balance Score"
+    ],
+    "categorical_columns_count": 10,
+    "categorical_columns": [
+      "User ID",
+      "Gender",
+      "Occupation",
+      "Stress Level",
+      "Sleep Quality",
+      "Physical Activity Level",
+      "Mental Health History",
+      "Therapy Type",
+      "Medication Usage",
+      "Support System Strength"
+    ],
+    "in_memory_size_bytes": 140412,
+    "in_memory_size_kb": 137.12
+  },
+  "latency_benchmarks_ms": {
+    "csv_load_pandas": {
+      "mean": 3.172,
+      "std": 0.887,
+      "median": 3.077,
+      "min": 1.823,
+      "max": 7.294,
+      "p95": 4.916,
+      "iterations": 500
+    },
+    "raw_csv_parse": {
+      "mean": 0.644,
+      "std": 0.739,
+      "median": 0.469,
+      "min": 0.269,
+      "max": 13.494,
+      "p95": 1.496,
+      "iterations": 500
+    },
+    "chart_render_latency": {
+      "mean": 51.581,
+      "std": 55.847,
+      "median": 42.37,
+      "min": 27.974,
+      "max": 417.668,
+      "p95": 79.786,
+      "iterations": 50
+    }
+  },
+  "tableau_status": {
+    "status": "Local Benchmark (Tableau Web Authoring Unautomated)",
+    "readiness": "100% Ready for Tableau Desktop / Web Authoring Ingestion",
+    "notes": "Dataset footprint (19.84 KB, 200 rows) is ultra-lightweight and operates far below Tableau Public limits (15M rows, 10GB)."
+  }
+}
