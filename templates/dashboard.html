@@ -6,56 +6,112 @@
 <div class="viz-container">
   <div class="viz-header">
     <div>
-      <h2 class="viz-title">Student Ecosystem Analytical Dashboards</h2>
-      <p style="color: var(--text-muted); font-size: 0.9rem;">Interactive multi-worksheet views with synchronized demographic & risk filtering</p>
+      <h2 class="viz-title">Student Ecosystem Analytical Dashboard</h2>
+      <p style="color: var(--text-muted); font-size: 0.95rem;">Empirical diagnostics unifying stress distributions, psychological symptoms, lifestyle indicators, and therapy efficacy.</p>
     </div>
-    <div class="viz-controls">
-      <a href="{{ tableau_public_url }}" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="font-size: 0.85rem; padding: 0.5rem 1rem;">
+    <div class="viz-controls" style="display: flex; gap: 0.75rem; align-items: center;">
+      {% if tableau_dashboard_url %}
+      <a href="{{ tableau_dashboard_url }}" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="font-size: 0.85rem; padding: 0.5rem 1rem;">
         Open in Tableau Public ↗
       </a>
+      {% else %}
+      <a href="{{ tableau_profile_url }}" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="font-size: 0.85rem; padding: 0.5rem 1rem;">
+        Tableau Public Profile ↗
+      </a>
+      {% endif %}
     </div>
   </div>
 
-  <!-- Tableau Embed Container -->
-  <div class="tableauPlaceholder" id="viz1710000000000" style="position: relative; width: 100%; min-height: 800px;">
-    <noscript>
-      <a href="{{ tableau_public_url }}">
-        <img alt="Student Mental Health Dashboard" src="https://public.tableau.com/static/images/St/StudentMentalHealthAnalytics/Dashboard1/1_rss.png" style="border: none" />
-      </a>
-    </noscript>
-    <object class="tableauViz" style="display:none;">
-      <param name="host_url" value="https%3A%2F%2Fpublic.tableau.com%2F" />
-      <param name="embed_code_version" value="3" />
-      <param name="site_root" value="" />
-      <param name="name" value="{{ tableau_dashboard_path }}" />
-      <param name="tabs" value="yes" />
-      <param name="toolbar" value="yes" />
-      <param name="animate_transition" value="yes" />
-      <param name="display_static_image" value="yes" />
-      <param name="display_spinner" value="yes" />
-      <param name="display_overlay" value="yes" />
-      <param name="display_count" value="yes" />
-      <param name="language" value="en-US" />
-    </object>
+  {% if tableau_dashboard_url %}
+  <!-- Live Embedded Tableau Visualization -->
+  <div class="tableau-embed-frame" style="width: 100%; min-height: 850px; background: #ffffff; border-radius: 0.5rem; overflow: hidden; box-shadow: var(--shadow-sm);">
+    <tableau-viz id="tableauDashboardViz" 
+                 src="{{ tableau_dashboard_url }}" 
+                 toolbar="bottom" 
+                 hide-tabs>
+    </tableau-viz>
   </div>
+  {% else %}
+  <!-- Fallback / Prototype View with Layout Controls -->
+  <div style="background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 0.5rem; padding: 1rem 1.25rem; margin-bottom: 1.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: gap;">
+    <div>
+      <h4 style="color: #1e40af; margin-bottom: 0.25rem; font-size: 0.95rem;">Tableau Public Deployment Status: Ready for Live URL Injection</h4>
+      <p style="color: #1e3a8a; font-size: 0.85rem; margin: 0;">Native Tableau workbook publishing is pending manual cloud upload. Set the <code>TABLEAU_DASHBOARD_URL</code> environment variable to activate live embedding. Viewing verified multi-device prototype below.</p>
+    </div>
+    <div class="device-switcher" style="display: flex; gap: 0.5rem;">
+      <button class="btn btn-sm device-btn active" data-variant="desktop" style="padding: 0.35rem 0.75rem; font-size: 0.8rem;">Desktop (16:9)</button>
+      <button class="btn btn-sm device-btn" data-variant="tablet" style="padding: 0.35rem 0.75rem; font-size: 0.8rem;">Tablet (1024×768)</button>
+      <button class="btn btn-sm device-btn" data-variant="mobile" style="padding: 0.35rem 0.75rem; font-size: 0.8rem;">Mobile (Stacked)</button>
+    </div>
+  </div>
+
+  <div class="prototype-viewer" style="background: #ffffff; padding: 1rem; border-radius: 0.5rem; box-shadow: var(--shadow-sm); border: 1px solid var(--border); text-align: center;">
+    <img id="dashboardImg" 
+         src="{{ url_for('serve_evidence', filename='dashboard/student_mental_health_dashboard.png') }}" 
+         alt="Student Mental Health Dashboard Prototype" 
+         style="max-width: 100%; height: auto; border-radius: 0.25rem; box-shadow: 0 2px 4px rgba(0,0,0,0.08);" />
+  </div>
+  {% endif %}
 </div>
 
-<div class="card">
-  <h3>Dashboard User Guide & Analytical Controls</h3>
-  <p style="color: var(--text-muted); margin-bottom: 1rem;">Utilize the interactive controls above to explore cross-demographic insights:</p>
-  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
-    <div style="padding: 1rem; background: var(--background); border-radius: 0.5rem;">
-      <h4 style="color: var(--primary); margin-bottom: 0.5rem;">Dashboard 1: Demographics</h4>
-      <p style="font-size: 0.9rem; color: var(--text-main);">Filter by <strong>Gender</strong> and <strong>Course Discipline</strong> to evaluate how student enrollment and study tiers relate to baseline mental well-being.</p>
+<!-- Dashboard Analytical Architecture Guide -->
+<div class="card" style="margin-top: 2rem;">
+  <h3 style="margin-bottom: 0.75rem; color: var(--secondary);">Dashboard Layout & Panel Specification</h3>
+  <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1.25rem;">The dashboard integrates 4 verified KPI cards and 6 specialized analytical panels engineered strictly from the 18 dataset columns:</p>
+  
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.25rem;">
+    <div style="padding: 1rem; background: var(--background); border-radius: 0.5rem; border-top: 3px solid #2b5c8f;">
+      <h4 style="color: var(--text-main); font-size: 0.95rem; margin-bottom: 0.5rem;">Panel 1: Stress Level Distribution</h4>
+      <p style="font-size: 0.85rem; color: var(--text-muted);">Vertical bar chart presenting exact counts and percentages across Low (22.0%), Medium (53.5%), and High (24.5%) cohorts.</p>
     </div>
-    <div style="padding: 1rem; background: var(--background); border-radius: 0.5rem;">
-      <h4 style="color: var(--danger); margin-bottom: 0.5rem;">Dashboard 2: Risk Assessment</h4>
-      <p style="font-size: 0.9rem; color: var(--text-main);">Examine <strong>High-Risk Student Clusters</strong> and click any condition bar to cross-filter across study years and discover treatment seeking disparities.</p>
+    <div style="padding: 1rem; background: var(--background); border-radius: 0.5rem; border-top: 3px solid #d73027;">
+      <h4 style="color: var(--text-main); font-size: 0.95rem; margin-bottom: 0.5rem;">Panel 2: Symptom Escalation</h4>
+      <p style="font-size: 0.85rem; color: var(--text-muted);">Dual-measure grouped bar chart showing steep anxiety (72.06) and depression (68.78) surges in high-stress students.</p>
+    </div>
+    <div style="padding: 1rem; background: var(--background); border-radius: 0.5rem; border-top: 3px solid #4575b4;">
+      <h4 style="color: var(--text-main); font-size: 0.95rem; margin-bottom: 0.5rem;">Panel 3: Sleep Quality vs Stress</h4>
+      <p style="font-size: 0.85rem; color: var(--text-muted);">Segmented stacked bar chart revealing that 71.4% of high-stress individuals experience poor sleep.</p>
+    </div>
+    <div style="padding: 1rem; background: var(--background); border-radius: 0.5rem; border-top: 3px solid #fdae61;">
+      <h4 style="color: var(--text-main); font-size: 0.95rem; margin-bottom: 0.5rem;">Panel 4: Screen Time Exposure</h4>
+      <p style="font-size: 0.85rem; color: var(--text-muted);">Continuous measure bar chart displaying 8.12 hrs/day screen immersion for distressed students (+2.12 hrs above low-stress).</p>
+    </div>
+    <div style="padding: 1rem; background: var(--background); border-radius: 0.5rem; border-top: 3px solid #313695;">
+      <h4 style="color: var(--text-main); font-size: 0.95rem; margin-bottom: 0.5rem;">Panel 5: Prior History Distribution</h4>
+      <p style="font-size: 0.85rem; color: var(--text-muted);">Donut chart illustrating that 60% of students bring no prior mental-health diagnoses into university studies.</p>
+    </div>
+    <div style="padding: 1rem; background: var(--background); border-radius: 0.5rem; border-top: 3px solid #2ca25f;">
+      <h4 style="color: var(--text-main); font-size: 0.95rem; margin-bottom: 0.5rem;">Panel 6: Ranked Therapy Efficacy</h4>
+      <p style="font-size: 0.85rem; color: var(--text-muted);">Horizontal ranked bar chart showing Cognitive Behavioral Therapy (CBT) leading clinical improvement with a 40.80 progress score.</p>
     </div>
   </div>
 </div>
 {% endblock %}
 
 {% block scripts %}
-<script type="text/javascript" src="https://public.tableau.com/javascripts/api/viz_v1.js"></script>
+<script>
+  // Device layout prototype switcher
+  document.addEventListener('DOMContentLoaded', () => {
+    const buttons = document.querySelectorAll('.device-btn');
+    const img = document.getElementById('dashboardImg');
+    if (!buttons.length || !img) return;
+
+    const urls = {
+      'desktop': "{{ url_for('serve_evidence', filename='dashboard/student_mental_health_dashboard.png') }}",
+      'tablet': "{{ url_for('serve_evidence', filename='dashboard/tablet_dashboard.png') }}",
+      'mobile': "{{ url_for('serve_evidence', filename='dashboard/mobile_dashboard.png') }}"
+    };
+
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        buttons.forEach(b => b.classList.remove('active', 'btn-primary'));
+        btn.classList.add('active', 'btn-primary');
+        const variant = btn.getAttribute('data-variant');
+        if (urls[variant]) {
+          img.src = urls[variant];
+        }
+      });
+    });
+  });
+</script>
 {% endblock %}

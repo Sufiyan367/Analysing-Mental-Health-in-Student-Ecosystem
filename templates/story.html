@@ -1,57 +1,180 @@
 {% extends "base.html" %}
 
-{% block title %}Data Story — Analysing Mental Health in Student Ecosystem{% endblock %}
+{% block title %}Guided Data Story — Analysing Mental Health in Student Ecosystem{% endblock %}
 
 {% block content %}
 <div class="viz-container">
   <div class="viz-header">
     <div>
-      <h2 class="viz-title">Tableau Data Story: The Student Well-being Journey</h2>
-      <p style="color: var(--text-muted); font-size: 0.9rem;">A guided 5-scene narrative connecting data diagnostics to actionable institutional policy</p>
+      <h2 class="viz-title">Tableau Data Story: The Student Mental Health Journey</h2>
+      <p style="color: var(--text-muted); font-size: 0.95rem;">A 5-scene guided analytical narrative connecting empirical diagnostics to targeted institutional policy.</p>
     </div>
     <div class="viz-controls">
-      <a href="{{ tableau_public_url }}" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="font-size: 0.85rem; padding: 0.5rem 1rem;">
+      {% if tableau_story_url %}
+      <a href="{{ tableau_story_url }}" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="font-size: 0.85rem; padding: 0.5rem 1rem;">
         Open in Tableau Public ↗
       </a>
+      {% else %}
+      <a href="{{ tableau_profile_url }}" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="font-size: 0.85rem; padding: 0.5rem 1rem;">
+        Tableau Public Profile ↗
+      </a>
+      {% endif %}
     </div>
   </div>
 
-  <!-- Tableau Story Embed -->
-  <div class="tableauPlaceholder" id="viz1710000000001" style="position: relative; width: 100%; min-height: 800px;">
-    <noscript>
-      <a href="{{ tableau_public_url }}">
-        <img alt="Student Mental Health Data Story" src="https://public.tableau.com/static/images/St/StudentMentalHealthAnalytics/Story/1_rss.png" style="border: none" />
-      </a>
-    </noscript>
-    <object class="tableauViz" style="display:none;">
-      <param name="host_url" value="https%3A%2F%2Fpublic.tableau.com%2F" />
-      <param name="embed_code_version" value="3" />
-      <param name="site_root" value="" />
-      <param name="name" value="{{ tableau_story_path }}" />
-      <param name="tabs" value="yes" />
-      <param name="toolbar" value="yes" />
-      <param name="animate_transition" value="yes" />
-      <param name="display_static_image" value="yes" />
-      <param name="display_spinner" value="yes" />
-      <param name="display_overlay" value="yes" />
-      <param name="display_count" value="yes" />
-      <param name="language" value="en-US" />
-    </object>
+  {% if tableau_story_url %}
+  <!-- Live Embedded Tableau Story -->
+  <div class="tableau-embed-frame" style="width: 100%; min-height: 850px; background: #ffffff; border-radius: 0.5rem; overflow: hidden; box-shadow: var(--shadow-sm);">
+    <tableau-viz id="tableauStoryViz" 
+                 src="{{ tableau_story_url }}" 
+                 toolbar="bottom" 
+                 hide-tabs>
+    </tableau-viz>
   </div>
-</div>
+  {% else %}
+  <!-- Fallback / Interactive 5-Scene Narrative Viewer -->
+  <div style="background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 0.5rem; padding: 1rem 1.25rem; margin-bottom: 1.5rem;">
+    <h4 style="color: #1e40af; margin-bottom: 0.25rem; font-size: 0.95rem;">Tableau Public Deployment Status: Ready for Live Story URL Injection</h4>
+    <p style="color: #1e3a8a; font-size: 0.85rem; margin: 0;">Native Tableau Story publishing is pending manual cloud upload. Set the <code>TABLEAU_STORY_URL</code> environment variable to activate live embedding. Interactively navigate the 5 verified story scenes below.</p>
+  </div>
 
-<div class="card">
-  <h3>5-Scene Analytical Narrative Architecture</h3>
-  <ol style="padding-left: 1.5rem; line-height: 1.8; color: var(--text-main);">
-    <li><strong>Scene 1 — Cohort Baseline:</strong> Establishes the overall demographic makeup and initial benchmark prevalence of mental health indicators across the student population.</li>
-    <li><strong>Scene 2 — The Academic Pressure Paradigm:</strong> Demonstrates that high CGPA performance does not insulate students from severe anxiety or depressive symptoms.</li>
-    <li><strong>Scene 3 — Lifestyle Stress Vectors:</strong> Evaluates study workload intensity, sleep disturbances, and acute panic attack occurrences.</li>
-    <li><strong>Scene 4 — Vulnerability Mapping:</strong> Isolates the 27.7% High-Risk cohort and contrasts symptom burden against the alarming 78.6% treatment deficit.</li>
-    <li><strong>Scene 5 — Strategic Roadmap:</strong> Prescribes concrete institutional solutions: proactive mental wellness screenings, de-stigmatized peer support, and academic calendar pacing.</li>
-  </ol>
+  <!-- Scene Navigator Buttons -->
+  <div class="scene-navigator" style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1.5rem;">
+    <button class="btn scene-btn active" data-scene="1" style="flex: 1; min-width: 180px; padding: 0.6rem 0.75rem; text-align: left; font-size: 0.85rem;">
+      <span style="font-weight: 700; display: block;">Scene 1</span>
+      <span style="font-size: 0.75rem; opacity: 0.85;">Student Baseline</span>
+    </button>
+    <button class="btn scene-btn" data-scene="2" style="flex: 1; min-width: 180px; padding: 0.6rem 0.75rem; text-align: left; font-size: 0.85rem;">
+      <span style="font-weight: 700; display: block;">Scene 2</span>
+      <span style="font-size: 0.75rem; opacity: 0.85;">Symptom Escalation</span>
+    </button>
+    <button class="btn scene-btn" data-scene="3" style="flex: 1; min-width: 180px; padding: 0.6rem 0.75rem; text-align: left; font-size: 0.85rem;">
+      <span style="font-weight: 700; display: block;">Scene 3</span>
+      <span style="font-size: 0.75rem; opacity: 0.85;">Lifestyle & Stress</span>
+    </button>
+    <button class="btn scene-btn" data-scene="4" style="flex: 1; min-width: 180px; padding: 0.6rem 0.75rem; text-align: left; font-size: 0.85rem;">
+      <span style="font-weight: 700; display: block;">Scene 4</span>
+      <span style="font-size: 0.75rem; opacity: 0.85;">Vulnerability & Support</span>
+    </button>
+    <button class="btn scene-btn" data-scene="5" style="flex: 1; min-width: 180px; padding: 0.6rem 0.75rem; text-align: left; font-size: 0.85rem;">
+      <span style="font-weight: 700; display: block;">Scene 5</span>
+      <span style="font-size: 0.75rem; opacity: 0.85;">Intervention & Progress</span>
+    </button>
+  </div>
+
+  <!-- Scene Visual Viewer -->
+  <div class="scene-viewer" style="background: #ffffff; padding: 1rem; border-radius: 0.5rem; box-shadow: var(--shadow-sm); border: 1px solid var(--border); text-align: center; margin-bottom: 1.5rem;">
+    <img id="sceneImg" 
+         src="{{ url_for('serve_evidence', filename='story/01_baseline.png') }}" 
+         alt="Story Scene Artifact" 
+         style="max-width: 100%; height: auto; border-radius: 0.25rem; box-shadow: 0 2px 4px rgba(0,0,0,0.08);" />
+  </div>
+
+  <!-- Dynamic Scene Narrative Details -->
+  <div class="card" id="sceneDetails">
+    <div id="scene-desc-1" class="scene-desc">
+      <h3 style="color: var(--primary); margin-bottom: 0.5rem;">Scene 1 — Student Mental Health Baseline</h3>
+      <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 0.75rem;"><strong>Core Question:</strong> What is the overall distress prevalence across the student cohort?</p>
+      <ul style="padding-left: 1.25rem; line-height: 1.7; font-size: 0.95rem;">
+        <li><strong>78.0% of students (156 of 200)</strong> experience moderate-to-high stress levels (53.5% Medium, 24.5% High).</li>
+        <li>The cohort exhibits an elevated symptom baseline with an average anxiety score of <strong>52.59</strong> and depression score of <strong>48.09</strong>.</li>
+        <li>Students average <strong>7.10 hours/day</strong> of continuous screen exposure across study and device habits.</li>
+      </ul>
+      <div style="margin-top: 1rem; padding: 0.75rem 1rem; background: var(--background); border-left: 3px solid var(--primary); font-size: 0.85rem; color: var(--text-main);">
+        <strong>Transition:</strong> Having established the population baseline, how do these self-reported stress tiers translate into quantifiable anxiety and depression symptom loads?
+      </div>
+    </div>
+
+    <div id="scene-desc-2" class="scene-desc" style="display: none;">
+      <h3 style="color: var(--primary); margin-bottom: 0.5rem;">Scene 2 — Stress and Psychological Symptoms</h3>
+      <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 0.75rem;"><strong>Core Question:</strong> How do anxiety and depression scores escalate across stress tiers?</p>
+      <ul style="padding-left: 1.25rem; line-height: 1.7; font-size: 0.95rem;">
+        <li>High Stress students average <strong>72.06 in anxiety</strong> and <strong>68.78 in depression</strong>, compared to 30.27 and 26.80 in Low Stress (a <strong>>135% symptom surge</strong>).</li>
+        <li>Anxiety and depression increase concurrently across stress categories, confirming joint psychological burden.</li>
+        <li>High-stress individuals operate near clinical distress thresholds on standardized scales.</li>
+      </ul>
+      <div style="margin-top: 1rem; padding: 0.75rem 1rem; background: var(--background); border-left: 3px solid var(--danger); font-size: 0.85rem; color: var(--text-main);">
+        <strong>Transition:</strong> Given the severity of psychological symptoms in high-stress students, what lifestyle habits (sleep patterns, screentime immersion) distinguish this cohort?
+      </div>
+    </div>
+
+    <div id="scene-desc-3" class="scene-desc" style="display: none;">
+      <h3 style="color: var(--primary); margin-bottom: 0.5rem;">Scene 3 — Lifestyle Factors and Stress</h3>
+      <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 0.75rem;"><strong>Core Question:</strong> What behavioral vectors (sleep, screen time, physical exercise) correlate with high stress?</p>
+      <ul style="padding-left: 1.25rem; line-height: 1.7; font-size: 0.95rem;">
+        <li><strong>71.4% (35 of 49)</strong> of High Stress students report Poor sleep, while only 2 maintain Good sleep.</li>
+        <li>High Stress students log <strong>8.12 hours/day</strong> of screen exposure (+2.12 hrs more than Low Stress students at 6.00 hrs/day).</li>
+        <li><strong>75.5% (37 of 49)</strong> of High Stress students engage in Low physical activity, showing a clear triad of sleep deprivation, digital immersion, and physical inactivity.</li>
+      </ul>
+      <div style="margin-top: 1rem; padding: 0.75rem 1rem; background: var(--background); border-left: 3px solid var(--warning); font-size: 0.85rem; color: var(--text-main);">
+        <strong>Transition:</strong> Beyond daily lifestyle habits, how do pre-existing mental health history, support networks, and psychiatric medication intersect with student vulnerability?
+      </div>
+    </div>
+
+    <div id="scene-desc-4" class="scene-desc" style="display: none;">
+      <h3 style="color: var(--primary); margin-bottom: 0.5rem;">Scene 4 — Vulnerability Factors and Support Systems</h3>
+      <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 0.75rem;"><strong>Core Question:</strong> How do prior mental-health history and social support influence student resilience?</p>
+      <ul style="padding-left: 1.25rem; line-height: 1.7; font-size: 0.95rem;">
+        <li><strong>40.0% (80 students)</strong> have a documented prior mental health history; within High Stress, <strong>71.4% (35 of 49)</strong> have prior history.</li>
+        <li><strong>60.0% (120 students)</strong> report no prior history, yet this group includes 66 Medium-stress and 14 High-stress students, highlighting substantial first-onset university distress.</li>
+        <li>Only <strong>9.0% (18 students)</strong> use psychiatric medication, with 15 of 18 belonging to the High Stress tier.</li>
+      </ul>
+      <div style="margin-top: 1rem; padding: 0.75rem 1rem; background: var(--background); border-left: 3px solid var(--primary); font-size: 0.85rem; color: var(--text-main);">
+        <strong>Transition:</strong> For students engaged in active psychological support, which therapy modalities demonstrate empirical recovery gains?
+      </div>
+    </div>
+
+    <div id="scene-desc-5" class="scene-desc" style="display: none;">
+      <h3 style="color: var(--primary); margin-bottom: 0.5rem;">Scene 5 — Intervention Patterns and Recovery Progress</h3>
+      <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 0.75rem;"><strong>Core Question:</strong> Which therapeutic interventions demonstrate measurable symptom recovery?</p>
+      <ul style="padding-left: 1.25rem; line-height: 1.7; font-size: 0.95rem;">
+        <li><strong>Cognitive Behavioral Therapy (CBT)</strong> leads recovery with an average progress score of <strong>40.80</strong> across 7.50 weeks.</li>
+        <li>Counseling (34.43), Support Groups (33.10), and Meditation (32.57) all provide measurable symptom relief.</li>
+        <li><strong>Institutional Care Gap:</strong> 107 of 200 students (53.5%) receive "No Therapy", including 15 High-stress and 48 Medium-stress students.</li>
+      </ul>
+      <div style="margin-top: 1rem; padding: 0.75rem 1rem; background: var(--background); border-left: 3px solid var(--success); font-size: 0.85rem; color: var(--text-main);">
+        <strong>Policy Recommendations:</strong> Scale accessible evidence-based CBT programs, embed campus mindfulness and sleep hygiene workshops, and implement proactive first-year mental health screening.
+      </div>
+    </div>
+  </div>
+  {% endif %}
 </div>
 {% endblock %}
 
 {% block scripts %}
-<script type="text/javascript" src="https://public.tableau.com/javascripts/api/viz_v1.js"></script>
+<script>
+  // Interactive Scene Navigator
+  document.addEventListener('DOMContentLoaded', () => {
+    const buttons = document.querySelectorAll('.scene-btn');
+    const img = document.getElementById('sceneImg');
+    const descs = document.querySelectorAll('.scene-desc');
+    if (!buttons.length || !img) return;
+
+    const sceneImages = {
+      '1': "{{ url_for('serve_evidence', filename='story/01_baseline.png') }}",
+      '2': "{{ url_for('serve_evidence', filename='story/02_psychological_symptoms.png') }}",
+      '3': "{{ url_for('serve_evidence', filename='story/03_lifestyle_and_stress.png') }}",
+      '4': "{{ url_for('serve_evidence', filename='story/04_vulnerability_and_support.png') }}",
+      '5': "{{ url_for('serve_evidence', filename='story/05_intervention_and_progress.png') }}"
+    };
+
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const sceneNum = btn.getAttribute('data-scene');
+        buttons.forEach(b => b.classList.remove('active', 'btn-primary'));
+        btn.classList.add('active', 'btn-primary');
+
+        if (sceneImages[sceneNum]) {
+          img.src = sceneImages[sceneNum];
+        }
+
+        descs.forEach(d => d.style.display = 'none');
+        const activeDesc = document.getElementById(`scene-desc-${sceneNum}`);
+        if (activeDesc) {
+          activeDesc.style.display = 'block';
+        }
+      });
+    });
+  });
+</script>
 {% endblock %}

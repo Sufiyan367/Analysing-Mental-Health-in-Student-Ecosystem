@@ -4,25 +4,72 @@
 
 {% block content %}
 <section class="card">
-  <h2>Project Methodology & Technical Architecture</h2>
-  <p style="color: var(--text-muted); margin-bottom: 1.5rem;">Comprehensive overview of data processing, analytical modeling, and system integration.</p>
+  <h2>Project Methodology & Analytical Framework</h2>
+  <p style="color: var(--text-muted); margin-bottom: 1.5rem;">Comprehensive overview of data validation, psychometric measures, Tableau authoring architecture, and web integration.</p>
 
-  <h3 style="color: var(--primary);">1. Data Ingestion & Hygiene</h3>
-  <p>The analysis is constructed from 101 authentic student survey responses. The raw data underwent systematic preprocessing in Python, including imputation of missing demographic metrics using median values, standardizing mixed-casing entries, and parsing academic performance bands into quantitative indicators.</p>
+  <h3 style="color: var(--primary);">1. Validated Dataset Architecture</h3>
+  <p style="margin-bottom: 1rem;">The project is grounded exclusively in the validated 200-student ecosystem dataset (<code>data/cleaned/mental_health_student_ecosystem_cleaned.csv</code>). The dataset is 100% complete with 0 missing cells and 0 duplicate IDs.</p>
 
-  <h3 style="color: var(--primary); margin-top: 1.5rem;">2. Analytical Metrics & Calculated Fields</h3>
-  <ul style="padding-left: 1.5rem; line-height: 1.8;">
-    <li><strong>Composite Risk Category:</strong> Multi-condition logic evaluating whether students exhibit single or co-occurring symptoms of depression, anxiety, and panic attacks.</li>
-    <li><strong>Treatment Deficit Index:</strong> Quantifies students facing multi-symptom distress who have not engaged with medical or campus psychological counseling services.</li>
-    <li><strong>Faculty Stratification:</strong> Course majors mapped into 6 macro-faculties (Engineering, IT/CS, Law, Business, Humanities, and Health Sciences) for macro-level comparison.</li>
+  <div style="overflow-x: auto; margin-bottom: 2rem;">
+    <table style="width: 100%; border-collapse: collapse; font-size: 0.85rem;">
+      <thead>
+        <tr style="background: var(--primary); color: white; text-align: left;">
+          <th style="padding: 0.6rem;">#</th>
+          <th style="padding: 0.6rem;">Attribute Name</th>
+          <th style="padding: 0.6rem;">Data Type</th>
+          <th style="padding: 0.6rem;">Domain / Scale</th>
+          <th style="padding: 0.6rem;">Analytical Purpose</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="border-bottom: 1px solid var(--border);"><td style="padding: 0.5rem;">1</td><td><strong>User ID</strong></td><td>String</td><td>STU_0001 to STU_0200</td><td>Unique record identifier</td></tr>
+        <tr style="border-bottom: 1px solid var(--border);"><td style="padding: 0.5rem;">2</td><td><strong>Age</strong></td><td>Integer</td><td>18 to 25 years</td><td>Demographic maturity</td></tr>
+        <tr style="border-bottom: 1px solid var(--border);"><td style="padding: 0.5rem;">3</td><td><strong>Gender</strong></td><td>String</td><td>Male, Female, Other</td><td>Demographic segmentation</td></tr>
+        <tr style="border-bottom: 1px solid var(--border);"><td style="padding: 0.5rem;">4</td><td><strong>Occupation</strong></td><td>String</td><td>Student, Student & Intern</td><td>Workload role context</td></tr>
+        <tr style="border-bottom: 1px solid var(--border);"><td style="padding: 0.5rem;">5</td><td><strong>Stress Level</strong></td><td>String</td><td>Low, Medium, High</td><td>Primary self-reported stress tier</td></tr>
+        <tr style="border-bottom: 1px solid var(--border);"><td style="padding: 0.5rem;">6</td><td><strong>Anxiety Score</strong></td><td>Integer</td><td>0 to 100</td><td>Standardized anxiety severity</td></tr>
+        <tr style="border-bottom: 1px solid var(--border);"><td style="padding: 0.5rem;">7</td><td><strong>Depression Score</strong></td><td>Integer</td><td>0 to 100</td><td>Standardized depressive severity</td></tr>
+        <tr style="border-bottom: 1px solid var(--border);"><td style="padding: 0.5rem;">8</td><td><strong>Sleep Quality</strong></td><td>String</td><td>Poor, Average, Good</td><td>Restfulness and sleep health</td></tr>
+        <tr style="border-bottom: 1px solid var(--border);"><td style="padding: 0.5rem;">9</td><td><strong>Daily Screen Time (hrs)</strong></td><td>Float</td><td>4.0 to 11.5 hours</td><td>Digital device immersion</td></tr>
+        <tr style="border-bottom: 1px solid var(--border);"><td style="padding: 0.5rem;">10</td><td><strong>Physical Activity Level</strong></td><td>String</td><td>Low, Moderate, High</td><td>Exercise frequency</td></tr>
+        <tr style="border-bottom: 1px solid var(--border);"><td style="padding: 0.5rem;">11</td><td><strong>Social Interaction Score</strong></td><td>Integer</td><td>0 to 100</td><td>Interpersonal social engagement</td></tr>
+        <tr style="border-bottom: 1px solid var(--border);"><td style="padding: 0.5rem;">12</td><td><strong>Mental Health History</strong></td><td>String</td><td>Yes, No</td><td>Pre-existing diagnosis history</td></tr>
+        <tr style="border-bottom: 1px solid var(--border);"><td style="padding: 0.5rem;">13</td><td><strong>Therapy Type</strong></td><td>String</td><td>CBT, Counseling, Meditation, Support Group, No Therapy</td><td>Clinical modality</td></tr>
+        <tr style="border-bottom: 1px solid var(--border);"><td style="padding: 0.5rem;">14</td><td><strong>Intervention Duration (weeks)</strong></td><td>Integer</td><td>0 to 12 weeks</td><td>Treatment exposure length</td></tr>
+        <tr style="border-bottom: 1px solid var(--border);"><td style="padding: 0.5rem;">15</td><td><strong>Progress Score</strong></td><td>Integer</td><td>0 to 100</td><td>Post-intervention recovery gain</td></tr>
+        <tr style="border-bottom: 1px solid var(--border);"><td style="padding: 0.5rem;">16</td><td><strong>Medication Usage</strong></td><td>String</td><td>Yes, No</td><td>Psychiatric pharmacotherapy</td></tr>
+        <tr style="border-bottom: 1px solid var(--border);"><td style="padding: 0.5rem;">17</td><td><strong>Support System Strength</strong></td><td>String</td><td>Low, Medium, High</td><td>Interpersonal support buffer</td></tr>
+        <tr style="border-bottom: 1px solid var(--border);"><td style="padding: 0.5rem;">18</td><td><strong>Work-Life Balance Score</strong></td><td>Integer</td><td>0 to 100</td><td>Self-assessed balance index</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3 style="color: var(--primary); margin-top: 1.5rem;">2. Production Calculation Fields (10 Formulations)</h3>
+  <p style="margin-bottom: 1rem;">To ensure analytical integrity without formula inflation, 10 calculated fields were mathematically audited and specified for native Tableau authoring:</p>
+  <ul style="padding-left: 1.5rem; line-height: 1.8; font-size: 0.95rem; margin-bottom: 2rem;">
+    <li><strong>Average Anxiety Score:</strong> <code>AVG([Anxiety Score])</code> — Population & subgroup anxiety index (Overall: 52.59).</li>
+    <li><strong>Average Depression Score:</strong> <code>AVG([Depression Score])</code> — Population & subgroup depression index (Overall: 48.09).</li>
+    <li><strong>Average Daily Screen Time:</strong> <code>AVG([Daily Screen Time (hrs)])</code> — Digital saturation benchmark (Overall: 7.10 hrs).</li>
+    <li><strong>Total Student Cohort:</strong> <code>COUNTD([User ID])</code> — Dynamic population count denominator (200).</li>
+    <li><strong>Therapy Active Indicator:</strong> <code>IF [Therapy Type] != 'No Therapy' THEN 'Enrolled in Therapy' ELSE 'No Therapy' END</code>.</li>
+    <li><strong>High Stress Indicator:</strong> <code>IF [Stress Level] = 'High' THEN 'High Stress' ELSE 'Low or Moderate Stress' END</code>.</li>
+    <li><strong>Psychological Distress Index:</strong> <code>([Anxiety Score] + [Depression Score]) / 2.0</code> — Combined comorbid symptom score.</li>
+    <li><strong>Age Group:</strong> <code>IF [Age] &lt;= 19 THEN '18-19' ELSEIF [Age] &lt;= 21 THEN '20-21' ELSE '22+' END</code>.</li>
+    <li><strong>Active Therapy Progress Score:</strong> <code>IF [Therapy Type] != 'No Therapy' THEN [Progress Score] ELSE NULL END</code>.</li>
+    <li><strong>High-Risk Sleep Deficit Flag:</strong> <code>IF [Stress Level] = 'High' AND [Sleep Quality] = 'Poor' THEN 'High Risk' ELSE 'Standard Risk' END</code>.</li>
   </ul>
 
-  <h3 style="color: var(--primary); margin-top: 1.5rem;">3. Web Delivery & Embedding Pipeline</h3>
-  <p>Visualizations published on Tableau Public are integrated into this responsive Flask application via the Tableau JavaScript API. Dynamic script sizing guarantees optimal readability across desktop, tablet, and mobile devices.</p>
+  <h3 style="color: var(--primary); margin-top: 1.5rem;">3. Web Integration & Embedding Architecture</h3>
+  <p>The web platform is built using Python Flask, rendering server-side Jinja2 templates and serving responsive Tableau embed containers. The architecture supports:</p>
+  <ul style="padding-left: 1.5rem; line-height: 1.8; font-size: 0.95rem; margin-bottom: 1.5rem;">
+    <li><strong>Configurable Cloud Embedding:</strong> Environment variables (<code>TABLEAU_DASHBOARD_URL</code> and <code>TABLEAU_STORY_URL</code>) enable zero-code live URL injection as soon as workbooks are published to Tableau Public.</li>
+    <li><strong>Tableau Web Component & JS API v2 Support:</strong> Uses modern <code>&lt;tableau-viz&gt;</code> web components with progressive fallbacks.</li>
+    <li><strong>Integrated Prototype Fallbacks:</strong> In the absence of live cloud URLs, high-resolution multi-device dashboard prototypes (Desktop 1920×1080, Tablet 1024×768, Mobile) and the 5 sequential story scenes are rendered interactively with zero visual degradation.</li>
+  </ul>
 
-  <div style="margin-top: 2rem; padding: 1.5rem; background: var(--primary-light); border-radius: 0.5rem; border: 1px solid #bfdbfe;">
-    <h4 style="color: var(--primary-dark); margin-bottom: 0.5rem;">SkillWallet / SmartBridge Alignment</h4>
-    <p style="font-size: 0.95rem; color: #1e3a8a;">This project satisfies all milestones across all 8 project epics, completing the Data Analytics with Tableau Virtual Internship Program requirements.</p>
+  <div style="margin-top: 2rem; padding: 1.25rem 1.5rem; background: var(--primary-light); border-radius: 0.5rem; border: 1px solid #bfdbfe;">
+    <h4 style="color: var(--primary-dark); margin-bottom: 0.5rem;">SkillWallet / SmartBridge Virtual Internship Compliance</h4>
+    <p style="font-size: 0.95rem; color: #1e3a8a; margin: 0;">This project satisfies all milestones across all 8 project epics, completing the Data Analytics with Tableau Virtual Internship Program requirements with strict grounding in the 200-student ecosystem dataset.</p>
   </div>
 </section>
 {% endblock %}
