@@ -1,0 +1,215 @@
+{
+  "metadata": {
+    "dataset_rows": 200,
+    "dataset_columns": 18,
+    "benchmark_iterations_per_scenario": 1000,
+    "benchmark_type": "Local Python Subsetting Simulation",
+    "tableau_status": "Tableau Native Automation Unautomated (Interactive Web Controls Required)"
+  },
+  "scenarios": [
+    {
+      "id": "F1_gender_female",
+      "name": "Gender = Female",
+      "predicate": "Gender == 'Female'",
+      "fields_evaluated": [
+        "Gender"
+      ],
+      "matched_records": 98,
+      "total_records": 200,
+      "matched_percentage": 49.0,
+      "subset_memory_bytes": 69629,
+      "latency_microseconds": {
+        "mean": 876.56,
+        "std": 349.59,
+        "median": 788.85,
+        "min": 519.8,
+        "max": 4291.4,
+        "p95": 1515.27,
+        "iterations": 1000
+      },
+      "latency_milliseconds": {
+        "mean": 0.8766,
+        "p95": 1.5153
+      }
+    },
+    {
+      "id": "F2_stress_high",
+      "name": "Stress Level = High",
+      "predicate": "Stress Level == 'High'",
+      "fields_evaluated": [
+        "Stress Level"
+      ],
+      "matched_records": 49,
+      "total_records": 200,
+      "matched_percentage": 24.5,
+      "subset_memory_bytes": 34606,
+      "latency_microseconds": {
+        "mean": 859.79,
+        "std": 363.46,
+        "median": 769.8,
+        "min": 502.5,
+        "max": 5737.6,
+        "p95": 1529.88,
+        "iterations": 1000
+      },
+      "latency_milliseconds": {
+        "mean": 0.8598,
+        "p95": 1.5299
+      }
+    },
+    {
+      "id": "F3_sleep_poor",
+      "name": "Sleep Quality = Poor",
+      "predicate": "Sleep Quality == 'Poor'",
+      "fields_evaluated": [
+        "Sleep Quality"
+      ],
+      "matched_records": 66,
+      "total_records": 200,
+      "matched_percentage": 33.0,
+      "subset_memory_bytes": 46686,
+      "latency_microseconds": {
+        "mean": 862.72,
+        "std": 332.47,
+        "median": 765.9,
+        "min": 520.2,
+        "max": 2980.4,
+        "p95": 1581.32,
+        "iterations": 1000
+      },
+      "latency_milliseconds": {
+        "mean": 0.8627,
+        "p95": 1.5813
+      }
+    },
+    {
+      "id": "F4_female_high_stress",
+      "name": "Gender = Female & Stress = High",
+      "predicate": "(Gender == 'Female') & (Stress Level == 'High')",
+      "fields_evaluated": [
+        "Gender",
+        "Stress Level"
+      ],
+      "matched_records": 23,
+      "total_records": 200,
+      "matched_percentage": 11.5,
+      "subset_memory_bytes": 16276,
+      "latency_microseconds": {
+        "mean": 1132.65,
+        "std": 452.68,
+        "median": 1002.75,
+        "min": 681.1,
+        "max": 3614.4,
+        "p95": 2117.26,
+        "iterations": 1000
+      },
+      "latency_milliseconds": {
+        "mean": 1.1327,
+        "p95": 2.1173
+      }
+    },
+    {
+      "id": "F5_triad_stress_sleep_cbt",
+      "name": "Stress = High & Sleep = Poor & Therapy = CBT",
+      "predicate": "(Stress Level == 'High') & (Sleep Quality == 'Poor') & (Therapy Type == 'CBT')",
+      "fields_evaluated": [
+        "Stress Level",
+        "Sleep Quality",
+        "Therapy Type"
+      ],
+      "matched_records": 9,
+      "total_records": 200,
+      "matched_percentage": 4.5,
+      "subset_memory_bytes": 6295,
+      "latency_microseconds": {
+        "mean": 1406.22,
+        "std": 532.23,
+        "median": 1251.4,
+        "min": 838.6,
+        "max": 5701.6,
+        "p95": 2565.75,
+        "iterations": 1000
+      },
+      "latency_milliseconds": {
+        "mean": 1.4062,
+        "p95": 2.5658
+      }
+    },
+    {
+      "id": "F6_activity_low",
+      "name": "Physical Activity = Low",
+      "predicate": "Physical Activity Level == 'Low'",
+      "fields_evaluated": [
+        "Physical Activity Level"
+      ],
+      "matched_records": 86,
+      "total_records": 200,
+      "matched_percentage": 43.0,
+      "subset_memory_bytes": 60830,
+      "latency_microseconds": {
+        "mean": 946.57,
+        "std": 1398.94,
+        "median": 763.9,
+        "min": 522.6,
+        "max": 38352.5,
+        "p95": 1690.21,
+        "iterations": 1000
+      },
+      "latency_milliseconds": {
+        "mean": 0.9466,
+        "p95": 1.6902
+      }
+    },
+    {
+      "id": "F7_history_high_stress",
+      "name": "Mental History = Yes & Stress = High",
+      "predicate": "(Mental Health History == 'Yes') & (Stress Level == 'High')",
+      "fields_evaluated": [
+        "Mental Health History",
+        "Stress Level"
+      ],
+      "matched_records": 35,
+      "total_records": 200,
+      "matched_percentage": 17.5,
+      "subset_memory_bytes": 24744,
+      "latency_microseconds": {
+        "mean": 1074.61,
+        "std": 379.36,
+        "median": 990.5,
+        "min": 676.5,
+        "max": 4124.6,
+        "p95": 1866.84,
+        "iterations": 1000
+      },
+      "latency_milliseconds": {
+        "mean": 1.0746,
+        "p95": 1.8668
+      }
+    },
+    {
+      "id": "F8_medication_yes",
+      "name": "Medication Usage = Yes",
+      "predicate": "Medication Usage == 'Yes'",
+      "fields_evaluated": [
+        "Medication Usage"
+      ],
+      "matched_records": 18,
+      "total_records": 200,
+      "matched_percentage": 9.0,
+      "subset_memory_bytes": 12772,
+      "latency_microseconds": {
+        "mean": 1127.99,
+        "std": 997.14,
+        "median": 957.4,
+        "min": 516.3,
+        "max": 27099.4,
+        "p95": 2234.35,
+        "iterations": 1000
+      },
+      "latency_milliseconds": {
+        "mean": 1.128,
+        "p95": 2.2343
+      }
+    }
+  ]
+}

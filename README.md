@@ -176,13 +176,11 @@ The Python Flask application (`app.py`) serves the complete web portal:
 
 The Flask web application is configured for production deployment as a containerized Python web service:
 
-- **LOCAL DEMO:** [`http://127.0.0.1:5000`](http://127.0.0.1:5000) *(Actively running & verified across all routes)*
-- **PUBLIC DEMO:** Configured for [Render](https://render.com) (Python 3.11 / Gunicorn WSGI). Public HTTPS endpoint activates upon 1-click authorization via [dashboard.render.com](https://dashboard.render.com).
-- **Infrastructure Blueprint:** [`render.yaml`](render.yaml)
-- **Production Build Command:** `pip install -r requirements.txt`
-- **Production Start Command:** `gunicorn app:app`
-- **Deployment & Blocker Analysis:** [`docs/public_deployment.md`](docs/public_deployment.md)
-- **Tableau Public Status Note:** The web application serves high-resolution interactive prototype layouts and metric cards. Native Tableau Public cloud workbook publishing remains pending manual GUI creation on profile [`sufiyansurve333`](https://public.tableau.com/app/profile/sufiyansurve333).
+- **PUBLIC DEMO URL (GitHub Pages):** [`https://sufiyan367.github.io/Analysing-Mental-Health-in-Student-Ecosystem/`](https://sufiyan367.github.io/Analysing-Mental-Health-in-Student-Ecosystem/) *(Live static project showcase featuring interactive KPIs, desktop dashboard preview, 5-scene data story, key findings, and methodology)*
+- **LOCAL BACKEND (Flask):** `http://127.0.0.1:5000` *(Localhost full-stack Python application with live calculated metrics and responsive view switcher)*
+- **Public Showcase Entrypoint:** [`docs/index.html`](docs/index.html)
+- **Deployment Architecture Report:** [`docs/public_deployment.md`](docs/public_deployment.md)
+- **Tableau Public Status Note:** The public showcase and local Flask application serve high-resolution interactive prototype layouts and metric cards. Native Tableau Public cloud workbook publishing remains pending manual GUI creation on profile [`sufiyansurve333`](https://public.tableau.com/app/profile/sufiyansurve333).
 
 ---
 

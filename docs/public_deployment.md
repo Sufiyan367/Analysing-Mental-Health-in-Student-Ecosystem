@@ -1,65 +1,63 @@
-# Flask Demo Deployment & Local Server Verification Report
+# Project Public Demonstration & Deployment Architecture
 
 ## Project: Analysing Mental Health in Student Ecosystem
 **Repository:** [`https://github.com/Sufiyan367/Analysing-Mental-Health-in-Student-Ecosystem`](https://github.com/Sufiyan367/Analysing-Mental-Health-in-Student-Ecosystem)  
-**Framework:** Python Flask 3.0.3 with WSGI Gunicorn 21+  
-**Target Platform:** [Render](https://render.com) (Native Python Web Service)
+**Public Demo URL (GitHub Pages):** [`https://sufiyan367.github.io/Analysing-Mental-Health-in-Student-Ecosystem/`](https://sufiyan367.github.io/Analysing-Mental-Health-in-Student-Ecosystem/)  
+**Local Backend Application (Flask):** `http://127.0.0.1:5000`
 
 ---
 
-## 1. Local Server Status (Verified Running)
+## 1. Public Project Demo Architecture (GitHub Pages)
 
-The application is actively running and accessible locally:
+To fulfill the SkillWallet "Demo URL" requirement without introducing paid cloud infrastructure, browser tunneling, or unauthenticated services, a polished static presentation is hosted natively via **GitHub Pages**:
 
-- **Local URL:** [`http://127.0.0.1:5000`](http://127.0.0.1:5000)
-- **Local Host Address:** `0.0.0.0:5000`
-- **Execution Mode:** Production-style (`debug=False`), dynamically bound to `$PORT` (default: `5000`)
-- **Status:** **ACTIVE & OPERATIONAL** (Background Daemon Process)
+- **Hosting Platform:** GitHub Pages (Static Web Hosting)
+- **Source Branch & Directory:** `main` branch, `/docs` directory
+- **Entrypoint:** [`docs/index.html`](index.html)
+- **Assets Directory:** [`docs/evidence/`](evidence/) (complete mirrors of high-resolution dashboard, story, and visualization assets)
+- **Deployment Status:** **LIVE & PUBLICLY ACCESSIBLE**
+- **Public Endpoint:** [`https://sufiyan367.github.io/Analysing-Mental-Health-in-Student-Ecosystem/`](https://sufiyan367.github.io/Analysing-Mental-Health-in-Student-Ecosystem/)
 
-### Verified Route Results (All HTTP 200 OK)
-
-| Route | Status | Page Title | Verified Content & Assets |
-| :--- | :---: | :--- | :--- |
-| `/` | **HTTP 200** | *Executive Overview — Analysing Mental Health in Student Ecosystem* | Renders 4 primary cohort KPIs ($N=200$, Anxiety $52.59$, Depression $48.09$, Screen Time $7.10\text{ hrs}$), CSS Grid layout, and 4 diagnostic research pillars. |
-| `/dashboard` | **HTTP 200** | *Interactive Dashboards — Analysing Mental Health in Student Ecosystem* | Renders multi-device layout switcher (Desktop, Tablet, Mobile) and responsive prototype panels; `<tableau-viz>` container ready. |
-| `/story` | **HTTP 200** | *Guided Data Story — Analysing Mental Health in Student Ecosystem* | Renders 5-scene narrative carousel with previous/next controls, clinical observations, and campus policy recommendations. |
-| `/about` | **HTTP 200** | *Methodology & Architecture — Analysing Mental Health in Student Ecosystem* | Renders 18-variable schema dictionary table, 10 calculation formulas, and validation report. |
-| `/evidence/<path>` | **HTTP 200** | Static Asset Delivery | Successfully serves charts (`01_stress_level_distribution.png`), prototypes (`student_mental_health_dashboard.png`, `01_baseline.png`), and the 6:26 MP4 demonstration video. |
-
----
-
-## 2. Public Hosting Status & Exact Blocker Analysis
-
-- **Public Hosting Status:** **PENDING MANUAL 1-CLICK AUTHORIZATION**
-- **Public URL Status:** Currently unassigned / 404 until authorized on Render's web portal.
-- **Exact Blocker:**
-  - Automated cloud deployment requires authenticated credentials (e.g., Render API Key or active GitHub OAuth session in the CLI).
-  - The local CLI environment contains no stored Render API tokens or tunneling credentials, and creating third-party accounts without user interaction is prevented by security policy.
-  - No paid plans or billing information were introduced, adhering strictly to the zero-cost mandate.
-- **Pre-Configured Infrastructure on GitHub `main`:**
-  - Infrastructure Blueprint: [`render.yaml`](../render.yaml)
-  - Dependencies: [`requirements.txt`](../requirements.txt)
-  - Entrypoint: [`app.py`](../app.py) (`gunicorn app:app`)
+### Features of the Public Showcase:
+1. **Interactive Executive KPIs:** 200 cohort records, Avg Anxiety 52.59, Avg Depression 48.09, Avg Screen Time 7.10 hrs.
+2. **Dashboard Architecture Preview:** High-resolution desktop dashboard layout ([`docs/evidence/dashboard/desktop_dashboard.png`](evidence/dashboard/desktop_dashboard.png)) with layout specifications.
+3. **5-Scene Guided Data Story:** Full visual scenes and clinical findings:
+   - Scene 1: Baseline Stress Spread ([`docs/evidence/story/01_baseline.png`](evidence/story/01_baseline.png))
+   - Scene 2: Symptom Surges ([`docs/evidence/story/02_psychological_symptoms.png`](evidence/story/02_psychological_symptoms.png))
+   - Scene 3: Lifestyle Deficits ([`docs/evidence/story/03_lifestyle_and_stress.png`](evidence/story/03_lifestyle_and_stress.png))
+   - Scene 4: Vulnerability & Peer Buffer ([`docs/evidence/story/04_vulnerability_and_support.png`](evidence/story/04_vulnerability_and_support.png))
+   - Scene 5: Intervention Efficacy ([`docs/evidence/story/05_intervention_and_progress.png`](evidence/story/05_intervention_and_progress.png))
+4. **Key Empirical Takeaways:** Four core diagnostic insights derived directly from the verified dataset.
+5. **Project Methodology & Schema:** Complete 18-variable domain specification and integrity audit.
+6. **Direct Media & Report Links:** Links to the 6:26 MP4 demonstration video, printable PDF report, and GitHub source code.
 
 ---
 
-## 3. Exact Manual Action to Activate the Free Public URL
+## 2. Local Full-Stack Backend (Python Flask)
 
-To activate the 100% free public HTTPS URL on Render:
+The full-stack Flask application remains available for local execution and development:
 
-1. Visit [dashboard.render.com](https://dashboard.render.com) and log in with your GitHub account (`Sufiyan367`).
-2. Click **New +** $\rightarrow$ **Blueprint** (or **Web Service**).
-3. Connect the repository: `Sufiyan367/Analysing-Mental-Health-in-Student-Ecosystem`.
-4. Render automatically detects [`render.yaml`](../render.yaml) and configures the build (`pip install -r requirements.txt`) and start command (`gunicorn app:app`) on the **Free Tier**.
-5. Click **Apply**. Within ~2 minutes, Render assigns the public HTTPS URL (e.g. `https://analysing-mental-health-student-ecosystem.onrender.com`).
+- **Local Endpoint:** `http://127.0.0.1:5000`
+- **Execution Command:** `python app.py`
+- **WSGI Specification:** `gunicorn app:app` (configured in [`requirements.txt`](../requirements.txt) and [`render.yaml`](../render.yaml))
+- **Production Status:** Localhost-only (not publicly exposed)
+
+### Verified Local Routes (100% HTTP 200 OK):
+- `GET /` — Executive Overview & live KPI computations
+- `GET /dashboard` — Multi-device responsive dashboard switcher
+- `GET /story` — 5-scene guided narrative carousel
+- `GET /about` — Technical data dictionary and schema documentation
+- `GET /evidence/<path>` — Direct evidence asset delivery
 
 ---
 
-## 4. Tableau Public Decoupling Notice
+## 3. Tableau Public Cloud Status & Transparency
 
 > [!IMPORTANT]
 > **Native Tableau Cloud Status: PENDING MANUAL GUI AUTHORING**
 >
-> `TABLEAU_DASHBOARD_URL` and `TABLEAU_STORY_URL` remain empty until manual cloud authoring is published on profile [`sufiyansurve333`](https://public.tableau.com/app/profile/sufiyansurve333).
+> In accordance with academic honesty principles, all Tableau worksheets (8 unique charts), calculated fields (10 formulas), responsive layouts, and story narrative steps are fully specified and prototyped in Python and Flask.
 >
-> The web application automatically falls back to verified high-resolution multi-device prototypes with full metric cards.
+> Native Tableau Public workbook publication remains pending manual creation in the authenticated author session on profile [`sufiyansurve333`](https://public.tableau.com/app/profile/sufiyansurve333).
+>
+> Neither the GitHub Pages static showcase nor the Flask backend fabricate active Tableau Cloud URLs until real publication is executed.

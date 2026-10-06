@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Analysing Mental Health in Student Ecosystem — Interactive Project Showcase</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #2563eb;
+      --primary-dark: #1d4ed8;
+      --primary-light: #dbeafe;
+      --slate-900: #0f172a;
+      --slate-800: #1e293b;
+      --slate-700: #334155;
+      --slate-600: #475569;
+      --slate-500: #64748b;
+      --slate-200: #e2e8f0;
+      --slate-100: #f1f5f9;
+      --slate-50: #f8fafc;
+      --white: #ffffff;
+      --success: #10b981;
+      --warning: #f59e0b;
+      --danger: #ef4444;
+      --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+      --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+      --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+      --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+      --radius-md: 12px;
+      --radius-lg: 16px;
+      --radius-xl: 24px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background-color: var(--slate-50);
+      color: var(--slate-800);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Top Notice Banner */
+    .top-banner {
+      background: linear-gradient(90deg, #1e293b 0%, #0f172a 100%);
+      color: var(--white);
+      padding: 10px 24px;
+      font-size: 0.875rem;
+      text-align: center;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .top-banner a {
+      color: #93c5fd;
+      text-decoration: underline;
+      font-weight: 600;
+    }
+
+    /* Header Nav */
+    header {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(8px);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      border-bottom: 1px solid var(--slate-200);
+      box-shadow: var(--shadow-sm);
+    }
+    .nav-container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 16px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--slate-900);
+      font-weight: 800;
+      font-size: 1.25rem;
+    }
+    .brand-badge {
+      background: var(--primary-light);
+      color: var(--primary);
+      font-size: 0.75rem;
+      padding: 4px 8px;
+      border-radius: 9999px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      list-style: none;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: var(--slate-600);
+      font-weight: 600;
+      font-size: 0.925rem;
+      transition: color 0.2s ease;
+    }
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+    .nav-btn {
+      background: var(--primary);
+      color: var(--white) !important;
+      padding: 8px 16px;
+      border-radius: 8px;
+      transition: background 0.2s ease;
+    }
+    .nav-btn:hover {
+      background: var(--primary-dark) !important;
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 64px 24px 48px;
+      max-width: 1280px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      color: #1e40af;
+      padding: 6px 14px;
+      border-radius: 9999px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+    .hero h1 {
+      font-size: 3rem;
+      line-height: 1.15;
+      font-weight: 800;
+      color: var(--slate-900);
+      margin-bottom: 20px;
+      letter-spacing: -0.025em;
+    }
+    .hero p {
+      font-size: 1.15rem;
+      color: var(--slate-600);
+      max-width: 840px;
+      margin: 0 auto 32px;
+    }
+    .hero-meta {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-bottom: 40px;
+      font-size: 0.9rem;
+      color: var(--slate-500);
+    }
+    .hero-meta span {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* KPI Cards Grid */
+    .kpi-section {
+      max-width: 1280px;
+      margin: 0 auto 64px;
+      padding: 0 24px;
+    }
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+    }
+    .kpi-card {
+      background: var(--white);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      box-shadow: var(--shadow-sm);
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .kpi-card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+    .kpi-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: var(--primary);
+    }
+    .kpi-card.warning::before { background: var(--warning); }
+    .kpi-card.danger::before { background: var(--danger); }
+    .kpi-card.success::before { background: var(--success); }
+    .kpi-label {
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--slate-500);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 8px;
+    }
+    .kpi-value {
+      font-size: 2.25rem;
+      font-weight: 800;
+      color: var(--slate-900);
+      line-height: 1.1;
+      margin-bottom: 8px;
+    }
+    .kpi-subtext {
+      font-size: 0.85rem;
+      color: var(--slate-600);
+    }
+
+    /* Section Containers */
+    .section-wrap {
+      max-width: 1280px;
+      margin: 0 auto 72px;
+      padding: 0 24px;
+    }
+    .section-header {
+      margin-bottom: 32px;
+      text-align: left;
+    }
+    .section-title {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--slate-900);
+      margin-bottom: 8px;
+      letter-spacing: -0.02em;
+    }
+    .section-desc {
+      font-size: 1.05rem;
+      color: var(--slate-600);
+      max-width: 720px;
+    }
+
+    /* Dashboard Preview */
+    .preview-card {
+      background: var(--white);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-xl);
+      padding: 24px;
+      box-shadow: var(--shadow-lg);
+    }
+    .preview-image {
+      width: 100%;
+      height: auto;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--slate-200);
+      display: block;
+      background: var(--slate-100);
+    }
+    .preview-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-top: 20px;
+      padding-top: 16px;
+      border-top: 1px solid var(--slate-200);
+    }
+    .badge-group {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .badge {
+      background: var(--slate-100);
+      color: var(--slate-700);
+      font-size: 0.8rem;
+      padding: 6px 12px;
+      border-radius: 9999px;
+      font-weight: 600;
+      border: 1px solid var(--slate-200);
+    }
+
+    /* Story Scenes */
+    .story-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+    .scene-card {
+      background: var(--white);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+      display: grid;
+      grid-template-columns: 1.25fr 1fr;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .scene-card:hover {
+      box-shadow: var(--shadow-xl);
+    }
+    .scene-media {
+      background: #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-right: 1px solid var(--slate-200);
+    }
+    .scene-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .scene-content {
+      padding: 36px 32px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .scene-num {
+      display: inline-block;
+      background: var(--primary-light);
+      color: var(--primary-dark);
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 6px;
+      margin-bottom: 12px;
+      letter-spacing: 0.05em;
+    }
+    .scene-title {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--slate-900);
+      margin-bottom: 14px;
+      line-height: 1.3;
+    }
+    .scene-body {
+      font-size: 0.95rem;
+      color: var(--slate-600);
+      margin-bottom: 20px;
+      line-height: 1.65;
+    }
+    .scene-bullets {
+      list-style: none;
+      margin-bottom: 24px;
+    }
+    .scene-bullets li {
+      position: relative;
+      padding-left: 24px;
+      font-size: 0.9rem;
+      color: var(--slate-700);
+      margin-bottom: 8px;
+    }
+    .scene-bullets li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: var(--primary);
+      font-weight: 800;
+    }
+
+    /* Key Findings Grid */
+    .findings-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 24px;
+    }
+    .finding-card {
+      background: var(--white);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-lg);
+      padding: 28px;
+      box-shadow: var(--shadow-sm);
+    }
+    .finding-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      background: #eff6ff;
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.25rem;
+      margin-bottom: 16px;
+    }
+    .finding-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--slate-900);
+      margin-bottom: 10px;
+    }
+    .finding-desc {
+      font-size: 0.925rem;
+      color: var(--slate-600);
+      line-height: 1.6;
+    }
+
+    /* Methodology Table */
+    .methodology-box {
+      background: var(--white);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-xl);
+      padding: 32px;
+      box-shadow: var(--shadow-sm);
+    }
+    .methodology-box h3 {
+      font-size: 1.25rem;
+      color: var(--slate-900);
+      margin-bottom: 16px;
+    }
+    .methodology-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+      margin-top: 16px;
+    }
+    .methodology-table th, .methodology-table td {
+      padding: 12px 16px;
+      text-align: left;
+      border-bottom: 1px solid var(--slate-200);
+    }
+    .methodology-table th {
+      background: var(--slate-50);
+      font-weight: 700;
+      color: var(--slate-700);
+    }
+
+    /* Video & CTA Banner */
+    .cta-banner {
+      background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+      color: var(--white);
+      border-radius: var(--radius-xl);
+      padding: 48px;
+      text-align: center;
+      box-shadow: var(--shadow-xl);
+    }
+    .cta-banner h2 {
+      font-size: 2.25rem;
+      font-weight: 800;
+      margin-bottom: 16px;
+    }
+    .cta-banner p {
+      font-size: 1.1rem;
+      color: #94a3b8;
+      max-width: 680px;
+      margin: 0 auto 32px;
+    }
+    .cta-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 24px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      border-radius: 10px;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+    .btn-primary {
+      background: var(--primary);
+      color: var(--white);
+    }
+    .btn-primary:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+    }
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.1);
+      color: var(--white);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.2);
+      transform: translateY(-2px);
+    }
+
+    /* Footer */
+    footer {
+      background: var(--white);
+      border-top: 1px solid var(--slate-200);
+      padding: 48px 24px;
+      text-align: center;
+      font-size: 0.875rem;
+      color: var(--slate-500);
+    }
+    footer a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .scene-card {
+        grid-template-columns: 1fr;
+      }
+      .scene-media {
+        border-right: none;
+        border-bottom: 1px solid var(--slate-200);
+      }
+      .hero h1 {
+        font-size: 2.25rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Notice Banner -->
+  <div class="top-banner">
+    🚀 <strong>Static Project Showcase on GitHub Pages.</strong> Full development procedure and verified local Flask runtime available in the <a href="https://github.com/Sufiyan367/Analysing-Mental-Health-in-Student-Ecosystem" target="_blank" rel="noopener">GitHub Repository</a>.
+  </div>
+
+  <!-- Header -->
+  <header>
+    <div class="nav-container">
+      <a href="#" class="brand">
+        <span>Mental Health Analytics</span>
+        <span class="brand-badge">Virtual Internship</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#kpis">KPIs</a></li>
+        <li><a href="#dashboard">Dashboard</a></li>
+        <li><a href="#story">Data Story</a></li>
+        <li><a href="#findings">Findings</a></li>
+        <li><a href="#methodology">Methodology</a></li>
+        <li><a href="https://github.com/Sufiyan367/Analysing-Mental-Health-in-Student-Ecosystem" target="_blank" rel="noopener" class="nav-btn">GitHub Repo</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-tag">
+      🎓 SmartBridge / SkillWallet Capstone Portfolio
+    </div>
+    <h1>Analysing Mental Health in Student Ecosystem</h1>
+    <p>A multidimensional visual analytics and clinical diagnostic platform bridging subjective student stress with empirical psychometric indices, lifestyle sleep degradation, and structured therapy recovery outcomes.</p>
+    <div class="hero-meta">
+      <span>👤 <strong>Student Author:</strong> Sufiyan Surve</span>
+      <span>•</span>
+      <span>📊 <strong>Cohort Size:</strong> 200 Students</span>
+      <span>•</span>
+      <span>📈 <strong>Attributes:</strong> 18 Validated Columns</span>
+      <span>•</span>
+      <span>🎯 <strong>Course:</strong> Data Analytics with Tableau</span>
+    </div>
+  </section>
+
+  <!-- KPI Section -->
+  <section class="kpi-section" id="kpis">
+    <div class="kpi-grid">
+      <div class="kpi-card success">
+        <div class="kpi-label">Cohort Population</div>
+        <div class="kpi-value">200</div>
+        <div class="kpi-subtext">Verified undergraduates & researchers with zero missing records.</div>
+      </div>
+      <div class="kpi-card warning">
+        <div class="kpi-label">Average Anxiety Score</div>
+        <div class="kpi-value">52.59</div>
+        <div class="kpi-subtext">Scale 0–100. Surges to <strong>72.06</strong> in high-stress students.</div>
+      </div>
+      <div class="kpi-card danger">
+        <div class="kpi-label">Average Depression Score</div>
+        <div class="kpi-value">48.09</div>
+        <div class="kpi-subtext">Scale 0–100. Surges to <strong>68.78</strong> in high-stress students.</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">Avg Daily Screen Time</div>
+        <div class="kpi-value">7.10 <span style="font-size: 1.25rem; font-weight: 600; color: var(--slate-500);">hrs</span></div>
+        <div class="kpi-subtext">Reaches <strong>8.12 hrs/day</strong> in students suffering severe stress.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Dashboard Section -->
+  <section class="section-wrap" id="dashboard">
+    <div class="section-header">
+      <h2 class="section-title">🖥️ Executive Diagnostic Dashboard</h2>
+      <p class="section-desc">Responsive multi-device command center integrating 4 top-level KPI metrics with 6 visual analytical panels designed for academic leaders and mental health directors.</p>
+    </div>
+    <div class="preview-card">
+      <img src="evidence/dashboard/desktop_dashboard.png" alt="Desktop Dashboard Prototype" class="preview-image" loading="lazy">
+      <div class="preview-footer">
+        <div class="badge-group">
+          <span class="badge">Desktop (1920×1080)</span>
+          <span class="badge">Tablet (1024×768)</span>
+          <span class="badge">Mobile Optimized</span>
+          <span class="badge">Tableau Embedding API Ready</span>
+        </div>
+        <div style="font-size: 0.85rem; color: var(--slate-500);">
+          Ground truth: <code>data/cleaned/mental_health_student_ecosystem_cleaned.csv</code>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Data Story Section -->
+  <section class="section-wrap" id="story">
+    <div class="section-header">
+      <h2 class="section-title">📖 Guided 5-Scene Data Story</h2>
+      <p class="section-desc">A structured analytical narrative taking institutional stakeholders from population baseline spread through symptom escalation, behavioral risks, and clinical recovery.</p>
+    </div>
+
+    <div class="story-grid">
+      <!-- Scene 1 -->
+      <article class="scene-card">
+        <div class="scene-media">
+          <img src="evidence/story/01_baseline.png" alt="Scene 1: Student Mental Health Baseline" loading="lazy">
+        </div>
+        <div class="scene-content">
+          <span class="scene-num">Scene 01</span>
+          <h3 class="scene-title">Student Mental Health Baseline</h3>
+          <p class="scene-body">Establishes the macro-level distribution of stress across the 200-student university ecosystem. Over 78% of students experience elevated chronic distress.</p>
+          <ul class="scene-bullets">
+            <li><strong>Low Stress:</strong> 44 students (22.0% of cohort)</li>
+            <li><strong>Medium Stress:</strong> 107 students (53.5% of cohort)</li>
+            <li><strong>High Stress:</strong> 49 students (24.5% of cohort)</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- Scene 2 -->
+      <article class="scene-card">
+        <div class="scene-media">
+          <img src="evidence/story/02_psychological_symptoms.png" alt="Scene 2: Stress and Psychological Symptoms" loading="lazy">
+        </div>
+        <div class="scene-content">
+          <span class="scene-num">Scene 02</span>
+          <h3 class="scene-title">Stress & Psychological Symptoms</h3>
+          <p class="scene-body">Quantifies how subjective perceived stress translates into standardized clinical anxiety and depression loads, revealing dramatic symptom surges.</p>
+          <ul class="scene-bullets">
+            <li><strong>Anxiety Escalation:</strong> Surges from 30.27 (Low) to <strong>72.06</strong> (High) (+138%)</li>
+            <li><strong>Depression Escalation:</strong> Surges from 26.80 (Low) to <strong>68.78</strong> (High) (+156%)</li>
+            <li><strong>Gender Parity:</strong> Both male and female students experience balanced severity burdens</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- Scene 3 -->
+      <article class="scene-card">
+        <div class="scene-media">
+          <img src="evidence/story/03_lifestyle_and_stress.png" alt="Scene 3: Lifestyle Factors and Stress" loading="lazy">
+        </div>
+        <div class="scene-content">
+          <span class="scene-num">Scene 03</span>
+          <h3 class="scene-title">Lifestyle Factors & Stress Compounding</h3>
+          <p class="scene-body">Isolates the lifestyle triad—sleep deprivation, screen immersion, and physical inactivity—that compounds psychological deterioration.</p>
+          <ul class="scene-bullets">
+            <li><strong>Severe Sleep Deficit:</strong> 71.4% (35 of 49) of high-stress students report Poor sleep</li>
+            <li><strong>Screen Immersion:</strong> High-stress students average <strong>8.12 hours/day</strong> on devices</li>
+            <li><strong>Physical Inactivity:</strong> 75.5% of the high-stress cohort engages in low physical exercise</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- Scene 4 -->
+      <article class="scene-card">
+        <div class="scene-media">
+          <img src="evidence/story/04_vulnerability_and_support.png" alt="Scene 4: Vulnerability Factors and Support Systems" loading="lazy">
+        </div>
+        <div class="scene-content">
+          <span class="scene-num">Scene 04</span>
+          <h3 class="scene-title">Vulnerability & Support Systems</h3>
+          <p class="scene-body">Examines pre-existing clinical history against first-onset university distress and highlights the protective buffer of peer support networks.</p>
+          <ul class="scene-bullets">
+            <li><strong>Pre-Existing History:</strong> 40.0% (80 students) have a diagnosed clinical history</li>
+            <li><strong>First-Onset Distress:</strong> 60.0% had no prior history, yet 14 high-stress cases emerged</li>
+            <li><strong>Support Network Buffer:</strong> Strong peer systems correlate with low stress concentrations</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- Scene 5 -->
+      <article class="scene-card">
+        <div class="scene-media">
+          <img src="evidence/story/05_intervention_and_progress.png" alt="Scene 5: Intervention Patterns and Recovery Progress" loading="lazy">
+        </div>
+        <div class="scene-content">
+          <span class="scene-num">Scene 05</span>
+          <h3 class="scene-title">Intervention Patterns & Clinical Recovery</h3>
+          <p class="scene-body">Ranks psychological therapy modalities by empirical progress scores and exposes the critical institutional care deficit.</p>
+          <ul class="scene-bullets">
+            <li><strong>Top Recovery Efficacy:</strong> CBT achieves highest progress score (<strong>40.80</strong> / 100)</li>
+            <li><strong>Broad Benefits:</strong> Counseling (34.43), Support Groups (33.10), Meditation (32.57)</li>
+            <li><strong>Care Gap:</strong> <strong>53.5% (107 students)</strong> receive No Therapy on campus</li>
+          </ul>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Key Findings Section -->
+  <section class="section-wrap" id="findings">
+    <div class="section-header">
+      <h2 class="section-title">🔍 Key Empirical Discoveries</h2>
+      <p class="section-desc">Four evidence-based takeaways extracted from the validated student mental health ecosystem dataset.</p>
+    </div>
+
+    <div class="findings-grid">
+      <div class="finding-card">
+        <div class="finding-icon">🚨</div>
+        <h4 class="finding-title">1. Pervasive Stress Burden</h4>
+        <p class="finding-desc">78.0% of the student cohort operates in moderate or severe stress tiers, showing that psychological strain is an ecosystem-wide challenge rather than an isolated outlier.</p>
+      </div>
+
+      <div class="finding-card">
+        <div class="finding-icon">📈</div>
+        <h4 class="finding-title">2. Symptom Escalation</h4>
+        <p class="finding-desc">High-stress students experience a >135% surge in anxiety (72.06) and depression (68.78) relative to low-stress peers, proving a direct coupling between subjective stress and clinical symptom load.</p>
+      </div>
+
+      <div class="finding-card">
+        <div class="finding-icon">📱</div>
+        <h4 class="finding-title">3. Behavioral Compounding</h4>
+        <p class="finding-desc">71.4% of high-stress students suffer from severe sleep deficits paired with 8.12 hours of screen immersion, confirming that digital saturation exacerbates emotional exhaustion.</p>
+      </div>
+
+      <div class="finding-card">
+        <div class="finding-icon">🩹</div>
+        <h4 class="finding-title">4. Institutional Care Gap</h4>
+        <p class="finding-desc">53.5% of students receive No Therapy, including 15 high-stress and 48 medium-stress students. Structured Cognitive Behavioral Therapy (CBT) achieves top recovery (40.80 score).</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Methodology Section -->
+  <section class="section-wrap" id="methodology">
+    <div class="methodology-box">
+      <div class="section-header" style="margin-bottom: 20px;">
+        <h2 class="section-title">📐 Dataset Methodology & Integrity</h2>
+        <p class="section-desc">Certified cross-sectional psychometric benchmark modeled specifically for higher education ecosystems.</p>
+      </div>
+      <p style="color: var(--slate-600); margin-bottom: 16px;">
+        The primary data source represents 200 validated individual profiles audited with zero nulls, zero duplicates, and strictly normalized psychometric distributions.
+      </p>
+
+      <table class="methodology-table">
+        <thead>
+          <tr>
+            <th>Variable Domain</th>
+            <th>Features Included</th>
+            <th>Validation Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Demographics</strong></td>
+            <td>User ID, Age (18–27), Gender, Academic Occupation</td>
+            <td>100% Unique, Zero Nulls</td>
+          </tr>
+          <tr>
+            <td><strong>Psychometrics</strong></td>
+            <td>Stress Level (Low/Med/High), Anxiety Score (0–100), Depression Score (0–100)</td>
+            <td>Clinically Bounded</td>
+          </tr>
+          <tr>
+            <td><strong>Lifestyle Habits</strong></td>
+            <td>Sleep Quality, Daily Screen Time (hrs), Physical Activity Level, Social Interaction</td>
+            <td>Continuous & Ordinal Normalization</td>
+          </tr>
+          <tr>
+            <td><strong>Clinical Care</strong></td>
+            <td>Mental Health History, Therapy Type, Duration (weeks), Progress Score, Medication</td>
+            <td>Relational Consistency Verified</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Video & GitHub CTA Banner -->
+  <section class="section-wrap">
+    <div class="cta-banner">
+      <h2>🎥 End-to-End Walkthrough Demonstration</h2>
+      <p>Watch the complete 6:26-minute capstone demonstration video with synchronized voice narration, slide transitions, and strategic institutional policy recommendations.</p>
+      <div class="cta-buttons">
+        <a href="evidence/demo/project_explanation_video.mp4" class="btn btn-primary" target="_blank">
+          ▶ Watch Demo Video (6:26)
+        </a>
+        <a href="https://github.com/Sufiyan367/Analysing-Mental-Health-in-Student-Ecosystem" class="btn btn-secondary" target="_blank" rel="noopener">
+          View GitHub Repository
+        </a>
+        <a href="evidence/documentation/Project_Documentation.pdf" class="btn btn-secondary" target="_blank">
+          Download PDF Report
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p><strong>Analysing Mental Health in Student Ecosystem</strong></p>
+    <p style="margin: 8px 0 16px;">Virtual Internship Capstone Project • Data Analytics with Tableau • SmartBridge / SkillWallet</p>
+    <p>Student Author: <strong>Sufiyan Surve</strong> • <a href="https://github.com/Sufiyan367/Analysing-Mental-Health-in-Student-Ecosystem" target="_blank" rel="noopener">GitHub Source Code</a> • <a href="https://public.tableau.com/app/profile/sufiyansurve333" target="_blank" rel="noopener">Tableau Public Profile</a></p>
+  </footer>
+
+</body>
+</html>
