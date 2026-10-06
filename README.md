@@ -26,8 +26,8 @@ By synthesizing **data engineering**, **validated psychometric metrics**, and **
 | **Data Preparation** | Prepare the Data for Visualization | **COMPLETED** | [`docs/data_preparation.md`](docs/data_preparation.md), [`data/cleaned/validation_summary.json`](data/cleaned/validation_summary.json) |
 | **Data Visualization** | No of Unique Visualizations | **COMPLETED (8 Artifacts)** | [`docs/data_visualization.md`](docs/data_visualization.md), [`evidence/visualizations/`](evidence/visualizations/) |
 | **Dashboard** | Responsive and Design of Dashboard | **COMPLETED (Prototypes & Spec)** | [`docs/dashboard_design.md`](docs/dashboard_design.md), [`evidence/dashboard/`](evidence/dashboard/) |
-| **Story** | Build Guided Story Points | **NEXT PLANNED STAGE** | 5-Scene Story Narrative Architecture |
-| **Performance Testing** | Performance & Audit Testing | Pending | Latency, filter optimization & responsiveness |
+| **Story** | No of Scenes of Story | **COMPLETED (5 Scenes)** | [`docs/story.md`](docs/story.md), [`evidence/story/`](evidence/story/) |
+| **Performance Testing** | Performance & Audit Testing | **NEXT PLANNED STAGE** | Latency, filter optimization & responsiveness |
 | **Web Integration** | Flask Web Portal Integration | Pending | Embedded Tableau Public visualizations in Flask |
 | **Demonstration & Docs** | Final Report & Demonstration | Pending | Video demonstration, slide deck & documentation |
 
@@ -42,6 +42,22 @@ By synthesizing **data engineering**, **validated psychometric metrics**, and **
 - **Duplicate User IDs:** **0** (Unique identifiers: `STU_0001` to `STU_0200`)
 - **Data Preparation Status:** **READY FOR VISUALIZATION**
 - **Cleaning Note:** *No further data cleaning was required; the dataset is visualization-ready.*
+
+---
+
+## 📖 Guided 5-Scene Data Story: Analysing Mental Health in Student Ecosystem
+
+The 5-scene data story guides institutional leaders from macro-level baseline diagnostics through lifestyle risks, vulnerability factors, and clinical treatment progress:
+
+| Scene | Scene Title | Core Question & Focus | Visual Artifact |
+| :---: | :--- | :--- | :--- |
+| **1** | **Student Mental Health Baseline** | Establish cohort population stress spread and KPI baseline. | [`01_baseline.png`](evidence/story/01_baseline.png) |
+| **2** | **Stress & Psychological Symptoms** | Quantify symptom escalation (Anxiety & Depression) by stress tier. | [`02_psychological_symptoms.png`](evidence/story/02_psychological_symptoms.png) |
+| **3** | **Lifestyle Factors and Stress** | Examine sleep deficits (71.4% poor sleep) and screen immersion (8.12 hrs). | [`03_lifestyle_and_stress.png`](evidence/story/03_lifestyle_and_stress.png) |
+| **4** | **Vulnerability & Support Systems** | Assess pre-existing history (40%) vs campus first-onset distress. | [`04_vulnerability_and_support.png`](evidence/story/04_vulnerability_and_support.png) |
+| **5** | **Intervention & Recovery Progress** | Evaluate therapy modalities (CBT top at 40.8 score) & campus policy. | [`05_intervention_and_progress.png`](evidence/story/05_intervention_and_progress.png) |
+
+Detailed narrative transitions and policy recommendations are documented in [`docs/story.md`](docs/story.md).
 
 ---
 
@@ -110,25 +126,26 @@ Analysing-Mental-Health-in-Student-Ecosystem/
 │   ├── data_preparation.md                      # Preparation report & visualization mapping
 │   ├── data_visualization.md                    # Specifications for 8 dataset-grounded visualizations
 │   ├── dashboard_design.md                      # Responsive dashboard architecture & layout specification
+│   ├── story.md                                 # 5-Scene guided data story & policy narrative
 │   ├── problem_statement.md                      # Capstone problem background & target outcomes
 │   └── tableau.md                                # Tableau authoring architectural reference
 │
 ├── evidence/
 │   ├── visualizations/                          # 8 Verified visualization artifacts (PNG)
-│   │   ├── 01_stress_level_distribution.png
-│   │   ├── ...
-│   │   └── 08_therapy_type_vs_progress.png
-│   └── dashboard/                               # Responsive dashboard prototypes
-│       ├── student_mental_health_dashboard.png   # Primary desktop dashboard
-│       ├── desktop_dashboard.png                # 16:9 desktop layout
-│       ├── tablet_dashboard.png                 # 2-column tablet layout
-│       └── mobile_dashboard.png                 # Vertical single-column mobile layout
+│   ├── dashboard/                               # Responsive dashboard prototypes (Desktop, Tablet, Mobile)
+│   └── story/                                   # 5 Verified story scene artifacts (PNG)
+│       ├── 01_baseline.png
+│       ├── 02_psychological_symptoms.png
+│       ├── 03_lifestyle_and_stress.png
+│       ├── 04_vulnerability_and_support.png
+│       └── 05_intervention_and_progress.png
 │
 ├── scripts/
 │   ├── generate_student_mental_health_dataset.py # Standardized realistic dataset generator
 │   ├── validate_dataset.py                       # Automated 18-variable schema audit script
 │   ├── generate_visualizations.py                # Reproducible generator for 8 chart artifacts
-│   └── generate_dashboard_prototypes.py         # Multi-device responsive dashboard generator
+│   ├── generate_dashboard_prototypes.py         # Multi-device responsive dashboard generator
+│   └── generate_story_scenes.py                 # 5-Scene story narrative generator
 │
 ├── tableau/                                      # Tableau workbooks and assets
 ├── templates/                                    # Flask web application Jinja2 templates
@@ -138,5 +155,6 @@ Analysing-Mental-Health-in-Student-Ecosystem/
 ---
 
 ## 🎯 Next Planned Stage
-**Story Architecture & Guided Narrative:**  
-- Define 5 guided analytical story scenes connecting student pressure points to policy recommendations.
+**Epic: Performance Testing & Web Integration:**  
+- Conduct query execution and responsive render performance benchmark.
+- Validate Flask web application embedding and user routing.
