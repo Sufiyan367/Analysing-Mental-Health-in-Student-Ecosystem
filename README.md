@@ -24,7 +24,8 @@ By synthesizing **data engineering**, **validated psychometric metrics**, and **
 | **Data Collection & Extraction** | Downloading the dataset | **COMPLETED** | [`data/raw/mental_health_student_ecosystem.csv`](data/raw/mental_health_student_ecosystem.csv) |
 | **Data Collection & Extraction** | Understand the data | **COMPLETED** | [`docs/data_dictionary.md`](docs/data_dictionary.md), [`docs/dataset_validation.md`](docs/dataset_validation.md) |
 | **Data Preparation** | Prepare the Data for Visualization | **COMPLETED** | [`docs/data_preparation.md`](docs/data_preparation.md), [`data/cleaned/validation_summary.json`](data/cleaned/validation_summary.json) |
-| **Data Visualization** | Connect Data with Tableau & Create Worksheets | **NEXT PLANNED STAGE** | To be authored on Tableau Public Web Authoring |
+| **Data Visualization** | No of Unique Visualizations | **COMPLETED (8 Artifacts)** | [`docs/data_visualization.md`](docs/data_visualization.md), [`evidence/visualizations/`](evidence/visualizations/) |
+| **Data Visualization** | Connect Data with Tableau & Author Worksheets | **NEXT PLANNED STAGE** | To be authored on Tableau Public Web Authoring |
 | **Dashboard** | Build Interactive Dashboards | Pending | Dashboard 1 & Dashboard 2 |
 | **Story** | Build Guided Story Points | Pending | 5-Scene Story Narrative |
 | **Performance Testing** | Performance & Audit Testing | Pending | Latency, filter optimization & responsiveness |
@@ -43,25 +44,24 @@ By synthesizing **data engineering**, **validated psychometric metrics**, and **
 - **Data Preparation Status:** **READY FOR VISUALIZATION**
 - **Cleaning Note:** *No further data cleaning was required; the dataset is visualization-ready.*
 
-### Data Schema (18 Variables)
-1. **User ID** (`String`): Unique identifier (`STU_0001` - `STU_0200`)
-2. **Age** (`Integer`): Age of the individual in years (18–27)
-3. **Gender** (`String`): Female, Male, Other
-4. **Occupation** (`String`): Undergraduate, Postgraduate, Doctoral Researcher, Student Intern, Teaching Assistant
-5. **Stress Level** (`String`): Low, Medium, High
-6. **Anxiety Score** (`Integer`): Standardized anxiety psychometric score (5–96)
-7. **Depression Score** (`Integer`): Standardized depression severity score (9–87)
-8. **Sleep Quality** (`String`): Poor, Average, Good
-9. **Daily Screen Time (hrs)** (`Float`): Daily screen time in hours (3.0–12.0)
-10. **Physical Activity Level** (`String`): Low, Moderate, High
-11. **Social Interaction Score** (`Integer`): Interpersonal engagement scale (1–10)
-12. **Mental Health History** (`String`): Yes, No
-13. **Therapy Type** (`String`): CBT, Counseling, Meditation, Support Group, No Therapy
-14. **Intervention Duration (weeks)** (`Integer`): Duration of intervention in weeks (0–16)
-15. **Progress Score** (`Integer`): Improvement score post-intervention (0–69)
-16. **Medication Usage** (`String`): Yes, No
-17. **Support System Strength** (`String`): Low, Medium, High
-18. **Work-Life Balance Score** (`Integer`): Self-rated balance score (1–10)
+---
+
+## 📈 8 Unique Dataset-Grounded Visualizations
+
+All 8 visualizations are generated strictly from the validated 18-column dataset without fabricating missing features:
+
+| # | Visualization Title | Chart Type | Data Dimensions & Measures | Visual Evidence |
+| :-: | :--- | :--- | :--- | :--- |
+| **1** | **Stress Level Distribution** | Bar Chart | Dimension: `Stress Level`, Measure: `Count of User ID` | [View Image](evidence/visualizations/01_stress_level_distribution.png) |
+| **2** | **Stress Level vs Anxiety Score** | Bar Chart | Dimension: `Stress Level`, Measure: `AVG(Anxiety Score)` | [View Image](evidence/visualizations/02_stress_vs_anxiety.png) |
+| **3** | **Stress Level vs Depression Score** | Bar Chart | Dimension: `Stress Level`, Measure: `AVG(Depression Score)` | [View Image](evidence/visualizations/03_stress_vs_depression.png) |
+| **4** | **Gender Mental Health Comparison** | Grouped Bar | Dimension: `Gender`, Measures: `AVG(Anxiety Score)`, `AVG(Depression Score)` | [View Image](evidence/visualizations/04_gender_mental_health_comparison.png) |
+| **5** | **Sleep Quality vs Stress Level** | Stacked Bar | Dimensions: `Sleep Quality`, `Stress Level`, Measure: `Count of User ID` | [View Image](evidence/visualizations/05_sleep_quality_vs_stress.png) |
+| **6** | **Screen Time vs Stress Level** | Bar Chart | Dimension: `Stress Level`, Measure: `AVG(Daily Screen Time (hrs))` | [View Image](evidence/visualizations/06_screen_time_vs_stress.png) |
+| **7** | **Mental Health History Distribution**| Donut Chart | Dimension: `Mental Health History`, Measure: `Count of User ID` | [View Image](evidence/visualizations/07_mental_health_history_distribution.png) |
+| **8** | **Therapy Type vs Progress Score** | Ranked Bar | Dimension: `Therapy Type`, Measure: `AVG(Progress Score)` | [View Image](evidence/visualizations/08_therapy_type_vs_progress.png) |
+
+Detailed interpretations and formulas are available in [`docs/data_visualization.md`](docs/data_visualization.md).
 
 ---
 
@@ -83,12 +83,25 @@ Analysing-Mental-Health-in-Student-Ecosystem/
 │   ├── data_dictionary.md                        # Psychometric descriptions & data definitions
 │   ├── dataset_validation.md                     # Statistical distributions & integrity audit
 │   ├── data_preparation.md                      # Preparation report & visualization mapping
+│   ├── data_visualization.md                    # Specifications for 8 dataset-grounded visualizations
 │   ├── problem_statement.md                      # Capstone problem background & target outcomes
 │   └── tableau.md                                # Tableau authoring architectural reference
 │
+├── evidence/
+│   └── visualizations/                          # 8 Verified visualization artifacts (PNG)
+│       ├── 01_stress_level_distribution.png
+│       ├── 02_stress_vs_anxiety.png
+│       ├── 03_stress_vs_depression.png
+│       ├── 04_gender_mental_health_comparison.png
+│       ├── 05_sleep_quality_vs_stress.png
+│       ├── 06_screen_time_vs_stress.png
+│       ├── 07_mental_health_history_distribution.png
+│       └── 08_therapy_type_vs_progress.png
+│
 ├── scripts/
 │   ├── generate_student_mental_health_dataset.py # Standardized realistic dataset generator
-│   └── validate_dataset.py                       # Automated 18-variable schema audit script
+│   ├── validate_dataset.py                       # Automated 18-variable schema audit script
+│   └── generate_visualizations.py                # Reproducible generator for 8 chart artifacts
 │
 ├── tableau/                                      # Tableau workbooks and assets
 ├── templates/                                    # Flask web application Jinja2 templates
@@ -98,7 +111,6 @@ Analysing-Mental-Health-in-Student-Ecosystem/
 ---
 
 ## 🎯 Next Planned Stage
-**Epic: Data Visualization**  
+**Tableau Authoring & Dashboard Construction:**  
 - Connect `data/cleaned/mental_health_student_ecosystem_cleaned.csv` via Tableau Public Web Authoring.
-- Author the 9 validated analytical worksheets, calculated fields, and interactive chart views.
-- Assemble Dashboard 1, Dashboard 2, and the 5-Scene Story Narrative.
+- Author interactive native sheets, calculated fields, and dashboards in the authenticated environment.
