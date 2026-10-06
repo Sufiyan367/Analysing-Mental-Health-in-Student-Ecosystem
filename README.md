@@ -186,9 +186,10 @@ The Flask web application is configured for production deployment as a container
 
 ## 12. Demonstration Video & Publication Report
 
-- **End-to-End Walkthrough Video (6:26 mins, 9.84 MB):** [`evidence/demo/project_explanation_video.mp4`](evidence/demo/project_explanation_video.mp4)  
-  *Fully compliant with SkillWallet's 5–7 minute requirement (386.13 seconds). Features 1920×1080 16:9 slides, synchronized narration covering all 11 capstone sections, and verified AAC audio.*
+- **End-to-End Walkthrough Video (6:24 mins, 37.48 MB):** [`evidence/demo/project_explanation_video.mp4`](evidence/demo/project_explanation_video.mp4)  
+  *Fully compliant with SkillWallet's 5–7 minute requirement (384.86 seconds). Screen-recorded directly from the live public GitHub Pages showcase at 1920×1080 (Full HD, 25 fps, H.264/AAC), featuring natural Indian-English student voiceover (`en-IN-PrabhatNeural`), custom cursor interactions, and comprehensive walkthrough across all 11 capstone sections.*
 - **Verbatim Narration Script:** [`docs/demo_video_script.md`](docs/demo_video_script.md)
+- **Technical Video Validation Report:** [`docs/demo_video_validation.md`](docs/demo_video_validation.md)
 - **19-Section Development Documentation:** [`docs/project_development_documentation.md`](docs/project_development_documentation.md)
 - **Printable Publication PDF:** [`evidence/documentation/Project_Documentation.pdf`](evidence/documentation/Project_Documentation.pdf) ($175.4\text{ KB}$, 8 pages)
 

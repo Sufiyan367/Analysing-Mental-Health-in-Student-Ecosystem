@@ -446,6 +446,55 @@
       color: var(--slate-700);
     }
 
+    /* Video Showcase Section */
+    .video-card {
+      background: var(--white);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+    }
+    .video-wrapper {
+      position: relative;
+      width: 100%;
+      background: #000;
+      border-bottom: 1px solid var(--slate-200);
+    }
+    .video-wrapper video {
+      width: 100%;
+      height: auto;
+      max-height: 720px;
+      display: block;
+      margin: 0 auto;
+    }
+    .video-meta-bar {
+      padding: 24px 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      background: var(--slate-50);
+    }
+    .video-details {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .video-details h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--slate-900);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .video-details p {
+      font-size: 0.9rem;
+      color: var(--slate-600);
+      max-width: 750px;
+    }
+
     /* Video & CTA Banner */
     .cta-banner {
       background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
@@ -547,6 +596,7 @@
       </a>
       <ul class="nav-links">
         <li><a href="#kpis">KPIs</a></li>
+        <li><a href="#video">Demo Video</a></li>
         <li><a href="#dashboard">Dashboard</a></li>
         <li><a href="#story">Data Story</a></li>
         <li><a href="#findings">Findings</a></li>
@@ -596,6 +646,34 @@
         <div class="kpi-label">Avg Daily Screen Time</div>
         <div class="kpi-value">7.10 <span style="font-size: 1.25rem; font-weight: 600; color: var(--slate-500);">hrs</span></div>
         <div class="kpi-subtext">Reaches <strong>8.12 hrs/day</strong> in students suffering severe stress.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Video Showcase Section -->
+  <section class="section-wrap" id="video">
+    <div class="section-header">
+      <h2 class="section-title">🎥 Project Explanation Video</h2>
+      <p class="section-desc">A 5–7 minute end-to-end walkthrough of the project, covering the problem statement, dataset preparation, visual analysis, dashboard, data story, and key findings.</p>
+    </div>
+    <div class="video-card">
+      <div class="video-wrapper">
+        <video controls preload="metadata" poster="evidence/dashboard/desktop_dashboard.png">
+          <source src="evidence/demo/project_explanation_video.mp4" type="video/mp4">
+          Your browser does not support the video tag. <a href="evidence/demo/project_explanation_video.mp4" target="_blank">Download or watch directly</a>.
+        </video>
+      </div>
+      <div class="video-meta-bar">
+        <div class="video-details">
+          <h3><span>🎙️</span> Natural Indian-English Narration & Live Showcase Navigation</h3>
+          <p>Presented by Sufiyan Surve. Screen-recorded across the live public GitHub Pages portfolio, highlighting the 200-student cohort, 18 validated features, multi-device dashboard layout, all 5 narrative scenes, and empirical clinical takeaways.</p>
+        </div>
+        <div class="badge-group">
+          <span class="badge" style="background:#eff6ff; color:#1e40af; border-color:#bfdbfe;">⏱️ 6:24 (384.8s)</span>
+          <span class="badge" style="background:#f0fdf4; color:#166534; border-color:#bbf7d0;">📺 1920×1080 Full HD</span>
+          <span class="badge" style="background:#fefce8; color:#854d0e; border-color:#fef08a;">🔊 H.264 / AAC</span>
+          <a href="evidence/demo/project_explanation_video.mp4" target="_blank" download class="badge" style="background:var(--primary); color:#ffffff; text-decoration:none; font-weight:700;">⬇️ Download MP4 (35.7 MB)</a>
+        </div>
       </div>
     </div>
   </section>
@@ -800,10 +878,10 @@
   <section class="section-wrap">
     <div class="cta-banner">
       <h2>🎥 End-to-End Walkthrough Demonstration</h2>
-      <p>Watch the complete 6:26-minute capstone demonstration video with synchronized voice narration, slide transitions, and strategic institutional policy recommendations.</p>
+      <p>Watch the complete 6:24-minute screen-recorded capstone demonstration video with synchronized natural Indian-English voice narration, live browser interaction, and strategic institutional policy recommendations.</p>
       <div class="cta-buttons">
-        <a href="evidence/demo/project_explanation_video.mp4" class="btn btn-primary" target="_blank">
-          ▶ Watch Demo Video (6:26)
+        <a href="#video" class="btn btn-primary">
+          ▶ Watch Demo Video (6:24)
         </a>
         <a href="https://github.com/Sufiyan367/Analysing-Mental-Health-in-Student-Ecosystem" class="btn btn-secondary" target="_blank" rel="noopener">
           View GitHub Repository
