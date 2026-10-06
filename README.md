@@ -176,13 +176,13 @@ The Python Flask application (`app.py`) serves the complete web portal:
 
 The Flask web application is configured for production deployment as a containerized Python web service:
 
-- **Hosting Platform:** [Render](https://render.com) (Python 3.11 / Gunicorn WSGI)
+- **LOCAL DEMO:** [`http://127.0.0.1:5000`](http://127.0.0.1:5000) *(Actively running & verified across all routes)*
+- **PUBLIC DEMO:** Configured for [Render](https://render.com) (Python 3.11 / Gunicorn WSGI). Public HTTPS endpoint activates upon 1-click authorization via [dashboard.render.com](https://dashboard.render.com).
 - **Infrastructure Blueprint:** [`render.yaml`](render.yaml)
 - **Production Build Command:** `pip install -r requirements.txt`
 - **Production Start Command:** `gunicorn app:app`
-- **Provisioning Status:** Infrastructure files (`render.yaml`, `requirements.txt`, WSGI `app:app`) are configured on `main`. Requires 1-click connection via [dashboard.render.com](https://dashboard.render.com) to assign the active HTTPS endpoint.
-- **Deployment Documentation & Steps:** [`docs/public_deployment.md`](docs/public_deployment.md)
-- **Tableau Public Status Note:** The deployed web application serves high-resolution interactive prototype layouts and metric cards. Native Tableau Public cloud workbook publishing remains pending manual GUI creation on profile [`sufiyansurve333`](https://public.tableau.com/app/profile/sufiyansurve333).
+- **Deployment & Blocker Analysis:** [`docs/public_deployment.md`](docs/public_deployment.md)
+- **Tableau Public Status Note:** The web application serves high-resolution interactive prototype layouts and metric cards. Native Tableau Public cloud workbook publishing remains pending manual GUI creation on profile [`sufiyansurve333`](https://public.tableau.com/app/profile/sufiyansurve333).
 
 ---
 
