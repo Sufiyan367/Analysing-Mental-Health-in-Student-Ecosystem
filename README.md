@@ -28,8 +28,8 @@ By synthesizing **data engineering**, **validated psychometric metrics**, and **
 | **Dashboard** | Responsive and Design of Dashboard | **COMPLETED (Prototypes & Spec)** | [`docs/dashboard_design.md`](docs/dashboard_design.md), [`evidence/dashboard/`](evidence/dashboard/) |
 | **Story** | No of Scenes of Story | **COMPLETED (5 Scenes)** | [`docs/story.md`](docs/story.md), [`evidence/story/`](evidence/story/) |
 | **Performance Testing** | Performance & Audit Testing | **COMPLETED (4 Subtasks)** | [`docs/performance_testing.md`](docs/performance_testing.md), [`evidence/performance/`](evidence/performance/) |
-| **Web Integration** | Flask Web Portal Integration | **NEXT PLANNED STAGE** | Embedded Tableau Public visualizations in Flask |
-| **Demonstration & Docs** | Final Report & Demonstration | Pending | Video demonstration, slide deck & documentation |
+| **Web Integration** | Web Integration of Dashboard and Story | **COMPLETED (Flask Portal & Embedding)** | [`docs/web_integration.md`](docs/web_integration.md), [`evidence/web_integration/`](evidence/web_integration/) |
+| **Demonstration & Docs** | Final Report & Demonstration | **NEXT PLANNED STAGE** | Project demonstration slide deck & documentation |
 
 ---
 
@@ -133,6 +133,7 @@ Analysing-Mental-Health-in-Student-Ecosystem/
 │   │   ├── filter_utilization.md                # Task 2: Filter utilization & subsetting benchmark
 │   │   ├── calculation_fields.md                # Task 3: Calculation fields inventory & formulas
 │   │   └── visualization_inventory.md           # Task 4: Official project visualization audit
+│   ├── web_integration.md                       # Flask web portal architecture & Tableau embedding
 │   ├── problem_statement.md                      # Capstone problem background & target outcomes
 │   └── tableau.md                                # Tableau authoring architectural reference
 │
@@ -140,10 +141,15 @@ Analysing-Mental-Health-in-Student-Ecosystem/
 │   ├── visualizations/                          # 8 Verified visualization artifacts (PNG)
 │   ├── dashboard/                               # Responsive dashboard prototypes (Desktop, Tablet, Mobile)
 │   ├── story/                                   # 5 Verified story scene artifacts (PNG)
-│   └── performance/                             # Performance testing benchmarks & evidence
-│       ├── data_rendering/                      # Task 1 charts & JSON metrics
-│       ├── filters/                             # Task 2 filter benchmark charts & JSON metrics
-│       └── calculations/                        # Task 3 calculation fields specs & diagram
+│   ├── performance/                             # Performance testing benchmarks & evidence
+│   │   ├── data_rendering/                      # Task 1 charts & JSON metrics
+│   │   ├── filters/                             # Task 2 filter benchmark charts & JSON metrics
+│   │   └── calculations/                        # Task 3 calculation fields specs & diagram
+│   └── web_integration/                         # Full-page web route validation screenshots
+│       ├── home_page.png
+│       ├── dashboard_page.png
+│       ├── story_page.png
+│       └── about_page.png
 │
 ├── scripts/
 │   ├── generate_student_mental_health_dataset.py # Standardized realistic dataset generator
@@ -153,7 +159,8 @@ Analysing-Mental-Health-in-Student-Ecosystem/
 │   ├── generate_story_scenes.py                 # 5-Scene story narrative generator
 │   ├── benchmark_data_rendering.py              # Task 1 rendering volume benchmark
 │   ├── benchmark_filter_utilization.py          # Task 2 filter latency benchmark
-│   └── generate_calculation_fields_spec.py       # Task 3 calculated field specification generator
+│   ├── generate_calculation_fields_spec.py       # Task 3 calculated field specification generator
+│   └── capture_web_screenshots.py               # Playwright automated web validation script
 │
 ├── tableau/                                      # Tableau workbooks and assets
 ├── templates/                                    # Flask web application Jinja2 templates
@@ -162,9 +169,22 @@ Analysing-Mental-Health-in-Student-Ecosystem/
 
 ---
 
+## 🌐 Flask Web Application & Tableau Embedding
+
+A fully functional Flask web application hosts the project diagnostics and provides responsive cloud embedding:
+
+- **Launch Command:** `python app.py` (Default port: `5000`)
+- **Web Routes:**
+  - `/` — **Executive Overview:** 4 cohort KPIs, subgroup badges, and 4 empirical diagnostic findings.
+  - `/dashboard` — **Interactive Dashboards:** Multi-device layout selector (Desktop, Tablet, Mobile) and live Tableau embed container (`TABLEAU_DASHBOARD_URL`).
+  - `/story` — **Guided Data Story:** 5-scene narrative browser with interactive step navigation and live Tableau embed container (`TABLEAU_STORY_URL`).
+  - `/about` — **Methodology & Architecture:** 18-variable schema dictionary, 10 calculation formulas, and validation report.
+- **Visual Validation Evidence:** Full-page verified screenshots under [`evidence/web_integration/`](evidence/web_integration/).
+
+---
+
 ## 🎯 Next Planned Stage
-**Epic: Web Integration & Flask Portal:**  
-- Build Flask web application layout with responsive navigation and UI styling.
-- Embed interactive dashboard views and visual reports in user interface templates.
-- Implement session routing, filters, and student mental health insight access.
+**Epic: Demonstration & Final Documentation:**  
+- Compile comprehensive project demonstration slides and capstone portfolio.
+- Deliver project executive summary and technical walkthrough documentation.
 
