@@ -2,31 +2,78 @@
 
 ## Project: Analysing Mental Health in Student Ecosystem
 
-This module houses the visual analytics architecture built in Tableau Public for analyzing mental health dynamics among university students.
+This module documents the visual analytics blueprints, worksheet specifications, calculation formulas, and dashboard architectures designed for **Analysing Mental Health in Student Ecosystem**.
 
-### Worksheets Inventory
-1. **Gender vs. Mental Health Prevalence** — Stacked bar chart showing the distribution of Depression, Anxiety, and Panic Attacks by Gender.
-2. **Age & Study Year Demographics** — Distribution histogram and breakdown by academic matriculation year.
-3. **Academic Performance (CGPA) vs. Psychological Stress** — Grouped bar analysis comparing mental health incidence across CGPA achievement tiers.
-4. **Sleep Duration vs. Panic Attack & Anxiety Likelihood** — Heatmap / scatter correlation analyzing lifestyle impacts on severe stress symptoms.
-5. **Academic Faculty / Course Stress Comparison** — Horizontal ranked bar chart highlighting stress levels by discipline.
-6. **Overall Risk Segmentation** — Donut chart illustrating student proportions classified into High, Moderate, and Low Risk tiers.
-7. **Year-of-Study Risk Heatmap** — Highlight matrix illustrating vulnerability shifts as students progress from Year 1 through Year 4.
-8. **Faculty Discipline Breakdown** — Treemap visualizing student population share by course major.
-9. **Academic Workload & Study Hours vs. Stress Indicators** — Dual-axis chart evaluating study intensity and mental strain.
+### Authoring Status & Integrity Notice
 
-### Interactive Dashboards
-* **Dashboard 1: Student Demographics & Academic Profile**
-  - High-level KPIs: Total Student Cohort, Gender Ratios, Course Distribution, and Academic Banding.
-  - Global interactivity filters: Gender, Year of Study, and Course.
-* **Dashboard 2: Mental Health Risk Assessment & Diagnostics**
-  - Diagnostic KPIs: Depression Rate (%), Anxiety Rate (%), Treatment Seeking Rate (%).
-  - Multi-condition cross-filtering, risk heatmaps, and treatment gap analyses.
+> [!IMPORTANT]
+> **Native Tableau Public Cloud Publication Status: PENDING**
+>
+> All 8 dataset-grounded visualizations, 10 calculation field specifications, responsive dashboard architectures (Desktop, Tablet, Mobile), and 5 story scenes are 100% specified, validated, and prototyped in Python and Flask.
+>
+> In accordance with academic honesty guidelines, synthetic XML workbooks were quarantined. Native Tableau Public authoring remains pending manual GUI creation and publishing in the authenticated browser session on the author's Tableau Public profile ([`sufiyansurve333`](https://public.tableau.com/app/profile/sufiyansurve333)).
 
-### Tableau Story
-* **Story Narrative (5 Sequential Scenes):**
-  1. *Scene 1:* Overview of Student Cohort & Baseline Health Status
-  2. *Scene 2:* Academic Stress & CGPA Correlation Analysis
-  3. *Scene 3:* Lifestyle Dynamics — Sleep Deprivation and Workload Drivers
-  4. *Scene 4:* Student Vulnerability Segments & High-Risk Profiling
-  5. *Scene 5:* Institutional Interventions & Strategic Mental Health Roadmap
+---
+
+### Primary Source Dataset
+- **File:** [`data/cleaned/mental_health_student_ecosystem_cleaned.csv`](../data/cleaned/mental_health_student_ecosystem_cleaned.csv)
+- **Cohort Size:** $N = 200$ university students
+- **Validated Attributes:** 18 columns (0 missing values, 0 duplicate records)
+
+---
+
+### Worksheets Inventory (8 Verified Visualizations)
+
+1. **Stress Level Distribution** — Vertical Bar Chart (`Stress Level` vs `COUNT([User ID])`).
+2. **Stress Level vs Anxiety Score** — Vertical Bar Chart (`Stress Level` vs `AVG([Anxiety Score])`).
+3. **Stress Level vs Depression Score** — Vertical Bar Chart (`Stress Level` vs `AVG([Depression Score])`).
+4. **Mental Health Burden by Gender** — Grouped Bar Chart (`Gender` vs `AVG([Anxiety Score])`, `AVG([Depression Score])`).
+5. **Sleep Quality vs Stress Level** — Stacked Bar Chart (`Sleep Quality` $\times$ `Stress Level`).
+6. **Daily Screen Time vs Stress Level** — Vertical Bar Chart (`Stress Level` vs `AVG([Daily Screen Time (hrs)])`).
+7. **Mental Health History Prevalence** — Donut / Pie Chart (`Mental Health History` vs `COUNT([User ID])`).
+8. **Ranked Therapy Efficacy** — Horizontal Ranked Bar Chart (`Therapy Type` vs `AVG([Progress Score])`).
+
+*Detailed visualization specifications and field mappings are documented in [`docs/data_visualization.md`](../docs/data_visualization.md).*
+
+---
+
+### Calculated Fields Specification (10 Production Formulas)
+
+Full formulas and classification metadata are documented in [`docs/performance/calculation_fields.md`](../docs/performance/calculation_fields.md). Key examples:
+
+1. **Stress High Flag:** `IF [Stress Level] = "High" THEN 1 ELSE 0 END`
+2. **Active Therapy Flag:** `IF [Therapy Type] != "No Therapy" THEN 1 ELSE 0 END`
+3. **Severe Distress Indicator:** `IF [Anxiety Score] >= 70 AND [Depression Score] >= 70 THEN 1 ELSE 0 END`
+4. **Screen Time Category:** `IF [Daily Screen Time (hrs)] < 6.0 THEN "Low Screen" ELSEIF [Daily Screen Time (hrs)] <= 8.0 THEN "Moderate Screen" ELSE "High Screen" END`
+5. **High Stress Poor Sleep Flag:** `IF [Stress Level] = "High" AND [Sleep Quality] = "Poor" THEN 1 ELSE 0 END`
+
+---
+
+### Interactive Dashboard Architecture
+
+- **Desktop (1920×1080 / 16:9):** 4 cohort KPI cards (`Total Students`: 200, `Avg Anxiety`: 52.59, `Avg Depression`: 48.09, `Avg Screen Time`: 7.10 hrs) and 6 visual diagnostic panels.
+- **Tablet (1024×768 / 2-Column):** Touch-optimized layout with collapsible filtering.
+- **Mobile (Vertical Stack):** Single-column stacked layout optimized for mobile screens.
+- **Visual Evidence:** [`evidence/dashboard/`](../evidence/dashboard/)
+- **Documentation:** [`docs/dashboard_design.md`](../docs/dashboard_design.md)
+
+---
+
+### 5-Scene Guided Data Story
+
+1. **Scene 1:** Student Mental Health Baseline
+2. **Scene 2:** Stress and Psychological Symptoms
+3. **Scene 3:** Lifestyle Factors and Stress
+4. **Scene 4:** Vulnerability Factors and Support Systems
+5. **Scene 5:** Intervention Patterns and Recovery Progress
+- **Visual Evidence:** [`evidence/story/`](../evidence/story/)
+- **Documentation:** [`docs/story.md`](../docs/story.md)
+
+---
+
+### Web Integration Container
+
+The Python Flask web application (`app.py`) provides dynamic `<tableau-viz>` web components configured via environment variables:
+- `TABLEAU_DASHBOARD_URL`: Configurable URL for published Tableau Dashboard.
+- `TABLEAU_STORY_URL`: Configurable URL for published Tableau Story.
+When URLs are left unset, the portal automatically displays high-resolution responsive prototypes with full metric cards.
