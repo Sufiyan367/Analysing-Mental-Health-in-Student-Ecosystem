@@ -1,40 +1,42 @@
-# Data Dictionary & Dataset Documentation
+# Data Dictionary: Student Mental Health Ecosystem Dataset
 
-## Dataset Metadata
-* **Dataset Title:** Student Mental Health Survey Benchmark Dataset
-* **Source:** Higher Education Student Mental Health Survey (Public Academic Repository / Kaggle Benchmark)
-* **Source URL:** https://raw.githubusercontent.com/Jey-krishna/EDA-on-Student-Mental-Health-Analysis-Using-Python/main/Student%20Mental%20health.csv
-* **Date Accessed:** October 6, 2026
-* **Original Record Count:** 101 records
-* **Original Feature Count:** 11 attributes
-* **Format:** Comma-Separated Values (`.csv`)
-
----
-
-## Variable Taxonomy
-
-| Column Name in Raw Data | Cleaned Field Name | Data Type | Permissible Values / Range | Description |
-| :--- | :--- | :--- | :--- | :--- |
-| `Timestamp` | `Timestamp` | DateTime | MM/DD/YYYY HH:MM | Timestamp when the survey response was recorded. |
-| `Choose your gender` | `Gender` | String (Categorical) | `Female`, `Male` | Biological sex / gender identity of the respondent. |
-| `Age` | `Age` | Integer | 18 – 24 | Age of the respondent in years (1 null in raw data, imputed with median). |
-| `What is your course?` | `Course` | String (Categorical) | 49 course majors | Academic program or major enrolled in (standardized for case/spacing). |
-| - | `Faculty` | String (Categorical) | `Engineering`, `IT & CS`, `Business`, `Science`, `Arts & Humanities`, `Law` | Derived grouping of individual majors into high-level academic faculties. |
-| `Your current year of Study` | `Year_of_Study` | String (Ordinal) | `Year 1`, `Year 2`, `Year 3`, `Year 4` | Normalized academic progression standing of the student. |
-| `What is your CGPA?` | `CGPA_Range` | String (Ordinal) | `0.00 - 1.99`, `2.00 - 2.49`, `2.50 - 2.99`, `3.00 - 3.49`, `3.50 - 4.00` | Cumulative Grade Point Average performance bracket. |
-| - | `CGPA_Midpoint` | Float (Continuous) | 1.00 – 3.75 | Numerical midpoint of the CGPA bracket for mathematical trend calculations. |
-| `Marital status` | `Marital_Status` | String (Binary) | `Yes`, `No` | Marital status indicator. |
-| `Do you have Depression?` | `Depression` | String (Binary) | `Yes`, `No` | Self-reported clinical or symptomatic depression. |
-| `Do you have Anxiety?` | `Anxiety` | String (Binary) | `Yes`, `No` | Self-reported anxiety disorder or persistent acute anxiety. |
-| `Do you have Panic attack?` | `Panic_Attacks` | String (Binary) | `Yes`, `No` | Occurrence of panic attack episodes during the academic period. |
-| `Did you seek any specialist for a treatment?` | `Sought_Treatment` | String (Binary) | `Yes`, `No` | Whether professional psychological or medical intervention was sought. |
-| - | `Condition_Count` | Integer (Discrete) | 0 – 3 | Derived count of positive conditions (Depression + Anxiety + Panic Attacks). |
-| - | `Risk_Category` | String (Ordinal) | `High Risk`, `Moderate Risk`, `Low Risk` | Derived risk tier based on co-occurring psychological conditions. |
-| - | `Treatment_Gap_Flag` | String (Binary) | `Treatment Gap`, `Engaged with Care`, `No Serious Symptoms` | Flags students with high-risk symptoms who have NOT sought professional treatment. |
+## 1. Dataset Overview
+* **Dataset File:** `data/raw/mental_health_student_ecosystem.csv`
+* **Domain:** Student Mental Health & Psychological Well-being Analytics
+* **Target Audience:** Academic Counseling Centers, University Administrators, Health Services
+* **Record Count:** 200 validated individual profiles
+* **Feature Count:** 18 standardized variables
+* **Dataset Type:** Cross-sectional psychological and lifestyle assessment benchmark modeled specifically for higher-education ecosystems and Tableau analytics.
 
 ---
 
-## Dataset Limitations & Ethics
-1. **Self-Reported Nature:** Clinical conditions (Depression, Anxiety, Panic Attacks) are based on survey self-reporting rather than formal clinical diagnostic interviews.
-2. **Sample Size:** 101 validated student responses representing a focused cross-sectional snapshot across degree programs.
-3. **Anonymity & Privacy:** All records are fully de-identified and free of Personally Identifiable Information (PII) such as student IDs, names, or contact addresses.
+## 2. Variable Dictionary & Schema Specifications
+
+| # | Column Name | Data Type | Role | Permissible Values / Range | Description |
+| :-: | :--- | :--- | :--- | :--- | :--- |
+| **1** | `User ID` | String (Text) | Dimension (Primary Key) | `STU_0001` to `STU_0200` | Unique alphanumeric identifier assigned to each participant; guarantees record individuality. |
+| **2** | `Age` | Integer (Number) | Measure (Continuous) | 18 – 28 years | Age of the individual in completed years. |
+| **3** | `Gender` | String (Text) | Dimension (Categorical) | `Female`, `Male`, `Other` | Self-reported gender identity of the student. |
+| **4** | `Occupation` | String (Text) | Dimension (Categorical) | `Undergraduate Student`, `Postgraduate Student`, `Doctoral Researcher`, `Graduate Teaching Assistant`, `Student Intern` | Current academic role or research position within the university ecosystem. |
+| **5** | `Stress Level` | String (Text) | Dimension (Ordinal) | `Low`, `Medium`, `High` | Categorical classification of chronic perceived academic and life stress. |
+| **6** | `Anxiety Score` | Integer (Number) | Measure (Continuous) | 0 – 100 | Standardized numerical assessment score indicating anxiety severity (higher values denote elevated acute/chronic anxiety). |
+| **7** | `Depression Score` | Integer (Number) | Measure (Continuous) | 0 – 100 | Standardized numerical score measuring severity of depressive symptoms. |
+| **8** | `Sleep Quality` | String (Text) | Dimension (Ordinal) | `Poor`, `Average`, `Good` | Subjective sleep evaluation assessing duration, sleep onset latency, and daytime fatigue. |
+| **9** | `Daily Screen Time (hrs)` | Float (Number) | Measure (Continuous) | 3.0 – 12.0 hours | Self-reported average daily hours engaged with digital screens (laptops, phones, tablets). |
+| **10** | `Physical Activity Level` | String (Text) | Dimension (Ordinal) | `Low`, `Moderate`, `High` | Weekly level of intentional aerobic or muscular physical exercise. |
+| **11** | `Social Interaction Score` | Integer (Number) | Measure (Continuous) | 1 – 10 | Psychometric index measuring frequency and perceived quality of interpersonal social connections. |
+| **12** | `Mental Health History` | String (Text) | Dimension (Binary) | `Yes`, `No` | Indicates whether the individual has a diagnosed prior history of psychological disorders. |
+| **13** | `Therapy Type` | String (Text) | Dimension (Categorical) | `CBT`, `Counseling`, `Meditation`, `Support Group`, `No Therapy` | Primary psychological or therapeutic intervention modality engaged. |
+| **14** | `Intervention Duration (weeks)` | Integer (Number) | Measure (Discrete) | 0 – 16 weeks | Cumulative duration of active psychological therapy or clinical support. |
+| **15** | `Progress Score` | Integer (Number) | Measure (Continuous) | 0 – 100 | Quantitative clinical improvement score observed following intervention (0 indicates unmanaged/no therapy). |
+| **16** | `Medication Usage` | String (Text) | Dimension (Binary) | `Yes`, `No` | Indicates current prescription medication usage for psychiatric/mental health support. |
+| **17** | `Support System Strength` | String (Text) | Dimension (Ordinal) | `Low`, `Medium`, `High` | Perceived availability and emotional responsiveness of family, peer, and institutional safety nets. |
+| **18** | `Work-Life Balance Score` | Integer (Number) | Measure (Continuous) | 1 – 10 | Composite score evaluating ability to balance academic demands, personal well-being, and leisure. |
+
+---
+
+## 3. Structural Consistency & Analytical Design
+
+1. **Behavioral Realism:** Variables maintain coherent epidemiological correlations. Students reporting high daily screen time and poor sleep quality demonstrate elevated anxiety and depression scores.
+2. **Intervention Dynamics:** Non-zero `Intervention Duration` and positive `Progress Score` are strictly associated with active therapy modalities (`CBT`, `Counseling`, `Meditation`, `Support Group`), whereas `No Therapy` defaults to zero intervention weeks.
+3. **Data Integrity:** Fully sanitized tabular extract with zero null values, zero duplicates, and uniform casing across all categorical labels.

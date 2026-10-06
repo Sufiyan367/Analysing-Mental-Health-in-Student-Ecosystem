@@ -1,0 +1,133 @@
+{
+  "file_path": "data/cleaned/mental_health_student_ecosystem_cleaned.csv",
+  "total_rows": 200,
+  "total_columns": 18,
+  "duplicate_user_ids": 0,
+  "missing_values_total": 0,
+  "columns": [
+    "User ID",
+    "Age",
+    "Gender",
+    "Occupation",
+    "Stress Level",
+    "Anxiety Score",
+    "Depression Score",
+    "Sleep Quality",
+    "Daily Screen Time (hrs)",
+    "Physical Activity Level",
+    "Social Interaction Score",
+    "Mental Health History",
+    "Therapy Type",
+    "Intervention Duration (weeks)",
+    "Progress Score",
+    "Medication Usage",
+    "Support System Strength",
+    "Work-Life Balance Score"
+  ],
+  "dimensions": [
+    "User ID",
+    "Gender",
+    "Occupation",
+    "Stress Level",
+    "Sleep Quality",
+    "Physical Activity Level",
+    "Mental Health History",
+    "Therapy Type",
+    "Medication Usage",
+    "Support System Strength"
+  ],
+  "measures": [
+    "Age",
+    "Anxiety Score",
+    "Depression Score",
+    "Daily Screen Time (hrs)",
+    "Social Interaction Score",
+    "Intervention Duration (weeks)",
+    "Progress Score",
+    "Work-Life Balance Score"
+  ],
+  "ranges": {
+    "Age": [
+      18,
+      27
+    ],
+    "Anxiety Score": [
+      5,
+      96
+    ],
+    "Depression Score": [
+      9,
+      87
+    ],
+    "Daily Screen Time (hrs)": [
+      3.0,
+      12.0
+    ],
+    "Social Interaction Score": [
+      1,
+      10
+    ],
+    "Intervention Duration (weeks)": [
+      0,
+      16
+    ],
+    "Progress Score": [
+      0,
+      69
+    ],
+    "Work-Life Balance Score": [
+      1,
+      10
+    ]
+  },
+  "categorical_distributions": {
+    "Gender": {
+      "Female": 98,
+      "Male": 94,
+      "Other": 8
+    },
+    "Occupation": {
+      "Undergraduate Student": 103,
+      "Postgraduate Student": 41,
+      "Student Intern": 24,
+      "Graduate Teaching Assistant": 17,
+      "Doctoral Researcher": 15
+    },
+    "Stress Level": {
+      "Medium": 107,
+      "High": 49,
+      "Low": 44
+    },
+    "Sleep Quality": {
+      "Average": 89,
+      "Poor": 66,
+      "Good": 45
+    },
+    "Physical Activity Level": {
+      "Low": 86,
+      "Moderate": 80,
+      "High": 34
+    },
+    "Mental Health History": {
+      "No": 120,
+      "Yes": 80
+    },
+    "Therapy Type": {
+      "No Therapy": 107,
+      "Counseling": 35,
+      "Meditation": 28,
+      "CBT": 20,
+      "Support Group": 10
+    },
+    "Medication Usage": {
+      "No": 182,
+      "Yes": 18
+    },
+    "Support System Strength": {
+      "Medium": 103,
+      "Low": 52,
+      "High": 45
+    }
+  },
+  "readiness_status": "READY FOR VISUALIZATION"
+}

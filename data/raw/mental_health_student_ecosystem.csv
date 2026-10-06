@@ -1,0 +1,201 @@
+User ID,Age,Gender,Occupation,Stress Level,Anxiety Score,Depression Score,Sleep Quality,Daily Screen Time (hrs),Physical Activity Level,Social Interaction Score,Mental Health History,Therapy Type,Intervention Duration (weeks),Progress Score,Medication Usage,Support System Strength,Work-Life Balance Score
+STU_0001,20,Male,Undergraduate Student,High,81,66,Poor,6.2,Low,6,Yes,No Therapy,0,0,No,Medium,4
+STU_0002,25,Female,Graduate Teaching Assistant,High,73,51,Poor,5.8,High,7,Yes,Counseling,8,37,Yes,High,4
+STU_0003,22,Female,Undergraduate Student,Low,27,30,Good,7.0,Moderate,8,No,No Therapy,0,0,No,High,8
+STU_0004,21,Male,Doctoral Researcher,Low,36,28,Poor,5.3,Moderate,7,No,No Therapy,0,0,No,Medium,6
+STU_0005,19,Male,Undergraduate Student,Medium,36,53,Average,6.2,Low,5,No,Meditation,4,17,No,Medium,6
+STU_0006,19,Female,Graduate Teaching Assistant,Medium,35,55,Average,5.0,Moderate,4,No,No Therapy,0,0,No,Medium,6
+STU_0007,18,Female,Undergraduate Student,Medium,60,60,Good,10.7,Low,6,Yes,Counseling,8,40,No,High,5
+STU_0008,23,Male,Undergraduate Student,Medium,54,54,Good,7.3,High,6,Yes,Counseling,6,41,No,Medium,8
+STU_0009,21,Female,Graduate Teaching Assistant,Medium,59,49,Good,5.9,Low,2,No,Meditation,6,35,No,Low,7
+STU_0010,21,Female,Undergraduate Student,High,73,64,Poor,7.6,Low,5,No,No Therapy,0,0,No,High,3
+STU_0011,18,Male,Undergraduate Student,Medium,70,53,Average,7.0,Low,6,Yes,Meditation,6,26,No,Medium,7
+STU_0012,26,Male,Student Intern,Low,27,29,Average,6.8,Moderate,9,No,No Therapy,0,0,No,Medium,8
+STU_0013,22,Male,Student Intern,Medium,65,56,Average,8.3,Moderate,3,Yes,CBT,4,18,No,Low,5
+STU_0014,19,Female,Postgraduate Student,Medium,55,53,Average,8.6,Low,7,No,No Therapy,0,0,No,Medium,5
+STU_0015,19,Male,Postgraduate Student,Medium,44,51,Good,6.2,Moderate,6,Yes,CBT,6,39,No,Medium,7
+STU_0016,19,Female,Undergraduate Student,Low,19,23,Good,6.2,Moderate,6,No,No Therapy,0,0,No,Medium,9
+STU_0017,20,Female,Undergraduate Student,Low,42,27,Good,6.7,Moderate,5,Yes,No Therapy,0,0,No,Low,9
+STU_0018,21,Male,Undergraduate Student,Low,31,27,Average,3.1,Moderate,5,No,No Therapy,0,0,No,Medium,10
+STU_0019,20,Male,Postgraduate Student,Medium,56,45,Average,4.5,Moderate,8,Yes,CBT,8,20,No,High,7
+STU_0020,19,Male,Postgraduate Student,High,60,76,Average,9.7,Moderate,4,Yes,Counseling,4,32,Yes,Low,3
+STU_0021,21,Male,Doctoral Researcher,High,78,67,Poor,10.2,Low,7,No,No Therapy,0,0,No,High,2
+STU_0022,19,Male,Doctoral Researcher,Medium,57,46,Poor,6.8,Low,7,No,No Therapy,0,0,No,Medium,4
+STU_0023,19,Female,Undergraduate Student,Medium,34,42,Average,8.2,High,7,No,No Therapy,0,0,No,High,6
+STU_0024,20,Female,Undergraduate Student,High,66,59,Average,7.8,High,7,Yes,Meditation,10,50,Yes,High,5
+STU_0025,20,Female,Undergraduate Student,High,72,60,Poor,12.0,Low,6,No,Meditation,10,47,Yes,Medium,1
+STU_0026,22,Female,Undergraduate Student,Medium,71,49,Poor,9.2,Low,5,No,Counseling,4,25,No,Medium,4
+STU_0027,19,Other,Undergraduate Student,Medium,52,43,Poor,7.0,Moderate,8,No,No Therapy,0,0,No,High,3
+STU_0028,20,Female,Graduate Teaching Assistant,Medium,62,47,Poor,5.5,Moderate,6,Yes,CBT,8,55,No,Medium,4
+STU_0029,21,Male,Undergraduate Student,Low,32,21,Good,4.3,Low,7,No,No Therapy,0,0,No,Medium,8
+STU_0030,18,Male,Undergraduate Student,Medium,71,49,Poor,7.6,Low,6,Yes,No Therapy,0,0,No,Medium,5
+STU_0031,21,Male,Undergraduate Student,Medium,48,57,Average,5.8,Moderate,8,Yes,Meditation,10,45,No,High,8
+STU_0032,19,Female,Postgraduate Student,Low,41,22,Average,4.6,Moderate,8,No,No Therapy,0,0,No,High,10
+STU_0033,18,Male,Postgraduate Student,High,64,66,Poor,6.0,Low,9,Yes,CBT,4,46,Yes,High,3
+STU_0034,25,Female,Undergraduate Student,Low,26,32,Good,5.3,Low,6,No,No Therapy,0,0,No,Medium,10
+STU_0035,26,Female,Undergraduate Student,Medium,58,57,Average,10.2,Low,8,No,Meditation,6,24,No,High,3
+STU_0036,22,Male,Postgraduate Student,High,69,62,Poor,8.8,Moderate,1,No,No Therapy,0,0,No,Low,1
+STU_0037,20,Female,Undergraduate Student,Medium,60,54,Poor,7.2,Low,4,No,No Therapy,0,0,No,Medium,4
+STU_0038,18,Female,Doctoral Researcher,High,77,74,Average,9.9,Low,3,Yes,No Therapy,0,0,No,Low,2
+STU_0039,21,Male,Postgraduate Student,Medium,56,38,Good,7.3,Moderate,5,Yes,Support Group,4,33,No,Medium,7
+STU_0040,20,Female,Undergraduate Student,Medium,71,52,Poor,5.6,Low,5,No,No Therapy,0,0,No,Medium,4
+STU_0041,19,Male,Undergraduate Student,Medium,64,52,Average,9.9,Moderate,6,Yes,CBT,4,44,No,Medium,3
+STU_0042,20,Male,Student Intern,High,63,81,Poor,8.2,Low,6,Yes,CBT,10,51,No,Medium,2
+STU_0043,18,Male,Undergraduate Student,Medium,55,42,Good,5.3,Low,6,Yes,Counseling,6,43,No,Medium,6
+STU_0044,24,Female,Undergraduate Student,High,78,74,Poor,6.9,Low,6,Yes,Counseling,12,49,No,Medium,3
+STU_0045,19,Female,Doctoral Researcher,Low,21,25,Good,5.6,Moderate,3,No,No Therapy,0,0,No,Low,10
+STU_0046,21,Male,Student Intern,Medium,48,28,Good,4.7,High,3,Yes,Counseling,2,16,Yes,Medium,6
+STU_0047,20,Female,Student Intern,Medium,52,34,Average,8.9,High,2,No,No Therapy,0,0,No,Low,2
+STU_0048,21,Other,Postgraduate Student,High,82,71,Poor,10.6,Low,3,No,CBT,8,60,No,Low,1
+STU_0049,21,Other,Undergraduate Student,Medium,40,56,Poor,4.7,Moderate,4,No,Counseling,6,41,No,Medium,6
+STU_0050,19,Male,Undergraduate Student,High,76,67,Poor,8.2,Low,6,Yes,CBT,8,26,Yes,Medium,4
+STU_0051,26,Female,Doctoral Researcher,High,72,73,Poor,6.0,Low,8,Yes,Meditation,16,64,Yes,Medium,2
+STU_0052,22,Female,Postgraduate Student,Medium,54,56,Poor,6.3,High,7,Yes,Support Group,8,34,No,Medium,5
+STU_0053,24,Male,Undergraduate Student,Medium,51,48,Average,6.1,Low,5,No,No Therapy,0,0,No,Medium,6
+STU_0054,23,Female,Graduate Teaching Assistant,Medium,53,43,Poor,5.6,Low,9,No,No Therapy,0,0,No,High,5
+STU_0055,21,Female,Undergraduate Student,High,73,72,Poor,7.3,Low,6,Yes,Counseling,8,44,No,Medium,5
+STU_0056,24,Male,Undergraduate Student,Low,28,9,Good,5.7,Low,5,No,No Therapy,0,0,No,Medium,7
+STU_0057,18,Male,Undergraduate Student,High,78,75,Average,7.7,Low,2,Yes,Meditation,12,45,No,Low,4
+STU_0058,19,Male,Undergraduate Student,Low,15,21,Good,7.1,Moderate,5,No,No Therapy,0,0,No,Medium,9
+STU_0059,18,Male,Undergraduate Student,Medium,36,44,Good,6.8,Moderate,5,No,No Therapy,0,0,No,Medium,8
+STU_0060,20,Female,Undergraduate Student,Low,32,23,Average,5.6,High,6,No,No Therapy,0,0,No,Medium,8
+STU_0061,20,Male,Undergraduate Student,Medium,36,45,Average,6.2,Moderate,6,No,No Therapy,0,0,No,Medium,7
+STU_0062,19,Other,Postgraduate Student,Medium,48,41,Average,8.6,Low,6,No,No Therapy,0,0,No,Medium,5
+STU_0063,22,Female,Postgraduate Student,Medium,63,53,Average,8.1,Low,6,Yes,Meditation,6,33,No,Medium,5
+STU_0064,20,Female,Postgraduate Student,Medium,52,59,Poor,5.4,Low,9,No,Meditation,6,21,No,High,4
+STU_0065,19,Male,Student Intern,Medium,43,34,Good,7.4,Moderate,9,Yes,Counseling,4,17,No,High,8
+STU_0066,21,Male,Undergraduate Student,Medium,69,52,Poor,8.6,Low,4,No,No Therapy,0,0,No,Medium,3
+STU_0067,19,Male,Undergraduate Student,Medium,55,43,Poor,4.2,Moderate,5,No,No Therapy,0,0,No,High,5
+STU_0068,22,Male,Graduate Teaching Assistant,Medium,44,66,Average,8.2,Moderate,5,No,Meditation,2,25,No,Low,5
+STU_0069,18,Female,Undergraduate Student,Medium,50,37,Average,6.0,Moderate,1,No,No Therapy,0,0,No,Low,7
+STU_0070,27,Female,Student Intern,Medium,47,54,Average,8.2,Moderate,3,No,Counseling,4,17,No,Low,5
+STU_0071,22,Male,Undergraduate Student,Medium,64,45,Poor,5.8,Low,4,No,No Therapy,0,0,No,Medium,3
+STU_0072,19,Male,Student Intern,Low,24,10,Good,4.0,High,6,No,No Therapy,0,0,No,High,10
+STU_0073,18,Male,Undergraduate Student,Medium,67,56,Average,4.3,Moderate,4,Yes,No Therapy,0,0,No,Low,5
+STU_0074,22,Male,Graduate Teaching Assistant,High,71,78,Poor,7.3,Low,8,Yes,Meditation,6,24,No,High,2
+STU_0075,21,Female,Undergraduate Student,Medium,53,54,Good,7.7,High,2,Yes,Counseling,6,38,No,Low,7
+STU_0076,22,Female,Student Intern,Medium,48,33,Good,5.6,Moderate,5,Yes,Counseling,2,15,No,High,9
+STU_0077,22,Male,Undergraduate Student,Low,27,36,Good,8.3,High,5,No,No Therapy,0,0,No,Medium,6
+STU_0078,18,Male,Postgraduate Student,Low,40,35,Good,4.2,Moderate,4,Yes,No Therapy,0,0,No,Low,10
+STU_0079,20,Male,Student Intern,Medium,37,43,Average,7.1,Moderate,4,No,No Therapy,0,0,No,Medium,7
+STU_0080,18,Male,Undergraduate Student,High,78,48,Average,5.0,Low,4,Yes,Support Group,8,59,Yes,Low,4
+STU_0081,23,Male,Postgraduate Student,High,75,79,Poor,6.0,Low,6,Yes,No Therapy,0,0,No,Medium,3
+STU_0082,21,Female,Postgraduate Student,Medium,40,40,Average,7.3,Moderate,6,No,Counseling,6,19,No,Medium,6
+STU_0083,20,Female,Undergraduate Student,Low,24,32,Average,5.7,Moderate,8,No,No Therapy,0,0,No,High,9
+STU_0084,18,Female,Postgraduate Student,High,63,67,Poor,6.5,Low,4,No,No Therapy,0,0,No,Medium,3
+STU_0085,20,Male,Postgraduate Student,High,60,67,Average,9.0,Low,7,No,Meditation,8,30,No,Medium,4
+STU_0086,20,Female,Graduate Teaching Assistant,Low,40,35,Average,6.2,High,5,No,No Therapy,0,0,No,Medium,8
+STU_0087,22,Female,Undergraduate Student,High,72,61,Poor,8.7,High,6,Yes,CBT,12,51,Yes,Medium,1
+STU_0088,21,Male,Undergraduate Student,Medium,60,50,Poor,5.2,Moderate,2,No,Counseling,8,16,No,Low,5
+STU_0089,23,Female,Student Intern,Medium,55,59,Average,8.2,Low,5,No,No Therapy,0,0,No,Medium,5
+STU_0090,20,Male,Graduate Teaching Assistant,High,71,80,Poor,9.8,Low,2,No,Counseling,10,48,No,Low,3
+STU_0091,18,Female,Undergraduate Student,Medium,69,53,Average,3.0,Low,3,Yes,Meditation,8,37,No,Low,7
+STU_0092,21,Female,Postgraduate Student,Low,5,11,Good,5.8,High,8,No,No Therapy,0,0,No,Medium,6
+STU_0093,22,Male,Undergraduate Student,High,96,84,Poor,8.2,Low,1,Yes,CBT,10,32,Yes,Low,2
+STU_0094,21,Female,Undergraduate Student,Medium,52,50,Average,6.8,Moderate,4,Yes,Counseling,4,24,No,Medium,6
+STU_0095,22,Female,Undergraduate Student,High,68,60,Average,7.9,Low,8,Yes,CBT,10,37,No,Medium,4
+STU_0096,20,Female,Undergraduate Student,Medium,42,36,Average,6.1,Moderate,3,No,Meditation,6,27,No,Low,6
+STU_0097,21,Male,Postgraduate Student,Low,40,31,Average,7.4,Moderate,5,No,No Therapy,0,0,No,Medium,9
+STU_0098,20,Female,Undergraduate Student,Medium,50,31,Average,6.9,High,5,No,Meditation,6,35,No,Low,7
+STU_0099,18,Male,Student Intern,High,75,72,Poor,9.3,Low,7,No,Support Group,10,59,No,High,1
+STU_0100,18,Female,Student Intern,Medium,53,37,Average,7.7,Low,8,No,Meditation,6,18,No,Medium,7
+STU_0101,18,Female,Postgraduate Student,Medium,65,56,Average,7.8,Low,8,Yes,No Therapy,0,0,No,High,5
+STU_0102,21,Male,Undergraduate Student,Medium,46,50,Average,6.5,High,5,Yes,No Therapy,0,0,No,Medium,5
+STU_0103,20,Male,Undergraduate Student,Low,15,30,Good,6.3,High,6,No,No Therapy,0,0,No,Low,8
+STU_0104,20,Male,Doctoral Researcher,Medium,43,43,Good,6.4,Moderate,5,Yes,Counseling,4,31,No,Medium,8
+STU_0105,24,Male,Postgraduate Student,Low,40,32,Average,7.9,Moderate,8,No,No Therapy,0,0,No,High,9
+STU_0106,19,Other,Undergraduate Student,Low,33,21,Good,6.4,Moderate,6,No,No Therapy,0,0,No,Medium,10
+STU_0107,20,Female,Graduate Teaching Assistant,Medium,50,28,Average,7.7,Low,9,No,Meditation,4,19,No,High,7
+STU_0108,22,Female,Doctoral Researcher,Medium,41,51,Average,10.9,High,9,No,No Therapy,0,0,No,High,6
+STU_0109,19,Male,Student Intern,Medium,44,41,Average,8.8,Moderate,3,No,No Therapy,0,0,No,Low,4
+STU_0110,18,Female,Postgraduate Student,Medium,59,51,Average,6.6,Low,2,No,No Therapy,0,0,No,Low,7
+STU_0111,19,Female,Postgraduate Student,Medium,63,59,Poor,9.4,Moderate,6,No,No Therapy,0,0,No,Medium,4
+STU_0112,19,Female,Undergraduate Student,Medium,53,53,Average,6.5,Low,5,No,No Therapy,0,0,No,Medium,7
+STU_0113,24,Female,Student Intern,Medium,48,39,Average,3.5,Low,10,Yes,No Therapy,0,0,No,High,7
+STU_0114,22,Other,Graduate Teaching Assistant,Medium,50,56,Poor,5.4,Moderate,8,No,No Therapy,0,0,No,High,6
+STU_0115,21,Male,Undergraduate Student,Low,40,29,Average,3.8,Low,5,No,No Therapy,0,0,No,Medium,8
+STU_0116,23,Male,Undergraduate Student,High,81,65,Poor,6.6,Moderate,4,Yes,No Therapy,0,0,No,Low,4
+STU_0117,22,Female,Undergraduate Student,Medium,46,63,Poor,7.2,Low,6,No,No Therapy,0,0,No,High,5
+STU_0118,19,Female,Doctoral Researcher,Medium,62,59,Average,10.2,Low,2,No,Support Group,2,13,No,Low,4
+STU_0119,23,Female,Student Intern,Medium,60,53,Poor,7.8,Low,9,No,No Therapy,0,0,No,High,5
+STU_0120,21,Female,Undergraduate Student,High,71,56,Average,6.8,Low,5,Yes,No Therapy,0,0,No,Medium,3
+STU_0121,22,Male,Postgraduate Student,Medium,53,42,Average,8.7,Moderate,4,No,No Therapy,0,0,No,Medium,4
+STU_0122,23,Male,Undergraduate Student,Medium,61,55,Poor,3.2,Low,4,No,No Therapy,0,0,No,Low,5
+STU_0123,20,Male,Student Intern,High,62,71,Poor,7.6,Moderate,7,Yes,No Therapy,0,0,No,Medium,2
+STU_0124,18,Female,Doctoral Researcher,High,68,72,Poor,8.6,Moderate,7,Yes,CBT,6,27,No,Medium,1
+STU_0125,19,Male,Doctoral Researcher,Low,33,42,Average,4.5,Moderate,7,No,No Therapy,0,0,No,Medium,6
+STU_0126,20,Male,Undergraduate Student,Medium,55,49,Good,9.3,High,2,Yes,No Therapy,0,0,No,Low,6
+STU_0127,22,Male,Undergraduate Student,Medium,46,39,Average,7.8,Moderate,4,No,Support Group,2,12,No,Medium,6
+STU_0128,23,Male,Undergraduate Student,Medium,60,36,Poor,6.5,Low,9,No,No Therapy,0,0,No,High,4
+STU_0129,18,Female,Undergraduate Student,High,66,59,Average,8.3,Low,3,Yes,Support Group,4,30,Yes,Low,4
+STU_0130,20,Female,Graduate Teaching Assistant,High,88,87,Poor,11.3,Low,3,No,No Therapy,0,0,No,Low,3
+STU_0131,20,Female,Doctoral Researcher,Low,33,28,Good,7.5,Moderate,5,No,No Therapy,0,0,No,Low,7
+STU_0132,19,Male,Student Intern,High,64,67,Poor,7.6,Low,6,No,No Therapy,0,0,No,Medium,2
+STU_0133,18,Female,Student Intern,Medium,37,42,Good,6.4,Moderate,6,Yes,Support Group,4,19,No,Medium,6
+STU_0134,20,Female,Postgraduate Student,Low,37,30,Average,5.7,Moderate,9,No,No Therapy,0,0,No,Medium,7
+STU_0135,25,Female,Postgraduate Student,High,69,69,Good,8.7,Low,2,Yes,CBT,6,35,No,Low,5
+STU_0136,20,Female,Student Intern,Low,14,36,Average,5.7,Moderate,7,No,No Therapy,0,0,No,Medium,8
+STU_0137,20,Male,Doctoral Researcher,Low,44,29,Average,7.3,Low,6,No,No Therapy,0,0,No,Medium,8
+STU_0138,21,Male,Undergraduate Student,Medium,56,58,Good,6.3,Low,6,Yes,Meditation,6,47,No,Medium,5
+STU_0139,20,Female,Undergraduate Student,Medium,49,53,Poor,8.1,Moderate,9,No,No Therapy,0,0,No,High,4
+STU_0140,26,Female,Undergraduate Student,Medium,65,58,Good,7.8,Moderate,4,Yes,Meditation,2,33,No,Low,6
+STU_0141,26,Female,Student Intern,Medium,58,47,Average,9.1,Moderate,6,No,Counseling,4,16,No,Medium,5
+STU_0142,19,Female,Postgraduate Student,Medium,66,47,Poor,6.3,Moderate,7,Yes,CBT,10,56,No,Medium,5
+STU_0143,20,Female,Undergraduate Student,Medium,61,50,Poor,6.7,Low,5,No,Meditation,6,26,No,Medium,6
+STU_0144,20,Female,Postgraduate Student,Medium,54,32,Average,5.4,Moderate,5,No,No Therapy,0,0,No,Medium,5
+STU_0145,19,Female,Postgraduate Student,High,74,70,Poor,6.4,Moderate,4,Yes,Counseling,8,41,Yes,Medium,1
+STU_0146,18,Male,Undergraduate Student,High,61,68,Average,7.9,Moderate,5,Yes,Meditation,4,25,Yes,High,4
+STU_0147,21,Male,Undergraduate Student,High,78,76,Poor,8.6,Low,6,Yes,No Therapy,0,0,No,Low,3
+STU_0148,20,Female,Postgraduate Student,Low,39,29,Average,5.5,Moderate,2,No,No Therapy,0,0,No,Low,9
+STU_0149,18,Female,Undergraduate Student,High,81,77,Poor,8.8,Low,5,Yes,Counseling,6,30,No,Medium,2
+STU_0150,19,Male,Doctoral Researcher,Medium,54,46,Average,9.6,Low,5,No,Meditation,6,24,No,Medium,5
+STU_0151,24,Female,Undergraduate Student,Low,22,28,Good,7.9,High,4,No,No Therapy,0,0,No,Low,10
+STU_0152,19,Male,Graduate Teaching Assistant,High,57,68,Good,10.6,Low,4,Yes,CBT,6,52,Yes,Low,3
+STU_0153,19,Male,Postgraduate Student,Low,25,10,Good,5.8,High,5,No,No Therapy,0,0,No,Low,9
+STU_0154,20,Female,Postgraduate Student,Medium,44,35,Poor,5.0,Moderate,7,No,Counseling,6,29,Yes,High,5
+STU_0155,27,Female,Graduate Teaching Assistant,High,64,67,Average,4.0,Low,3,Yes,Support Group,6,41,Yes,Low,5
+STU_0156,19,Male,Undergraduate Student,High,64,72,Poor,9.9,Moderate,6,Yes,Counseling,8,52,No,Medium,4
+STU_0157,21,Female,Undergraduate Student,High,75,75,Poor,8.4,High,3,Yes,CBT,8,51,No,Low,2
+STU_0158,22,Male,Undergraduate Student,Low,37,26,Average,7.1,Moderate,8,No,No Therapy,0,0,No,Medium,7
+STU_0159,19,Male,Postgraduate Student,Medium,44,35,Average,7.7,Moderate,4,No,No Therapy,0,0,No,Low,6
+STU_0160,22,Male,Postgraduate Student,Low,31,20,Good,5.2,Moderate,7,No,No Therapy,0,0,No,Medium,7
+STU_0161,20,Female,Postgraduate Student,Medium,71,51,Average,11.6,Moderate,4,No,Counseling,8,35,No,Low,4
+STU_0162,21,Male,Undergraduate Student,Low,25,15,Average,7.4,High,9,No,No Therapy,0,0,No,High,8
+STU_0163,21,Female,Undergraduate Student,Medium,54,48,Poor,7.4,Low,4,No,No Therapy,0,0,No,Low,4
+STU_0164,21,Male,Undergraduate Student,Medium,41,38,Good,8.5,Moderate,4,No,No Therapy,0,0,No,Medium,6
+STU_0165,18,Male,Undergraduate Student,High,65,77,Poor,8.1,Low,8,Yes,No Therapy,0,0,No,High,1
+STU_0166,22,Female,Postgraduate Student,Medium,52,51,Average,7.6,High,5,Yes,CBT,8,45,No,Medium,7
+STU_0167,20,Other,Undergraduate Student,Medium,63,53,Average,5.8,High,5,Yes,Counseling,16,69,No,Medium,6
+STU_0168,19,Male,Undergraduate Student,Medium,65,53,Average,8.0,Low,6,Yes,Counseling,16,57,No,Medium,6
+STU_0169,18,Female,Graduate Teaching Assistant,Low,32,37,Average,10.6,Moderate,7,No,No Therapy,0,0,No,Medium,6
+STU_0170,21,Female,Undergraduate Student,Medium,56,44,Poor,9.6,High,6,No,Counseling,4,26,No,Medium,4
+STU_0171,21,Female,Undergraduate Student,High,81,75,Poor,10.1,Low,8,Yes,CBT,8,39,No,High,2
+STU_0172,18,Female,Doctoral Researcher,Medium,48,39,Average,6.3,Moderate,8,Yes,Meditation,4,17,No,Medium,5
+STU_0173,20,Female,Undergraduate Student,Low,23,22,Good,5.4,High,6,No,No Therapy,0,0,No,Medium,8
+STU_0174,19,Male,Postgraduate Student,Medium,47,61,Poor,7.0,Low,9,No,Counseling,6,32,No,Medium,4
+STU_0175,21,Female,Graduate Teaching Assistant,Medium,46,42,Good,7.3,Moderate,6,Yes,Counseling,2,16,Yes,Medium,6
+STU_0176,19,Female,Student Intern,High,84,74,Poor,9.2,Low,1,No,Counseling,8,35,No,Low,1
+STU_0177,21,Male,Undergraduate Student,Medium,49,40,Average,4.2,High,7,Yes,Support Group,6,31,No,Medium,6
+STU_0178,20,Female,Student Intern,Medium,41,44,Good,10.0,High,8,Yes,No Therapy,0,0,No,High,7
+STU_0179,24,Male,Undergraduate Student,Low,29,35,Average,6.9,High,5,No,No Therapy,0,0,No,Low,8
+STU_0180,19,Female,Undergraduate Student,Low,36,30,Average,6.4,Moderate,7,No,No Therapy,0,0,No,Medium,8
+STU_0181,20,Female,Undergraduate Student,Medium,53,34,Average,5.4,High,3,Yes,Counseling,10,51,No,Low,7
+STU_0182,18,Male,Student Intern,Low,28,30,Average,4.2,High,4,No,No Therapy,0,0,No,Medium,8
+STU_0183,24,Male,Undergraduate Student,Medium,50,36,Good,8.7,Low,3,No,No Therapy,0,0,No,Low,6
+STU_0184,23,Male,Undergraduate Student,Medium,48,28,Average,7.3,High,5,No,No Therapy,0,0,No,Medium,6
+STU_0185,19,Male,Postgraduate Student,Medium,47,39,Average,4.9,Low,7,No,Counseling,8,38,No,High,6
+STU_0186,21,Male,Undergraduate Student,Medium,43,57,Poor,4.9,Moderate,6,No,No Therapy,0,0,No,Medium,4
+STU_0187,22,Female,Undergraduate Student,Medium,47,58,Poor,6.6,Low,8,No,No Therapy,0,0,No,Medium,2
+STU_0188,21,Female,Undergraduate Student,High,74,55,Poor,10.2,Low,8,No,Meditation,8,62,No,High,1
+STU_0189,21,Male,Undergraduate Student,High,74,55,Average,6.7,Low,6,Yes,Counseling,8,59,No,High,6
+STU_0190,19,Male,Undergraduate Student,Medium,55,50,Average,4.5,Moderate,4,Yes,Meditation,6,31,No,Low,7
+STU_0191,18,Other,Undergraduate Student,Medium,60,62,Average,6.8,Low,7,Yes,CBT,6,32,No,Medium,7
+STU_0192,23,Female,Postgraduate Student,Medium,54,29,Average,6.7,Moderate,2,No,No Therapy,0,0,No,Low,7
+STU_0193,24,Female,Undergraduate Student,Low,50,23,Good,3.0,Low,7,Yes,No Therapy,0,0,No,High,9
+STU_0194,21,Male,Undergraduate Student,High,66,61,Poor,7.1,Low,8,No,No Therapy,0,0,No,High,3
+STU_0195,20,Female,Graduate Teaching Assistant,Low,23,25,Good,6.8,Moderate,5,No,No Therapy,0,0,No,Medium,8
+STU_0196,20,Male,Undergraduate Student,Medium,37,39,Good,8.5,Moderate,8,Yes,Meditation,4,25,No,High,6
+STU_0197,22,Male,Postgraduate Student,Medium,55,58,Average,10.5,Low,6,No,Counseling,2,26,No,Medium,6
+STU_0198,23,Female,Undergraduate Student,Medium,56,52,Average,9.2,Moderate,6,No,No Therapy,0,0,No,Medium,6
+STU_0199,23,Male,Undergraduate Student,Low,30,28,Good,6.7,High,2,No,No Therapy,0,0,No,Low,9
+STU_0200,22,Male,Undergraduate Student,Low,36,37,Average,5.2,Moderate,7,Yes,No Therapy,0,0,No,High,8
