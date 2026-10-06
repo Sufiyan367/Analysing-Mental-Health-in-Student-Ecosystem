@@ -27,8 +27,8 @@ By synthesizing **data engineering**, **validated psychometric metrics**, and **
 | **Data Visualization** | No of Unique Visualizations | **COMPLETED (8 Artifacts)** | [`docs/data_visualization.md`](docs/data_visualization.md), [`evidence/visualizations/`](evidence/visualizations/) |
 | **Dashboard** | Responsive and Design of Dashboard | **COMPLETED (Prototypes & Spec)** | [`docs/dashboard_design.md`](docs/dashboard_design.md), [`evidence/dashboard/`](evidence/dashboard/) |
 | **Story** | No of Scenes of Story | **COMPLETED (5 Scenes)** | [`docs/story.md`](docs/story.md), [`evidence/story/`](evidence/story/) |
-| **Performance Testing** | Performance & Audit Testing | **NEXT PLANNED STAGE** | Latency, filter optimization & responsiveness |
-| **Web Integration** | Flask Web Portal Integration | Pending | Embedded Tableau Public visualizations in Flask |
+| **Performance Testing** | Performance & Audit Testing | **COMPLETED (4 Subtasks)** | [`docs/performance_testing.md`](docs/performance_testing.md), [`evidence/performance/`](evidence/performance/) |
+| **Web Integration** | Flask Web Portal Integration | **NEXT PLANNED STAGE** | Embedded Tableau Public visualizations in Flask |
 | **Demonstration & Docs** | Final Report & Demonstration | Pending | Video demonstration, slide deck & documentation |
 
 ---
@@ -127,25 +127,33 @@ Analysing-Mental-Health-in-Student-Ecosystem/
 │   ├── data_visualization.md                    # Specifications for 8 dataset-grounded visualizations
 │   ├── dashboard_design.md                      # Responsive dashboard architecture & layout specification
 │   ├── story.md                                 # 5-Scene guided data story & policy narrative
+│   ├── performance_testing.md                   # Overall performance testing & architectural audit
+│   ├── performance_data_rendering.md            # Task 1: Data rendering volume & parsing benchmark
+│   ├── performance/
+│   │   ├── filter_utilization.md                # Task 2: Filter utilization & subsetting benchmark
+│   │   ├── calculation_fields.md                # Task 3: Calculation fields inventory & formulas
+│   │   └── visualization_inventory.md           # Task 4: Official project visualization audit
 │   ├── problem_statement.md                      # Capstone problem background & target outcomes
 │   └── tableau.md                                # Tableau authoring architectural reference
 │
 ├── evidence/
 │   ├── visualizations/                          # 8 Verified visualization artifacts (PNG)
 │   ├── dashboard/                               # Responsive dashboard prototypes (Desktop, Tablet, Mobile)
-│   └── story/                                   # 5 Verified story scene artifacts (PNG)
-│       ├── 01_baseline.png
-│       ├── 02_psychological_symptoms.png
-│       ├── 03_lifestyle_and_stress.png
-│       ├── 04_vulnerability_and_support.png
-│       └── 05_intervention_and_progress.png
+│   ├── story/                                   # 5 Verified story scene artifacts (PNG)
+│   └── performance/                             # Performance testing benchmarks & evidence
+│       ├── data_rendering/                      # Task 1 charts & JSON metrics
+│       ├── filters/                             # Task 2 filter benchmark charts & JSON metrics
+│       └── calculations/                        # Task 3 calculation fields specs & diagram
 │
 ├── scripts/
 │   ├── generate_student_mental_health_dataset.py # Standardized realistic dataset generator
 │   ├── validate_dataset.py                       # Automated 18-variable schema audit script
 │   ├── generate_visualizations.py                # Reproducible generator for 8 chart artifacts
 │   ├── generate_dashboard_prototypes.py         # Multi-device responsive dashboard generator
-│   └── generate_story_scenes.py                 # 5-Scene story narrative generator
+│   ├── generate_story_scenes.py                 # 5-Scene story narrative generator
+│   ├── benchmark_data_rendering.py              # Task 1 rendering volume benchmark
+│   ├── benchmark_filter_utilization.py          # Task 2 filter latency benchmark
+│   └── generate_calculation_fields_spec.py       # Task 3 calculated field specification generator
 │
 ├── tableau/                                      # Tableau workbooks and assets
 ├── templates/                                    # Flask web application Jinja2 templates
@@ -155,6 +163,8 @@ Analysing-Mental-Health-in-Student-Ecosystem/
 ---
 
 ## 🎯 Next Planned Stage
-**Epic: Performance Testing & Web Integration:**  
-- Conduct query execution and responsive render performance benchmark.
-- Validate Flask web application embedding and user routing.
+**Epic: Web Integration & Flask Portal:**  
+- Build Flask web application layout with responsive navigation and UI styling.
+- Embed interactive dashboard views and visual reports in user interface templates.
+- Implement session routing, filters, and student mental health insight access.
+
