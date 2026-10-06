@@ -77,7 +77,7 @@ The SkillWallet syllabus displays default generic examples referencing variables
 - **Exact Data Fields Used:** `Gender`, `Anxiety Score`, `Depression Score`
 - **Data Source:** `data/cleaned/mental_health_student_ecosystem_cleaned.csv`
 - **Key Interpretation:** Average anxiety scores remain consistently elevated across all groups: `Other` gender individuals average **53.5** (Depression: **50.4**), `Female` students average **53.3** (Depression: **48.1**), and `Male` students average **51.8** (Depression: **47.9**). Distress is distributed throughout all demographic groups, highlighting the need for universal, inclusive campus interventions.
-- **Validation Statement:** Group averages validated across all 97 female, 92 male, and 11 other participants.
+- **Validation Statement:** Group averages validated across all 98 female, 94 male, and 8 other participants.
 
 ---
 

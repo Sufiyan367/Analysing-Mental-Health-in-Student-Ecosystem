@@ -36,35 +36,35 @@ To streamline authoring in Tableau, variables are classified into categorical **
 
 ### Dimensions (Categorical / Discrete Attributes)
 1. **User ID** (`String` / Nominal): Unique participant identifier (`STU_0001` to `STU_0200`). Serves as level-of-detail key.
-2. **Gender** (`String` / Nominal): `Female` (97), `Male` (92), `Other` (11).
+2. **Gender** (`String` / Nominal): `Female` (98), `Male` (94), `Other` (8).
 3. **Occupation** (`String` / Nominal): Academic role across the student ecosystem:
-   - `Undergraduate Student` (95)
-   - `Postgraduate Student` (51)
-   - `Doctoral Researcher` (21)
-   - `Student Intern` (18)
-   - `Graduate Teaching Assistant` (15)
-4. **Stress Level** (`String` / Ordinal): Perceived stress tier: `Low` (44), `Medium` (107), `High` (49).
+   - `Undergraduate Student` (103)
+   - `Postgraduate Student` (41)
+   - `Student Intern` (24)
+   - `Graduate Teaching Assistant` (17)
+   - `Doctoral Researcher` (15)
+4. **Stress Level** (`String` / Ordinal): Perceived stress tier: `Medium` (107), `High` (49), `Low` (44).
 5. **Sleep Quality** (`String` / Ordinal): Self-reported sleep restfulness: `Average` (89), `Poor` (66), `Good` (45).
 6. **Physical Activity Level** (`String` / Ordinal): Weekly physical exercise level: `Low` (86), `Moderate` (80), `High` (34).
-7. **Mental Health History** (`String` / Nominal): Prior history of mental health challenges: `No` (118), `Yes` (82).
+7. **Mental Health History** (`String` / Nominal): Prior history of mental health challenges: `No` (120), `Yes` (80).
 8. **Therapy Type** (`String` / Nominal): Modality of therapeutic intervention:
    - `No Therapy` (107)
    - `Counseling` (35)
    - `Meditation` (28)
    - `CBT` (20)
    - `Support Group` (10)
-9. **Medication Usage** (`String` / Nominal): Active psychiatric medication: `No` (147), `Yes` (53).
+9. **Medication Usage** (`String` / Nominal): Active psychiatric medication: `No` (182), `Yes` (18).
 10. **Support System Strength** (`String` / Ordinal): Level of social/familial network support: `Medium` (103), `Low` (52), `High` (45).
 
 ### Measures (Continuous / Discrete Quantitative Metrics)
-1. **Age** (`Integer`): Participant age in years (Range: `18` to `27`, Mean: `20.62`).
+1. **Age** (`Integer`): Participant age in years (Range: `18` to `27`, Mean: `20.61`, Std: `2.02`).
 2. **Anxiety Score** (`Integer`): Standardized anxiety psychometric assessment (Range: `5` to `96`, Mean: `52.59`, Std: `16.77`).
-3. **Depression Score** (`Integer`): Standardized depression severity metric (Range: `9` to `87`, Mean: `46.74`, Std: `18.25`).
-4. **Daily Screen Time (hrs)** (`Float`): Daily digital screen usage (Range: `3.0` to `12.0` hrs, Mean: `7.05`, Std: `1.70`).
-5. **Social Interaction Score** (`Integer`): Scale of interpersonal social engagement (Range: `1` to `10`, Mean: `5.49`, Std: `2.06`).
-6. **Intervention Duration (weeks)** (`Integer`): Duration in active therapy (Range: `0` to `16` weeks, Mean: `3.99`). *(Zero for students receiving No Therapy)*.
-7. **Progress Score** (`Integer`): Post-intervention recovery/improvement score (Range: `0` to `69`, Mean: `16.32`). *(Zero for students receiving No Therapy)*.
-8. **Work-Life Balance Score** (`Integer`): Self-rated balance between study, work, and personal life (Range: `1` to `10`, Mean: `5.48`, Std: `2.28`).
+3. **Depression Score** (`Integer`): Standardized depression severity metric (Range: `9` to `87`, Mean: `48.09`, Std: `16.65`).
+4. **Daily Screen Time (hrs)** (`Float`): Daily digital screen usage (Range: `3.0` to `12.0` hrs, Mean: `7.10`, Std: `1.81`).
+5. **Social Interaction Score** (`Integer`): Scale of interpersonal social engagement (Range: `1` to `10`, Mean: `5.55`, Std: `2.00`).
+6. **Intervention Duration (weeks)** (`Integer`): Duration in active therapy (Range: `0` to `16` weeks, Mean: `3.10`, Std: `3.90`). *(Zero for students receiving No Therapy; Mean for active therapy = 6.67 weeks)*.
+7. **Progress Score** (`Integer`): Post-intervention recovery/improvement score (Range: `0` to `69`, Mean: `16.32`, Std: `19.87`). *(Zero for students receiving No Therapy; Mean for active therapy = 35.10)*.
+8. **Work-Life Balance Score** (`Integer`): Self-rated balance between study, work, and personal life (Range: `1` to `10`, Mean: `5.47`, Std: `2.28`).
 
 ---
 
