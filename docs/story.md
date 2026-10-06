@@ -117,7 +117,7 @@ Scene 5: Intervention Patterns and Recovery Progress
 - **Evidence-Based Observations:**
   1. *CBT Demonstrates Strongest Recovery:* Cognitive Behavioral Therapy (CBT) achieves the highest average progress score (**40.80** across an average duration of 7.50 weeks), demonstrating the efficacy of structured cognitive restructuring.
   2. *Broad Therapeutic Benefit:* Counseling (**34.43**), Support Groups (**33.10**), and Meditation (**32.57**) all yield positive progress scores, confirming that diverse clinical and peer-led modalities provide measurable symptom relief.
-  3. *The Institutional Care Gap:* **107 of 200 students (53.5%)** receive "No Therapy", including 14 students with High Stress and 66 with Medium Stress, pointing to a critical service reach deficit.
+  3. *The Institutional Care Gap:* **107 of 200 students (53.5%)** receive "No Therapy", including 15 students with High Stress and 48 with Medium Stress (along with 44 Low Stress students), pointing to a critical service reach deficit.
 - **Strategic Policy Recommendations:**
   - *Expand CBT Availability:* Partner with counseling interns and clinical psychology departments to increase capacity for evidence-based CBT.
   - *Institutional Sleep & Digital Wellness Workshops:* Implement structured campus workshops focusing on digital screen limits and sleep hygiene.
