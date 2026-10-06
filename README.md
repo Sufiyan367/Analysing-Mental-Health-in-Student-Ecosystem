@@ -25,9 +25,8 @@ By synthesizing **data engineering**, **validated psychometric metrics**, and **
 | **Data Collection & Extraction** | Understand the data | **COMPLETED** | [`docs/data_dictionary.md`](docs/data_dictionary.md), [`docs/dataset_validation.md`](docs/dataset_validation.md) |
 | **Data Preparation** | Prepare the Data for Visualization | **COMPLETED** | [`docs/data_preparation.md`](docs/data_preparation.md), [`data/cleaned/validation_summary.json`](data/cleaned/validation_summary.json) |
 | **Data Visualization** | No of Unique Visualizations | **COMPLETED (8 Artifacts)** | [`docs/data_visualization.md`](docs/data_visualization.md), [`evidence/visualizations/`](evidence/visualizations/) |
-| **Data Visualization** | Connect Data with Tableau & Author Worksheets | **NEXT PLANNED STAGE** | To be authored on Tableau Public Web Authoring |
-| **Dashboard** | Build Interactive Dashboards | Pending | Dashboard 1 & Dashboard 2 |
-| **Story** | Build Guided Story Points | Pending | 5-Scene Story Narrative |
+| **Dashboard** | Responsive and Design of Dashboard | **COMPLETED (Prototypes & Spec)** | [`docs/dashboard_design.md`](docs/dashboard_design.md), [`evidence/dashboard/`](evidence/dashboard/) |
+| **Story** | Build Guided Story Points | **NEXT PLANNED STAGE** | 5-Scene Story Narrative Architecture |
 | **Performance Testing** | Performance & Audit Testing | Pending | Latency, filter optimization & responsiveness |
 | **Web Integration** | Flask Web Portal Integration | Pending | Embedded Tableau Public visualizations in Flask |
 | **Demonstration & Docs** | Final Report & Demonstration | Pending | Video demonstration, slide deck & documentation |
@@ -43,6 +42,32 @@ By synthesizing **data engineering**, **validated psychometric metrics**, and **
 - **Duplicate User IDs:** **0** (Unique identifiers: `STU_0001` to `STU_0200`)
 - **Data Preparation Status:** **READY FOR VISUALIZATION**
 - **Cleaning Note:** *No further data cleaning was required; the dataset is visualization-ready.*
+
+---
+
+## 🖥️ Student Mental Health Analysis Dashboard
+
+The **Student Mental Health Analysis Dashboard** unifies the project's empirical findings into an interactive, multi-device diagnostic tool for campus administrators and counselors.
+
+### Verified Cohort KPIs
+- **Total Students:** `200` (Full cohort sample)
+- **Average Anxiety Score:** `52.59` (Normalized psychometric score 0–100)
+- **Average Depression Score:** `48.09` (Normalized psychometric score 0–100)
+- **Average Daily Screen Time:** `7.10 hrs/day` (Continuous measurement)
+
+### Core Visualizations Incorporated
+1. **Stress Level Distribution** (Bar Chart)
+2. **Stress vs. Anxiety & Depression Scores** (Grouped Bar Chart)
+3. **Sleep Quality vs. Stress Tier** (Stacked Bar Chart)
+4. **Daily Screen Time by Stress Level** (Bar Chart)
+5. **Mental Health History Prevalence** (Donut Chart)
+6. **Ranked Therapy Efficacy** (Horizontal Bar Chart)
+
+### Responsive Dashboard Variants
+- **Desktop (1920 $\times$ 1080 / 16:9):** [`evidence/dashboard/student_mental_health_dashboard.png`](evidence/dashboard/student_mental_health_dashboard.png)
+- **Tablet (1024 $\times$ 768 / 2-Column):** [`evidence/dashboard/tablet_dashboard.png`](evidence/dashboard/tablet_dashboard.png)
+- **Mobile (Vertical Stack):** [`evidence/dashboard/mobile_dashboard.png`](evidence/dashboard/mobile_dashboard.png)
+- **Full Architecture & Layout Specification:** [`docs/dashboard_design.md`](docs/dashboard_design.md)
 
 ---
 
@@ -84,24 +109,26 @@ Analysing-Mental-Health-in-Student-Ecosystem/
 │   ├── dataset_validation.md                     # Statistical distributions & integrity audit
 │   ├── data_preparation.md                      # Preparation report & visualization mapping
 │   ├── data_visualization.md                    # Specifications for 8 dataset-grounded visualizations
+│   ├── dashboard_design.md                      # Responsive dashboard architecture & layout specification
 │   ├── problem_statement.md                      # Capstone problem background & target outcomes
 │   └── tableau.md                                # Tableau authoring architectural reference
 │
 ├── evidence/
-│   └── visualizations/                          # 8 Verified visualization artifacts (PNG)
-│       ├── 01_stress_level_distribution.png
-│       ├── 02_stress_vs_anxiety.png
-│       ├── 03_stress_vs_depression.png
-│       ├── 04_gender_mental_health_comparison.png
-│       ├── 05_sleep_quality_vs_stress.png
-│       ├── 06_screen_time_vs_stress.png
-│       ├── 07_mental_health_history_distribution.png
-│       └── 08_therapy_type_vs_progress.png
+│   ├── visualizations/                          # 8 Verified visualization artifacts (PNG)
+│   │   ├── 01_stress_level_distribution.png
+│   │   ├── ...
+│   │   └── 08_therapy_type_vs_progress.png
+│   └── dashboard/                               # Responsive dashboard prototypes
+│       ├── student_mental_health_dashboard.png   # Primary desktop dashboard
+│       ├── desktop_dashboard.png                # 16:9 desktop layout
+│       ├── tablet_dashboard.png                 # 2-column tablet layout
+│       └── mobile_dashboard.png                 # Vertical single-column mobile layout
 │
 ├── scripts/
 │   ├── generate_student_mental_health_dataset.py # Standardized realistic dataset generator
 │   ├── validate_dataset.py                       # Automated 18-variable schema audit script
-│   └── generate_visualizations.py                # Reproducible generator for 8 chart artifacts
+│   ├── generate_visualizations.py                # Reproducible generator for 8 chart artifacts
+│   └── generate_dashboard_prototypes.py         # Multi-device responsive dashboard generator
 │
 ├── tableau/                                      # Tableau workbooks and assets
 ├── templates/                                    # Flask web application Jinja2 templates
@@ -111,6 +138,5 @@ Analysing-Mental-Health-in-Student-Ecosystem/
 ---
 
 ## 🎯 Next Planned Stage
-**Tableau Authoring & Dashboard Construction:**  
-- Connect `data/cleaned/mental_health_student_ecosystem_cleaned.csv` via Tableau Public Web Authoring.
-- Author interactive native sheets, calculated fields, and dashboards in the authenticated environment.
+**Story Architecture & Guided Narrative:**  
+- Define 5 guided analytical story scenes connecting student pressure points to policy recommendations.
