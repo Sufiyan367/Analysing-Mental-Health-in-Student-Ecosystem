@@ -172,7 +172,21 @@ The Python Flask application (`app.py`) serves the complete web portal:
 
 ---
 
-## 11. Demonstration Video & Publication Report
+## 11. 🚀 Public Demo Deployment & Live Access
+
+The Flask web application is configured for production deployment as a containerized Python web service:
+
+- **Hosting Platform:** [Render](https://render.com) (Python 3.11 / Gunicorn WSGI)
+- **Infrastructure Blueprint:** [`render.yaml`](render.yaml)
+- **Production Build Command:** `pip install -r requirements.txt`
+- **Production Start Command:** `gunicorn app:app`
+- **Public Demo Endpoint:** `https://analysing-mental-health-student-ecosystem.onrender.com`
+- **Deployment Documentation:** [`docs/public_deployment.md`](docs/public_deployment.md)
+- **Tableau Public Status Note:** The deployed web application serves high-resolution interactive prototype layouts and metric cards. Native Tableau Public cloud workbook publishing remains pending manual GUI creation on profile [`sufiyansurve333`](https://public.tableau.com/app/profile/sufiyansurve333).
+
+---
+
+## 12. Demonstration Video & Publication Report
 
 - **End-to-End Walkthrough Video (6:26 mins, 9.84 MB):** [`evidence/demo/project_explanation_video.mp4`](evidence/demo/project_explanation_video.mp4)  
   *Fully compliant with SkillWallet's 5–7 minute requirement (386.13 seconds). Features 1920×1080 16:9 slides, synchronized narration covering all 11 capstone sections, and verified AAC audio.*
@@ -182,7 +196,7 @@ The Python Flask application (`app.py`) serves the complete web portal:
 
 ---
 
-## 12. Repository Directory Structure
+## 13. Repository Directory Structure
 
 ```
 Analysing-Mental-Health-in-Student-Ecosystem/
@@ -254,7 +268,7 @@ Analysing-Mental-Health-in-Student-Ecosystem/
 
 ---
 
-## 13. Tableau Public Authoring Status & Transparency Notice
+## 14. Tableau Public Authoring Status & Transparency Notice
 
 > [!IMPORTANT]
 > **Tableau Public Publication Status: PENDING MANUAL UPLOAD**
@@ -271,7 +285,7 @@ Once published to Tableau Public:
 
 ---
 
-## 14. Key Empirical Findings & Strategic Recommendations
+## 15. Key Empirical Findings & Strategic Recommendations
 
 ### Empirical Clinical Discoveries
 1. **Pervasive Stress Burden:** 78.0% of the cohort (156 of 200) operates in moderate or severe stress tiers.
