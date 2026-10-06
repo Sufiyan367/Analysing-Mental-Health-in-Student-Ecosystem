@@ -189,7 +189,7 @@ A fully functional Flask web application hosts the project diagnostics and provi
 
 ## 🎬 Project Demonstration & Comprehensive Documentation
 
-- **End-to-End Walkthrough Video (8.71 mins, 13.3 MB):** [`evidence/demo/project_explanation_video.mp4`](evidence/demo/project_explanation_video.mp4)  
+- **End-to-End Walkthrough Video (6:26 mins, 9.84 MB):** [`evidence/demo/project_explanation_video.mp4`](evidence/demo/project_explanation_video.mp4)  
   *Comprehensive walkthrough covering problem statement, data preparation, 8 visualizations, multi-device dashboard prototypes, 5-scene story, performance testing, Flask web portal, and strategic policy recommendations with synchronized audio narration and 1920×1080 slides.*
 - **Verbatim Narration Script:** [`docs/demo_video_script.md`](docs/demo_video_script.md)
 - **Step-by-Step Project Development Lifecycle (19 Sections):** [`docs/project_development_documentation.md`](docs/project_development_documentation.md)
