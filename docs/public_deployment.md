@@ -7,7 +7,18 @@
 
 ---
 
-## 1. Hosting Architecture & Specification
+## 1. Current Deployment & Verification Status
+
+> [!IMPORTANT]
+> **Status: Ready for 1-Click Provisioning on Render (Pending User Dashboard Authorization)**
+> 
+> The repository includes complete production infrastructure files ([`render.yaml`](../render.yaml), [`requirements.txt`](../requirements.txt), and WSGI entrypoint `app:app`).
+> 
+> Because Render requires personal account authentication (OAuth / API token) which is not connected locally in this CLI environment, the service has not yet been provisioned on Render's servers. Therefore, `https://analysing-mental-health-student-ecosystem.onrender.com` returns `HTTP 404: Not Found` until the 1-click connection is authorized on [dashboard.render.com](https://dashboard.render.com).
+
+---
+
+## 2. Hosting Architecture & Specification
 
 The application is architected to run as a stateless, containerized Python web service:
 
@@ -20,9 +31,9 @@ The application is architected to run as a stateless, containerized Python web s
 
 ---
 
-## 2. Environment Variables Configuration
+## 3. Environment Variables Configuration
 
-| Variable Name | Default / Production Value | Purpose |
+| Variable Name | Production Setting | Purpose |
 | :--- | :--- | :--- |
 | `PYTHON_VERSION` | `3.11.9` | Sets the Python runtime version on Render. |
 | `PORT` | Set automatically by Render | The HTTP listening port for Gunicorn. |
@@ -32,51 +43,38 @@ The application is architected to run as a stateless, containerized Python web s
 
 ---
 
-## 3. Step-by-Step Render Deployment Procedure
+## 4. 1-Click Provisioning Steps on Render
 
-To provision the public HTTPS demo URL on Render:
+To provision the live public HTTPS demo endpoint:
 
 1. **Sign in to Render:**  
-   Navigate to [dashboard.render.com](https://dashboard.render.com) and log in using your GitHub account (`Sufiyan367`).
-2. **Create New Web Service:**  
-   Click **New +** $\rightarrow$ **Web Service**.
-3. **Connect GitHub Repository:**  
-   Select the repository: `Sufiyan367/Analysing-Mental-Health-in-Student-Ecosystem`.  
-   *(If prompted, grant Render access to your public GitHub repositories).*
-4. **Configure Service Settings:**
-   - **Name:** `analysing-mental-health-student-ecosystem`
-   - **Region:** Frankfurt (EU) or Oregon (US West)
-   - **Branch:** `main`
-   - **Root Directory:** *(leave blank)*
-   - **Runtime:** `Python 3`
-   - **Build Command:** `pip install -r requirements.txt`
-   - **Start Command:** `gunicorn app:app`
-   - **Instance Type:** `Free`
-5. **Add Environment Variables (Optional):**
-   - `PYTHON_VERSION` = `3.11.9`
-6. **Deploy:**  
-   Click **Create Web Service**.
-7. **Obtain Public URL:**  
-   Once the build completes (approx. 2–3 minutes), Render provides a live HTTPS endpoint:  
-   `https://analysing-mental-health-student-ecosystem.onrender.com`
+   Navigate to [dashboard.render.com](https://dashboard.render.com) and log in with your GitHub account (`Sufiyan367`).
+2. **Deploy with Blueprint / Web Service:**  
+   - Click **New +** $\rightarrow$ **Blueprint** (or **Web Service**).
+   - Select repository: `Sufiyan367/Analysing-Mental-Health-in-Student-Ecosystem`.
+   - Render automatically reads [`render.yaml`](../render.yaml) and populates the build command (`pip install -r requirements.txt`), start command (`gunicorn app:app`), and environment variables.
+3. **Deploy:**  
+   Click **Apply** / **Create Web Service**.
+4. **Live Verification:**  
+   Render will build the dependencies and provide the assigned HTTPS URL (e.g. `https://analysing-mental-health-student-ecosystem.onrender.com`).
 
 ---
 
-## 4. Route Health-Check Specifications
+## 5. Local Production Route Health-Check Audit
 
-Upon deployment, the following routes provide 100% functionality and sub-second load times:
+All core routes and assets were verified against the Flask production application object (`app.app`):
 
-| Route | Expected Status | Verified Page Title & Content |
+| Route | Status | Verified Page Title & Content |
 | :--- | :---: | :--- |
-| `/` | **HTTP 200 OK** | *Executive Overview — Analysing Mental Health in Student Ecosystem*<br>Renders 4 live KPI cards ($N=200$, Anxiety $52.59$, Depression $48.09$, Screen Time $7.10\text{ hrs}$) and 4 empirical diagnostic pillars. |
-| `/dashboard` | **HTTP 200 OK** | *Interactive Dashboards — Analysing Mental Health in Student Ecosystem*<br>Renders multi-device layout selector (Desktop, Tablet, Mobile) and responsive prototype views. |
-| `/story` | **HTTP 200 OK** | *Guided Data Story — Analysing Mental Health in Student Ecosystem*<br>Renders interactive 5-scene narrative carousel with step controls. |
-| `/about` | **HTTP 200 OK** | *Methodology & Architecture — Analysing Mental Health in Student Ecosystem*<br>Renders 18-variable schema dictionary, 10 calculation formulas, and validation report. |
+| `/` | **HTTP 200 OK** | *Executive Overview — Analysing Mental Health in Student Ecosystem*<br>Computes all 4 cohort KPIs ($N=200$, Anxiety $52.59$, Depression $48.09$, Screen Time $7.10\text{ hrs}$) directly from CSV; renders CSS Grid and subgroup badges. |
+| `/dashboard` | **HTTP 200 OK** | *Interactive Dashboards — Analysing Mental Health in Student Ecosystem*<br>Renders multi-device prototype selector (Desktop, Tablet, Mobile) and responsive diagnostic panels. |
+| `/story` | **HTTP 200 OK** | *Guided Data Story — Analysing Mental Health in Student Ecosystem*<br>Renders interactive 5-scene narrative carousel with previous/next controls, observations, and recommendations. |
+| `/about` | **HTTP 200 OK** | *Methodology & Architecture — Analysing Mental Health in Student Ecosystem*<br>Renders 18-variable schema dictionary, 10 calculation formulas, and validation compliance report. |
 | `/evidence/<path>` | **HTTP 200 OK** | Direct static asset delivery for visual charts, responsive dashboard PNGs, and the 6:26 demonstration video MP4. |
 
 ---
 
-## 5. Tableau Public Publication Transparency Notice
+## 6. Tableau Public Publication Transparency Notice
 
 > [!IMPORTANT]
 > **Native Tableau Cloud Status: PENDING MANUAL GUI AUTHORING**

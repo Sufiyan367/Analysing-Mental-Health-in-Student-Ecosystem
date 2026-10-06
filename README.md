@@ -180,8 +180,8 @@ The Flask web application is configured for production deployment as a container
 - **Infrastructure Blueprint:** [`render.yaml`](render.yaml)
 - **Production Build Command:** `pip install -r requirements.txt`
 - **Production Start Command:** `gunicorn app:app`
-- **Public Demo Endpoint:** `https://analysing-mental-health-student-ecosystem.onrender.com`
-- **Deployment Documentation:** [`docs/public_deployment.md`](docs/public_deployment.md)
+- **Provisioning Status:** Infrastructure files (`render.yaml`, `requirements.txt`, WSGI `app:app`) are configured on `main`. Requires 1-click connection via [dashboard.render.com](https://dashboard.render.com) to assign the active HTTPS endpoint.
+- **Deployment Documentation & Steps:** [`docs/public_deployment.md`](docs/public_deployment.md)
 - **Tableau Public Status Note:** The deployed web application serves high-resolution interactive prototype layouts and metric cards. Native Tableau Public cloud workbook publishing remains pending manual GUI creation on profile [`sufiyansurve333`](https://public.tableau.com/app/profile/sufiyansurve333).
 
 ---
