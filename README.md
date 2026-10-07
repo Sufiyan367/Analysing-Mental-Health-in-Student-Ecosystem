@@ -2,7 +2,8 @@
 
 [![Python](https://img.shields.io/badge/Python-3.11-3776AB?logo=python&logoColor=white)](https://www.python.org/)
 [![Flask](https://img.shields.io/badge/Flask-3.0.3-black?logo=flask&logoColor=white)](https://flask.palletsprojects.com/)
-[![Tableau Public](https://img.shields.io/badge/Tableau_Public-Profile_Prepared-blue?logo=tableau&logoColor=white)](https://public.tableau.com/app/profile/sufiyansurve333)
+[![Tableau Public](https://img.shields.io/badge/Tableau_Public-Live_Dashboard-blue?logo=tableau&logoColor=white)](https://public.tableau.com/views/Student_Mental_Health_Analysis_sufiyan_17913953791380/AnalysingMentalHealthinStudentEcosystem?:language=en-US&:publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
+[![Google Drive](https://img.shields.io/badge/Google_Drive-Demo_Folder-34A853?logo=googledrive&logoColor=white)](https://drive.google.com/drive/folders/1rZAiZPEoPbtN1HpOQH8XI3h9L5-z5J-f)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 > **Data Analytics with Tableau — Virtual Internship Capstone Project**  
@@ -10,6 +11,15 @@
 > *Student Author:* Sufiyan Surve  
 > *Tableau Public Profile:* [`sufiyansurve333`](https://public.tableau.com/app/profile/sufiyansurve333)  
 > *Repository:* [`Sufiyan367/Analysing-Mental-Health-in-Student-Ecosystem`](https://github.com/Sufiyan367/Analysing-Mental-Health-in-Student-Ecosystem)
+
+---
+
+## 🎯 Project Demo & Deliverable Evidence
+
+- **Project:** Analysing Mental Health in Student Ecosystem
+- **Project Explanation Video:** [Google Drive Video Stream / Download](https://drive.google.com/file/d/1GcqoIyzyw_9iIb3Yp4Wv6wGykcNCurVg/view?usp=sharing)
+- **Interactive Tableau Dashboard:** [Tableau Public Live Interactive Dashboard](https://public.tableau.com/views/Student_Mental_Health_Analysis_sufiyan_17913953791380/AnalysingMentalHealthinStudentEcosystem?:language=en-US&:publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
+- **Google Drive Demo Folder:** [Analysing Mental Health in Student Ecosystem — Demo](https://drive.google.com/drive/folders/1rZAiZPEoPbtN1HpOQH8XI3h9L5-z5J-f?usp=sharing)
 
 ---
 
@@ -94,7 +104,7 @@ All project analyses, calculations, visual charts, and dashboard metrics are gro
 | **6** | **Performance Testing** | **COMPLETED** | Ingestion & Filter Benchmarks, 10 Calculation Specs ([`evidence/performance/`](evidence/performance/)), [`docs/performance_testing.md`](docs/performance_testing.md) |
 | **7** | **Web Integration** | **COMPLETED** | Python Flask Portal (`app.py`), `<tableau-viz>` Integration, Route Evidence ([`evidence/web_integration/`](evidence/web_integration/)), [`docs/web_integration.md`](docs/web_integration.md) |
 | **8** | **Project Demonstration & Docs** | **COMPLETED** | 6:26-Min Walkthrough Video ([`evidence/demo/project_explanation_video.mp4`](evidence/demo/project_explanation_video.mp4)), Script ([`docs/demo_video_script.md`](docs/demo_video_script.md)), PDF Report ([`evidence/documentation/Project_Documentation.pdf`](evidence/documentation/Project_Documentation.pdf)) |
-| **—** | **Tableau Public Publication** | **PENDING MANUAL UPLOAD** | All 8 worksheets, 10 calculations, and layouts are specified; cloud publishing remains pending manual browser session authoring. |
+| **—** | **Tableau Public Publication** | **COMPLETED — LIVE** | Real interactive dashboard live on Tableau Public ([`AnalysingMentalHealthinStudentEcosystem`](https://public.tableau.com/views/Student_Mental_Health_Analysis_sufiyan_17913953791380/AnalysingMentalHealthinStudentEcosystem?:language=en-US&:publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)) |
 
 ---
 
@@ -267,20 +277,16 @@ Analysing-Mental-Health-in-Student-Ecosystem/
 
 ---
 
-## 14. Tableau Public Authoring Status & Transparency Notice
-
-> [!IMPORTANT]
-> **Tableau Public Publication Status: PENDING MANUAL UPLOAD**
+## 14. Tableau Public Interactive Dashboard
+ 
+> [!NOTE]
+> **Tableau Public Publication: LIVE & VERIFIED**
 >
-> All **8 worksheets**, **10 calculation fields**, **multi-device responsive dashboard layouts**, and **5-scene data story** are fully specified, verified, and prototyped in Python and Flask.
->
-> To maintain strict academic integrity and avoid session corruption, synthetic XML workbook hacking was stopped. Cloud publishing remains pending manual creation and publishing via the authenticated Tableau Public Web Authoring GUI on the author's profile:  
-> 🔗 **Tableau Public Profile:** [`https://public.tableau.com/app/profile/sufiyansurve333`](https://public.tableau.com/app/profile/sufiyansurve333)
-
-Once published to Tableau Public:
-1. Export the dashboard URL as `TABLEAU_DASHBOARD_URL`.
-2. Export the story URL as `TABLEAU_STORY_URL`.
-3. Restart `app.py` to seamlessly transition the portal from prototype frames to live Tableau Cloud embedding.
+> The complete interactive visual analytics workbook is published and accessible on Tableau Public:  
+> 🔗 **Interactive Dashboard:** [`Analysing Mental Health in Student Ecosystem`](https://public.tableau.com/views/Student_Mental_Health_Analysis_sufiyan_17913953791380/AnalysingMentalHealthinStudentEcosystem?:language=en-US&:publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)  
+> 👤 **Author Profile:** [`sufiyansurve333`](https://public.tableau.com/app/profile/sufiyansurve333)
+ 
+The live cloud dashboard includes all interactive filters, calculated fields, and multi-device views for exploring student mental health metrics.
 
 ---
 
