@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<workbook source-build='2024.1.0' source-platform='win' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <AccessibleZoneTabOrder />
+    <AnimationOnByDefault />
+    <MarkAnimation />
+    <SheetIdentifierTracking />
+    <WindowsPersistSimpleIdentifiers />
+  </document-format-change-manifest>
+  <preferences />
+  <datasources>
+    <datasource caption='mental_health_student_ecosystem_cleaned' inline='true' name='federated.main_data' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='mental_health_student_ecosystem_cleaned' name='textscan.main'>
+            <connection class='textscan' directory='S:\SY\SEM 3\Internships' filename='mental_health_student_ecosystem_cleaned.csv' />
+          </named-connection>
+        </named-connections>
+      </connection>
+    </datasource>
+  </datasources>
+
+  <worksheets>
+    <worksheet name='Sheet 1'>
+      <table>
+        <view>
+          <datasources><datasource name='federated.main_data' /></datasources>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes><pane><view><breakdown value='auto' /></view><mark class='Automatic' /></pane></panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{11111111-2222-3333-4444-555555555555}' />
+    </worksheet>
+  </worksheets>
+
+  <windows>
+    <window class='worksheet' maximized='true' name='Sheet 1'>
+      <cards />
+      <simple-id uuid='{66666666-7777-8888-9999-000000000000}' />
+    </window>
+  </windows>
+</workbook>
