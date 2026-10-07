@@ -302,17 +302,38 @@
 
     /* Dashboard Link Section */
     #dashboard {
-      overflow-wrap: break-word;
-      word-break: break-word;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: clamp(24px, 4vw, 40px) clamp(16px, 3vw, 24px);
     }
-    #dashboard a {
-      color: var(--primary);
-      font-weight: 600;
-      text-decoration: underline;
-      display: inline-block;
+    .btn-dashboard-cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: linear-gradient(135deg, #1d4ed8 0%, #2563eb 50%, #3b82f6 100%);
+      color: var(--white) !important;
+      font-size: clamp(0.95rem, 2vw, 1.15rem);
+      font-weight: 800;
+      padding: clamp(14px, 2.5vw, 18px) clamp(22px, 4vw, 36px);
+      border-radius: var(--radius-lg);
+      text-decoration: none !important;
+      box-shadow: 0 8px 24px -4px rgba(37, 99, 235, 0.4), 0 4px 10px -2px rgba(37, 99, 235, 0.2);
+      transition: all 0.25s ease;
       max-width: 100%;
-      word-break: break-all;
-      line-height: 1.5;
+      text-align: center;
+      word-break: normal;
+      letter-spacing: -0.01em;
+      min-height: 52px;
+    }
+    .btn-dashboard-cta:hover {
+      background: linear-gradient(135deg, #1e40af 0%, #1d4ed8 50%, #2563eb 100%);
+      transform: translateY(-2px);
+      box-shadow: 0 12px 28px -4px rgba(37, 99, 235, 0.5), 0 6px 14px -2px rgba(37, 99, 235, 0.3);
+    }
+    .btn-dashboard-cta:active {
+      transform: translateY(0);
     }
 
     /* Story Scenes */
@@ -860,7 +881,7 @@
 
   <!-- Dashboard Section -->
   <section class="section-wrap" id="dashboard">
-    <a href="https://public.tableau.com/views/Student_Mental_Health_Analysis_sufiyan/AnalysingMentalHealthinStudentEcosystem?:language=en-US&amp;publish=yes&amp;:sid=&amp;:redirect=auth&amp;:display_count=n&amp;:origin=viz_share_link" target="_blank" rel="noopener noreferrer">https://public.tableau.com/views/Student_Mental_Health_Analysis_sufiyan/AnalysingMentalHealthinStudentEcosystem?:language=en-US&amp;publish=yes&amp;:sid=&amp;:redirect=auth&amp;:display_count=n&amp;:origin=viz_share_link</a>
+    <a href="https://public.tableau.com/views/Student_Mental_Health_Analysis_sufiyan/AnalysingMentalHealthinStudentEcosystem?:language=en-US&amp;publish=yes&amp;:sid=&amp;:redirect=auth&amp;:display_count=n&amp;:origin=viz_share_link" target="_blank" rel="noopener noreferrer" class="btn-dashboard-cta">📊 View Interactive Tableau Dashboard →</a>
   </section>
 
   <!-- Data Story Section -->
