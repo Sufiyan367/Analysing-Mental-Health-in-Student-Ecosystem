@@ -1,0 +1,367 @@
+import os
+import zipfile
+
+def build_twbx():
+    base_dir = r"S:\SY\SEM 3\Internships\Skill Wallet"
+    data_file = os.path.join(base_dir, "data", "cleaned", "mental_health_student_ecosystem_cleaned.csv")
+    twb_path = os.path.join(base_dir, "Analysing_Mental_Health_in_Student_Ecosystem.twb")
+    twbx_path = os.path.join(base_dir, "Analysing_Mental_Health_in_Student_Ecosystem.twbx")
+
+    csv_name = "mental_health_student_ecosystem_cleaned.csv"
+
+    xml_content = f"""<?xml version='1.0' encoding='utf-8' ?>
+<workbook source-build='2024.1.0' source-platform='win' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <AccessibleZoneTabOrder />
+    <AnimationOnByDefault />
+    <MarkAnimation />
+    <SheetIdentifierTracking />
+    <WindowsPersistSimpleIdentifiers />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource caption='mental_health_student_ecosystem_cleaned' inline='true' name='federated.main_data' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='mental_health_student_ecosystem_cleaned' name='textscan.main'>
+            <connection class='textscan' directory='.' filename='{csv_name}' />
+          </named-connection>
+        </named-connections>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='User ID' datatype='string' name='[User ID]' role='dimension' type='nominal' />
+      <column caption='Age' datatype='integer' name='[Age]' role='measure' type='quantitative' />
+      <column caption='Gender' datatype='string' name='[Gender]' role='dimension' type='nominal' />
+      <column caption='Occupation' datatype='string' name='[Occupation]' role='dimension' type='nominal' />
+      <column caption='Stress Level' datatype='string' name='[Stress Level]' role='dimension' type='nominal' />
+      <column caption='Anxiety Score' datatype='integer' name='[Anxiety Score]' role='measure' type='quantitative' />
+      <column caption='Depression Score' datatype='integer' name='[Depression Score]' role='measure' type='quantitative' />
+      <column caption='Sleep Quality' datatype='string' name='[Sleep Quality]' role='dimension' type='nominal' />
+      <column caption='Daily Screen Time (hrs)' datatype='real' name='[Daily Screen Time (hrs)]' role='measure' type='quantitative' />
+      <column caption='Physical Activity Level' datatype='string' name='[Physical Activity Level]' role='dimension' type='nominal' />
+      <column caption='Social Interaction Score' datatype='integer' name='[Social Interaction Score]' role='measure' type='quantitative' />
+      <column caption='Mental Health History' datatype='string' name='[Mental Health History]' role='dimension' type='nominal' />
+      <column caption='Therapy Type' datatype='string' name='[Therapy Type]' role='dimension' type='nominal' />
+      <column caption='Intervention Duration (weeks)' datatype='integer' name='[Intervention Duration (weeks)]' role='measure' type='quantitative' />
+      <column caption='Progress Score' datatype='integer' name='[Progress Score]' role='measure' type='quantitative' />
+      <column caption='Medication Usage' datatype='string' name='[Medication Usage]' role='dimension' type='nominal' />
+      <column caption='Support System Strength' datatype='string' name='[Support System Strength]' role='dimension' type='nominal' />
+      <column caption='Work-Life Balance Score' datatype='integer' name='[Work-Life Balance Score]' role='measure' type='quantitative' />
+
+      <!-- Calculated Fields -->
+      <column caption='High Stress Poor Sleep Flag' datatype='integer' name='[Calculation_HighStress_PoorSleep]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='IF [Stress Level] = "High" AND [Sleep Quality] = "Poor" THEN 1 ELSE 0 END' />
+      </column>
+      <column caption='Active Therapy Flag' datatype='integer' name='[Calculation_Active_Therapy]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='IF [Therapy Type] != "No Therapy" THEN 1 ELSE 0 END' />
+      </column>
+    </datasource>
+  </datasources>
+
+  <worksheets>
+    <!-- Worksheet 1: Stress Level Distribution -->
+    <worksheet name='Stress Level Distribution'>
+      <table>
+        <view>
+          <datasources>
+            <datasource name='federated.main_data' />
+          </datasources>
+          <datasource-dependencies datasource='federated.main_data'>
+            <column name='[Stress Level]' role='dimension' type='nominal' />
+            <column name='[User ID]' role='dimension' type='nominal' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+          </pane>
+        </panes>
+        <rows>[federated.main_data].[ctd:User ID:qk]</rows>
+        <cols>[federated.main_data].[none:Stress Level:nk]</cols>
+      </table>
+    </worksheet>
+
+    <!-- Worksheet 2: Stress Level vs Anxiety Score -->
+    <worksheet name='Stress Level vs Anxiety Score'>
+      <table>
+        <view>
+          <datasources>
+            <datasource name='federated.main_data' />
+          </datasources>
+          <datasource-dependencies datasource='federated.main_data'>
+            <column name='[Stress Level]' role='dimension' type='nominal' />
+            <column name='[Anxiety Score]' role='measure' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+          </pane>
+        </panes>
+        <rows>[federated.main_data].[avg:Anxiety Score:qk]</rows>
+        <cols>[federated.main_data].[none:Stress Level:nk]</cols>
+      </table>
+    </worksheet>
+
+    <!-- Worksheet 3: Stress Level vs Depression Score -->
+    <worksheet name='Stress Level vs Depression Score'>
+      <table>
+        <view>
+          <datasources>
+            <datasource name='federated.main_data' />
+          </datasources>
+          <datasource-dependencies datasource='federated.main_data'>
+            <column name='[Stress Level]' role='dimension' type='nominal' />
+            <column name='[Depression Score]' role='measure' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+          </pane>
+        </panes>
+        <rows>[federated.main_data].[avg:Depression Score:qk]</rows>
+        <cols>[federated.main_data].[none:Stress Level:nk]</cols>
+      </table>
+    </worksheet>
+
+    <!-- Worksheet 4: Gender Mental Health Comparison -->
+    <worksheet name='Gender Mental Health Comparison'>
+      <table>
+        <view>
+          <datasources>
+            <datasource name='federated.main_data' />
+          </datasources>
+          <datasource-dependencies datasource='federated.main_data'>
+            <column name='[Gender]' role='dimension' type='nominal' />
+            <column name='[Anxiety Score]' role='measure' type='quantitative' />
+            <column name='[Depression Score]' role='measure' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+          </pane>
+        </panes>
+        <rows>[federated.main_data].[avg:Anxiety Score:qk]</rows>
+        <cols>[federated.main_data].[none:Gender:nk]</cols>
+      </table>
+    </worksheet>
+
+    <!-- Worksheet 5: Sleep Quality vs Stress Level -->
+    <worksheet name='Sleep Quality vs Stress Level'>
+      <table>
+        <view>
+          <datasources>
+            <datasource name='federated.main_data' />
+          </datasources>
+          <datasource-dependencies datasource='federated.main_data'>
+            <column name='[Sleep Quality]' role='dimension' type='nominal' />
+            <column name='[Stress Level]' role='dimension' type='nominal' />
+            <column name='[User ID]' role='dimension' type='nominal' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+            <encodings>
+              <color column='[federated.main_data].[none:Stress Level:nk]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.main_data].[ctd:User ID:qk]</rows>
+        <cols>[federated.main_data].[none:Sleep Quality:nk]</cols>
+      </table>
+    </worksheet>
+
+    <!-- Worksheet 6: Screen Time vs Stress Level -->
+    <worksheet name='Screen Time vs Stress Level'>
+      <table>
+        <view>
+          <datasources>
+            <datasource name='federated.main_data' />
+          </datasources>
+          <datasource-dependencies datasource='federated.main_data'>
+            <column name='[Stress Level]' role='dimension' type='nominal' />
+            <column name='[Daily Screen Time (hrs)]' role='measure' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+          </pane>
+        </panes>
+        <rows>[federated.main_data].[avg:Daily Screen Time (hrs):qk]</rows>
+        <cols>[federated.main_data].[none:Stress Level:nk]</cols>
+      </table>
+    </worksheet>
+
+    <!-- Worksheet 7: Mental Health History Prevalence -->
+    <worksheet name='Mental Health History Prevalence'>
+      <table>
+        <view>
+          <datasources>
+            <datasource name='federated.main_data' />
+          </datasources>
+          <datasource-dependencies datasource='federated.main_data'>
+            <column name='[Mental Health History]' role='dimension' type='nominal' />
+            <column name='[User ID]' role='dimension' type='nominal' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Pie' />
+            <encodings>
+              <color column='[federated.main_data].[none:Mental Health History:nk]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows />
+        <cols>[federated.main_data].[none:Mental Health History:nk]</cols>
+      </table>
+    </worksheet>
+
+    <!-- Worksheet 8: Ranked Therapy Efficacy -->
+    <worksheet name='Ranked Therapy Efficacy'>
+      <table>
+        <view>
+          <datasources>
+            <datasource name='federated.main_data' />
+          </datasources>
+          <datasource-dependencies datasource='federated.main_data'>
+            <column name='[Therapy Type]' role='dimension' type='nominal' />
+            <column name='[Progress Score]' role='measure' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+          </pane>
+        </panes>
+        <rows>[federated.main_data].[none:Therapy Type:nk]</rows>
+        <cols>[federated.main_data].[avg:Progress Score:qk]</cols>
+      </table>
+    </worksheet>
+  </worksheets>
+
+  <!-- Primary Executive Dashboard -->
+  <dashboards>
+    <dashboard name='Executive Diagnostic Dashboard'>
+      <style />
+      <size maxheight='1600' maxwidth='1200' minheight='800' minwidth='1200' type='fixed' />
+      <zones>
+        <zone h='100000' id='1' type-v2='layout-basic' w='100000' x='0' y='0'>
+          <zone h='25000' id='2' name='Stress Level Distribution' w='50000' x='0' y='0' />
+          <zone h='25000' id='3' name='Stress Level vs Anxiety Score' w='50000' x='50000' y='0' />
+          <zone h='25000' id='4' name='Stress Level vs Depression Score' w='50000' x='0' y='25000' />
+          <zone h='25000' id='5' name='Gender Mental Health Comparison' w='50000' x='50000' y='25000' />
+          <zone h='25000' id='6' name='Sleep Quality vs Stress Level' w='50000' x='0' y='50000' />
+          <zone h='25000' id='7' name='Screen Time vs Stress Level' w='50000' x='50000' y='50000' />
+          <zone h='25000' id='8' name='Mental Health History Prevalence' w='50000' x='0' y='75000' />
+          <zone h='25000' id='9' name='Ranked Therapy Efficacy' w='50000' x='50000' y='75000' />
+        </zone>
+      </zones>
+    </dashboard>
+  </dashboards>
+
+  <!-- 5-Scene Story Points -->
+  <stories>
+    <story name='Student Mental Health Story'>
+      <style />
+      <size maxheight='900' maxwidth='1280' minheight='900' minwidth='1280' type='fixed' />
+      <story-points>
+        <story-point caption='1. Student Mental Health Baseline'>
+          <sheet name='Stress Level Distribution' type='worksheet' />
+        </story-point>
+        <story-point caption='2. Stress &amp; Psychological Symptoms'>
+          <sheet name='Stress Level vs Anxiety Score' type='worksheet' />
+        </story-point>
+        <story-point caption='3. Lifestyle Factors &amp; Stress'>
+          <sheet name='Sleep Quality vs Stress Level' type='worksheet' />
+        </story-point>
+        <story-point caption='4. Vulnerability Factors &amp; Support Systems'>
+          <sheet name='Mental Health History Prevalence' type='worksheet' />
+        </story-point>
+        <story-point caption='5. Intervention Patterns &amp; Recovery'>
+          <sheet name='Ranked Therapy Efficacy' type='worksheet' />
+        </story-point>
+      </story-points>
+    </story>
+  </stories>
+
+  <windows>
+    <window class='dashboard' name='Executive Diagnostic Dashboard'>
+      <viewpoints />
+      <active id='2' />
+    </window>
+    <window class='story' name='Student Mental Health Story'>
+      <viewpoints />
+      <active id='1' />
+    </window>
+    <window class='worksheet' name='Stress Level Distribution'><cards /></window>
+    <window class='worksheet' name='Stress Level vs Anxiety Score'><cards /></window>
+    <window class='worksheet' name='Stress Level vs Depression Score'><cards /></window>
+    <window class='worksheet' name='Gender Mental Health Comparison'><cards /></window>
+    <window class='worksheet' name='Sleep Quality vs Stress Level'><cards /></window>
+    <window class='worksheet' name='Screen Time vs Stress Level'><cards /></window>
+    <window class='worksheet' name='Mental Health History Prevalence'><cards /></window>
+    <window class='worksheet' name='Ranked Therapy Efficacy'><cards /></window>
+  </windows>
+</workbook>
+"""
+
+    with open(twb_path, "w", encoding="utf-8") as f:
+        f.write(xml_content)
+    print(f"Created TWB at: {twb_path}")
+
+    with zipfile.ZipFile(twbx_path, "w", zipfile.ZIP_DEFLATED) as zf:
+        zf.write(twb_path, arcname="Analysing_Mental_Health_in_Student_Ecosystem.twb")
+        zf.write(data_file, arcname=csv_name)
+    print(f"Created TWBX at: {twbx_path}")
+    print(f"TWBX size: {os.path.getsize(twbx_path)} bytes")
+
+if __name__ == "__main__":
+    build_twbx()

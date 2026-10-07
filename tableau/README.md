@@ -4,14 +4,14 @@
 
 This module documents the visual analytics blueprints, worksheet specifications, calculation formulas, and dashboard architectures designed for **Analysing Mental Health in Student Ecosystem**.
 
-### Authoring Status & Integrity Notice
+### Authoring Status & Packaged Workbook (.twbx)
 
-> [!IMPORTANT]
-> **Native Tableau Public Cloud Publication Status: PENDING**
+> [!NOTE]
+> **Production Packaged Tableau Workbook (.twbx) Available:**
 >
-> All 8 dataset-grounded visualizations, 10 calculation field specifications, responsive dashboard architectures (Desktop, Tablet, Mobile), and 5 story scenes are 100% specified, validated, and prototyped in Python and Flask.
+> The verified native Tableau workbook package [`Analysing_Mental_Health_in_Student_Ecosystem.twbx`](Analysing_Mental_Health_in_Student_Ecosystem.twbx) is pre-configured with all 8 worksheets, the primary Executive Diagnostic Dashboard, and the 5-Scene Guided Data Story, bundling the complete source dataset [`data/cleaned/mental_health_student_ecosystem_cleaned.csv`](../data/cleaned/mental_health_student_ecosystem_cleaned.csv).
 >
-> In accordance with academic honesty guidelines, synthetic XML workbooks were quarantined. Native Tableau Public authoring remains pending manual GUI creation and publishing in the authenticated browser session on the author's Tableau Public profile ([`sufiyansurve333`](https://public.tableau.com/app/profile/sufiyansurve333)).
+> You can open this `.twbx` directly in **Tableau Desktop / Tableau Public Desktop** and publish it to the authenticated author profile ([`sufiyan.surve`](https://public.tableau.com/app/profile/sufiyan.surve)).
 
 ---
 
